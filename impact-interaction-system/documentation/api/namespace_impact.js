@@ -1,0 +1,25 @@
+var namespace_impact =
+[
+    [ "Interactions", "namespace_impact_1_1_interactions.html", "namespace_impact_1_1_interactions" ],
+    [ "Materials", "namespace_impact_1_1_materials.html", "namespace_impact_1_1_materials" ],
+    [ "Objects", "namespace_impact_1_1_objects.html", "namespace_impact_1_1_objects" ],
+    [ "TagLibrary", "namespace_impact_1_1_tag_library.html", "namespace_impact_1_1_tag_library" ],
+    [ "Triggers", "namespace_impact_1_1_triggers.html", "namespace_impact_1_1_triggers" ],
+    [ "Utility", "namespace_impact_1_1_utility.html", "namespace_impact_1_1_utility" ],
+    [ "IImpactCollisionWrapper", "interface_impact_1_1_i_impact_collision_wrapper.html", "interface_impact_1_1_i_impact_collision_wrapper" ],
+    [ "IImpactContactPoint", "interface_impact_1_1_i_impact_contact_point.html", "interface_impact_1_1_i_impact_contact_point" ],
+    [ "IInteractionData", "interface_impact_1_1_i_interaction_data.html", "interface_impact_1_1_i_interaction_data" ],
+    [ "ImpactCollisionWrapper", "struct_impact_1_1_impact_collision_wrapper.html", "struct_impact_1_1_impact_collision_wrapper" ],
+    [ "ImpactContactPoint", "struct_impact_1_1_impact_contact_point.html", "struct_impact_1_1_impact_contact_point" ],
+    [ "ImpactManager", "class_impact_1_1_impact_manager.html", "class_impact_1_1_impact_manager" ],
+    [ "ImpactManagerInstance", "class_impact_1_1_impact_manager_instance.html", "class_impact_1_1_impact_manager_instance" ],
+    [ "ImpactMaterialComposition", "struct_impact_1_1_impact_material_composition.html", "struct_impact_1_1_impact_material_composition" ],
+    [ "ImpactPhysicMaterialMapping", "class_impact_1_1_impact_physic_material_mapping.html", "class_impact_1_1_impact_physic_material_mapping" ],
+    [ "ImpactPhysicsMaterial2DMapping", "class_impact_1_1_impact_physics_material2_d_mapping.html", "class_impact_1_1_impact_physics_material2_d_mapping" ],
+    [ "ImpactRigidbodyWrapper", "class_impact_1_1_impact_rigidbody_wrapper.html", "class_impact_1_1_impact_rigidbody_wrapper" ],
+    [ "ImpactTag", "struct_impact_1_1_impact_tag.html", "struct_impact_1_1_impact_tag" ],
+    [ "ImpactTagMask", "struct_impact_1_1_impact_tag_mask.html", "struct_impact_1_1_impact_tag_mask" ],
+    [ "InteractionData", "struct_impact_1_1_interaction_data.html", "struct_impact_1_1_interaction_data" ],
+    [ "InteractionDataUtilities", "class_impact_1_1_interaction_data_utilities.html", "class_impact_1_1_interaction_data_utilities" ],
+    [ "VelocityData", "struct_impact_1_1_velocity_data.html", "struct_impact_1_1_velocity_data" ]
+];
