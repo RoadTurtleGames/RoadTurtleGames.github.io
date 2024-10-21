@@ -1,0 +1,9 @@
+{
+"TOTAL_MEMORY": 268435456,
+"dataUrl": "Building Ever After.data.unityweb",
+"asmCodeUrl": "Building Ever After.asm.code.unityweb",
+"asmMemoryUrl": "Building Ever After.asm.memory.unityweb",
+"asmFrameworkUrl": "Building Ever After.asm.framework.unityweb",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#222C36"
+}
