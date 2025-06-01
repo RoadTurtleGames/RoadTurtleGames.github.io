@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Impact CFX Documentation</title>
+
+  	<meta charset="utf-8" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+  	<link rel="stylesheet" href="/css/main.css"/>
+  	<link rel="stylesheet" href="/css/all.css"> 
+  	
+  	<script src="/js/jquery.min.js"></script>
+  	<script src="/js/main.js"></script>
+</head>
+  <body>
+    <!-- Navigation Bar -->
+<header id="navigation" class="navbar flex-row">
+	<div class="flex-row navbar-title">
+		<a class="navbar-turtle-link" href="/">
+			<img class="navbar-turtle" src="/images/turtle.png">
+		</a>
+
+		<a class="navbar-title-link" href="/">
+			<h1>Road Turtle Games</h1>
+		</a>
+
+		<div class="flexible-space"></div>
+
+		<a class="navbar-link hamburger" href="javascript:void(0);" onclick="openHamburger()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+
+	<a class="navbar-link hide-me" href="/games">Games</a>	
+	<a class="navbar-link hide-me" href="/development-tools">Development Tools</a>
+</header>  	
+
+    <div class="vertical-navbar">
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="/impact-cfx"><i class="fas fa-arrow-left"></i> Impact CFX Main Page</a>	
+		<a class="vertical-navbar-link" href="index"><i class="fas fa-book"></i> Index</a>		
+		<a class="vertical-navbar-link" href="api"><i class="fas fa-book"></i> API Reference</a>		
+		<a class="vertical-navbar-link" href="change-logs"><i class="fas fa-list"></i> Change Logs</a>		
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="conversion">Conversion From Legacy Impact</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="project-settings">Impact CFX Project Settings</a>
+		<a class="vertical-navbar-link sub-1" href="project-settings#tags">Impact Tags</a>
+		<a class="vertical-navbar-link sub-1" href="project-settings#logging">Logging</a>
+		<a class="vertical-navbar-link" href="material-registry">Impact Material Registry</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-cfx-manager">Impact CFX Manager</a>
+		<a class="vertical-navbar-link sub-1" href="impact-cfx-manager#material-mapping">Material Mapping</a>
+		<a class="vertical-navbar-link sub-1" href="impact-cfx-manager#managing-materials">Managing Registered Materials</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="materials">Impact Materials</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="audio-effect">Audio Effect</a>
+		<a class="vertical-navbar-link sub-1" href="audio-effect#prefab">Audio Source Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="audio-effect#processor">Audio Effect Processor</a>
+		<a class="vertical-navbar-link" href="particle-effect">Particle Effect</a>
+		<a class="vertical-navbar-link sub-1" href="particle-effect#prefab">Particle System Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="particle-effect#processor">Particle Effect Processor</a>
+		<a class="vertical-navbar-link" href="decal-effect">Decal Effect</a>
+		<a class="vertical-navbar-link sub-1" href="decal-effect#prefab">Decal Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="decal-effect#processor">Decal Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="decal-urp-hdrp">URP & HDRP Decals</a>
+		<a class="vertical-navbar-link" href="vfxbatch-effect">VFX Batch Effect</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#master">VFX Batch Master</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#creating">Creating a Visual Effect</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#processor">VFX Batch Effect Processor</a>
+		<a class="vertical-navbar-link" href="managing-attached-effects">Managing Attached Effects</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="objects">Impact Objects</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#single-material">Impact Object Single Material</a>										
+		<a class="vertical-navbar-link sub-1" href="objects#rigidbody">Impact Object Rigidbody</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#custom-velocity">Impact Object Custom Velocity</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#multiple-materials">Objects With Multiple Materials</a>									
+		<a class="vertical-navbar-link sub-1" href="objects#terrain">Impact Terrain</a>				
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="triggers">Impact Triggers</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#common">Common Trigger Properties</a>	
+		<a class="vertical-navbar-link sub-2" href="triggers#material-count">Material Count</a>														
+		<a class="vertical-navbar-link sub-1" href="triggers#collision">Impact Collision Trigger</a>									
+		<a class="vertical-navbar-link sub-1" href="triggers#slide-and-roll">Impact Slide and Roll Trigger</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#speculative">Impact Speculative Collision Trigger</a>									
+		<a class="vertical-navbar-link sub-1" href="triggers#simple">Impact Simple Collision Trigger</a>													
+		<a class="vertical-navbar-link sub-1" href="triggers#particle">Impact Particle Collision Trigger</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#on-trigger-enter">Impact On Trigger Enter</a>
+		<a class="vertical-navbar-link sub-1" href="triggers#on-trigger-stay">Impact On Trigger Stay</a>																	
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="raycasting">Impact Raycasting</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="fmod">FMOD Integration</a>	
+		<a class="vertical-navbar-link" href="wwise">Wwise Integration</a>	
+		<a class="vertical-navbar-link" href="master-audio">Master Audio Integration</a>	
+	</div>
+	
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="custom-triggers">Custom Triggers</a>
+		<a class="vertical-navbar-link" href="custom-objects">Custom Objects</a>
+		<a class="vertical-navbar-link sub-1" href="custom-objects#component">Creating an Impact Object Script</a>
+		<a class="vertical-navbar-link sub-1" href="custom-objects#processor">Impact Material Processors</a>
+		<a class="vertical-navbar-link" href="custom-effects">Custom Effects</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#asset">Impact Effect Authoring Asset</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#effect-result">Effect Result</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#effect-data">Effect Data</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#processor">Impact Effect Processors</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#simple-processor">Impact Simple Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#pooled-processor">Impact Pooled Effect Processor</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-object">Pooled Effect Object</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-authoring">Pooled Effect Authoring</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-result">Pooled Effect Result</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-data">Pooled Effect Data</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#object-pool">Object Pool</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-processor">Pooled Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#add-to-impact-cfx-manager"">Add to Impact CFX Manager</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#example-download"">Example Effect Download</a>
+	</div>
+</div>  	
+
+    <div class="main-container doc-container">
+    	<div style="padding: 0px 80px;">
+    		<div class="main-body">
+	<div class="content">
+		<div class="doc-section clearfix">	
+			<div class="doc-section clearfix">		
+				<h2>Custom Objects</h2>
+	
+				<p class="doc-text-section">Creating a custom Impact Object may be required if the built-in objects do not meet the needs of your project.
+					For instance, you may require that an object have different Impact Materials based on the vertex color of its mesh, a case that is not handled by the built-in Impact Objects.
+					Creating custom Impact Objects is very open-ended, and there is no one required way that you should implement a custom object.
+				</p>
+
+				<p class="doc-text-section">For comprehensive documentation of the entire Impact CFX API, please refer to the <a href="api">API Reference</a>.</p>
+			</div>	
+
+			<hr>
+
+			<div class="doc-section clearfix">		
+				<h3 id="component">Creating an Impact Object Component</h3>
+	
+				<p class="doc-text-section">The first step in creating a custom Impact Object is to create a new script for it.
+					This script must implement the <span class="doc-code">IImpactObject</span> interface and its methods:
+				</p>
+
+				<ul>
+					<li><span class="doc-code">int GetID()</span> - Gets a unique identifier for this object that is used to generate unique contact point IDs.
+						Using GetInstanceID() is a good choice for this.</li>
+					<li><span class="doc-code">int GetPriority()</span> - Gets the priority of the object for potentially stealing effects from objects with a lower priority.</li>
+					<li><span class="doc-code">RigidbodyData GetRigidbodyData()</span> - Gets information about this object's velocity and center of mass. 
+						Even static objects must implement this, but they can simply give a velocity of 0.
+						This is called when the object is being queued for collision processing.</li>
+					<li><span class="doc-code">GameObject GetGameObject()</span> - Gets the game object assoicated with this object.</li>
+					<li><span class="doc-code">Vector3 GetContactPointRelativePosition(Vector3 point)</span> - Converts the given contact point into local space coordinates.</li>
+				</ul>
+
+				<p class="doc-text-section">Directly implementing the <span class="doc-code">IImpactObject</span> interface is not strictly necessary, 
+					but there are a few built-in base classes that you can inherit from if you wish:
+				</p>
+
+				<ul>
+					<li><span class="doc-code">ImpactObjectBase</span> - The most basic Impact Object with a few of the <span class="doc-code">IImpactObject</span> interface methods already implemented.</li>
+					<li><span class="doc-code">ImpactObjectSingleMaterial</span> - Supports an object with only 1 material. 
+						By default these kinds of objects are considered static.</li>
+					<li><span class="doc-code">ImpactObjectRigidbody</span> - Supports an object with a Rigidbody or Rigidbody2D. 
+						This class inherits from <span class="doc-code">ImpactObjectSingleMaterial</span>.</li>
+				</ul>				
+				
+				<p class="doc-text-section">Inheriting from at least an <span class="doc-code">ImpactObjectBase</span> is required if you want to be able assign your object to the built-in triggers.</p>
+		
+				<h4 id="example">Example Impact Object Script</h4>
+	
+				<p class="doc-text-section">The following example gives a basic implementation of a component implementing <span class="doc-code">IImpactObject</span>:</p>
+				
+				<pre>
+using ImpactCFX;
+using UnityEngine;
+
+//Implementing via the IImpactObject interface.
+public class ImpactExampleObject : MonoBehaviour, IImpactObject
+{
+    //Inspector field for the Rigidbody component.
+    public Rigidbody Rigidbody;
+    //Inspector field for the Impact Material associated with this object.
+	//This will be used later.
+    public ImpactMaterialAuthoring Material;
+
+    //Hold the state of the rigidbody from the previous FixedUpdate.
+    //Many velocity calculation methods require this.
+    private RigidbodyStateData previousRigidbodyState;
+
+    public int GetID()
+    {
+        //Use this script's instance ID as a unique ID.
+        return this.GetInstanceID();
+    }
+
+    public GameObject GetGameObject()
+    {
+        //Simply return this gameobject.
+        return this.gameObject;
+    }
+
+    public int GetPriority()
+    {
+        //Hardcoding a priority for example purposes.
+        return 1;
+    }
+
+    public Vector3 GetContactPointRelativePosition(Vector3 point)
+    {
+        //Use Unity's built-in function for calculating the local point.
+        return transform.InverseTransformPoint(point);
+    }
+
+    private void FixedUpdate()
+    {
+        //Update the state of the rigidbody.
+        previousRigidbodyState = new RigidbodyStateData(Rigidbody.velocity, Rigidbody.angularVelocity, Rigidbody.worldCenterOfMass);
+    }
+
+    public RigidbodyData GetRigidbodyData()
+    {
+        //Get the current state of the rigidbody.
+        RigidbodyStateData currentRigidbodyState = new RigidbodyStateData(Rigidbody.velocity, Rigidbody.angularVelocity, Rigidbody.worldCenterOfMass);
+
+        //Return RigidbodyData with both the previous and current state.
+        return new RigidbodyData(previousRigidbodyState, currentRigidbodyState);
+    }
+}
+				</pre>
+			</div>	
+
+			<hr>
+
+			<div class="doc-section clearfix">		
+				<h3 id="processor">Impact Material Processors</h3>
+	
+				<p class="doc-text-section">The final step in creating a custom Impact Object is probably the most difficult.
+					While the Impact CFX system can get most of the data it needs directly from the <span class="doc-code">IImpactObject</span> itself, it cannot get the Impact Material data directly.
+					Some objects, like terrains, require non-trivial processing in order to determine the Impact Material(s) present at a given contact point, 
+					so there needs to be a system in place to efficiently gather these materials.
+				</p>
+
+				<p class="doc-text-section">This is where <span class="doc-property">Impact Material Processors</span> come in.
+					Impact Material Processors are responsible for obtaining material information at contact points for specific kinds of objects in bulk.
+					<span class="doc-property">Impact Single Material Processor</span> and <span class="doc-property">Impact Terrain Material Processor</span> are the two built-in Impact Material Processors,
+					responsible for handling <span class="doc-property">Impact Single Material</span> and <span class="doc-property">Impact Terrain</span> objects, respectively.
+				</p>
+
+				<p class="doc-text-section">To create a custom Impact Material Processor, you need to create a script that inherits from <span class="doc-code">ImpactMaterialProcessorBase</span> and implements the required functions:</p>
+				<ul>
+					<li><span class="doc-code">QueueObject</span> - Queues an object for material processing.
+						The impact object could be of any type, so it is important to check the type before proceeding.
+						The <span class="doc-code">resultArrayChunk</span> parameter is very important here; it defines the range of the material results array that has been assigned to this object.
+						The actual code here will depend entirely on your use case.
+					</li>
+					<li><span class="doc-code">ScheduleProcessorJobs</span> - Schedules all jobs needed to get the material data.
+						The <span class="doc-code">materialCompositionArray</span> parameter is very important; this is where you should put the materials you retrieved from the object.</li>
+					<li><span class="doc-code">ResetProcessor</span> - Resets data at the end of a fixed update step, if needed</li>
+				</ul>
+				
+				<hr>
+
+				<h4 id="example">Example Impact Material Processor Script</h4>
+	
+				<p class="doc-text-section">The following example gives a skeleton of a component implementing <span class="doc-code">ImpactMaterialProcessorBase</span>, using the example object from above:</p>
+				<pre>
+using ImpactCFX;
+using Unity.Collections;
+using Unity.Jobs;
+
+public class ImpactExampleMaterialProcessor : ImpactMaterialProcessorBase
+{
+    public override void QueueObject(
+        IImpactObject impactObject,
+        ImpactContactPoint contactPoint,
+        ArrayChunk resultArrayChunk)
+    {
+        //Make sure to check the type before proceeding
+        if (impactObject is ImpactExampleObject exampleObject)
+        {
+            //Write code needed to queue up the object for processing.
+        }
+    }
+
+    public override JobHandle ScheduleProcessorJobs(
+        NativeArray<MaterialCompositionData> materialCompositionArray,
+        NativeHashMap<int, ImpactMaterialData> materialDataMap,
+        JobHandle dependencies)
+    {
+        //Write code needed to schedule jobs or otherwise process all of the objects that were queued.
+        return new JobHandle();
+    }
+
+    public override void ResetProcessor()
+    {
+        //Reset any data if needed.
+    }
+}
+				</pre>
+
+				<p class="doc-text-section">Even a simple example of an Impact Material Processor is quite complex and open-ended, 
+					so your best bet is to examine the <span class="doc-property">Impact Single Material Processor</span> and <span class="doc-property">Impact Terrain Material Processor</span> for reference on how you may want to implement your processor.</p>
+					
+				<img class="doc-image left" src="../images/CustomImpactMaterialProcessor.png">
+
+				<p class="doc-text-section">Once you have your custom Impact Material Processor, 
+					all you need to do is add it as a component to an object and assign it to the <span class="doc-property">Impact Material Processors</span> list on the <span class="doc-property">Impact CFX Manager</span>.
+				</p>
+
+			</div>	
+		</div>
+	</div>
+</div>    		
+    	</div>	
+    </div>
+  </body>
+</html>

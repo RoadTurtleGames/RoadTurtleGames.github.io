@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Impact CFX Documentation</title>
+
+  	<meta charset="utf-8" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+  	<link rel="stylesheet" href="/css/main.css"/>
+  	<link rel="stylesheet" href="/css/all.css"> 
+  	
+  	<script src="/js/jquery.min.js"></script>
+  	<script src="/js/main.js"></script>
+</head>
+  <body>
+    <!-- Navigation Bar -->
+<header id="navigation" class="navbar flex-row">
+	<div class="flex-row navbar-title">
+		<a class="navbar-turtle-link" href="/">
+			<img class="navbar-turtle" src="/images/turtle.png">
+		</a>
+
+		<a class="navbar-title-link" href="/">
+			<h1>Road Turtle Games</h1>
+		</a>
+
+		<div class="flexible-space"></div>
+
+		<a class="navbar-link hamburger" href="javascript:void(0);" onclick="openHamburger()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+
+	<a class="navbar-link hide-me" href="/games">Games</a>	
+	<a class="navbar-link hide-me" href="/development-tools">Development Tools</a>
+</header>  	
+
+    <div class="vertical-navbar">
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="/impact-cfx"><i class="fas fa-arrow-left"></i> Impact CFX Main Page</a>	
+		<a class="vertical-navbar-link" href="index"><i class="fas fa-book"></i> Index</a>		
+		<a class="vertical-navbar-link" href="api"><i class="fas fa-book"></i> API Reference</a>		
+		<a class="vertical-navbar-link" href="change-logs"><i class="fas fa-list"></i> Change Logs</a>		
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="conversion">Conversion From Legacy Impact</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="project-settings">Impact CFX Project Settings</a>
+		<a class="vertical-navbar-link sub-1" href="project-settings#tags">Impact Tags</a>
+		<a class="vertical-navbar-link sub-1" href="project-settings#logging">Logging</a>
+		<a class="vertical-navbar-link" href="material-registry">Impact Material Registry</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-cfx-manager">Impact CFX Manager</a>
+		<a class="vertical-navbar-link sub-1" href="impact-cfx-manager#material-mapping">Material Mapping</a>
+		<a class="vertical-navbar-link sub-1" href="impact-cfx-manager#managing-materials">Managing Registered Materials</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="materials">Impact Materials</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="audio-effect">Audio Effect</a>
+		<a class="vertical-navbar-link sub-1" href="audio-effect#prefab">Audio Source Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="audio-effect#processor">Audio Effect Processor</a>
+		<a class="vertical-navbar-link" href="particle-effect">Particle Effect</a>
+		<a class="vertical-navbar-link sub-1" href="particle-effect#prefab">Particle System Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="particle-effect#processor">Particle Effect Processor</a>
+		<a class="vertical-navbar-link" href="decal-effect">Decal Effect</a>
+		<a class="vertical-navbar-link sub-1" href="decal-effect#prefab">Decal Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="decal-effect#processor">Decal Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="decal-urp-hdrp">URP & HDRP Decals</a>
+		<a class="vertical-navbar-link" href="vfxbatch-effect">VFX Batch Effect</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#master">VFX Batch Master</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#creating">Creating a Visual Effect</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#processor">VFX Batch Effect Processor</a>
+		<a class="vertical-navbar-link" href="managing-attached-effects">Managing Attached Effects</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="objects">Impact Objects</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#single-material">Impact Object Single Material</a>										
+		<a class="vertical-navbar-link sub-1" href="objects#rigidbody">Impact Object Rigidbody</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#custom-velocity">Impact Object Custom Velocity</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#multiple-materials">Objects With Multiple Materials</a>									
+		<a class="vertical-navbar-link sub-1" href="objects#terrain">Impact Terrain</a>				
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="triggers">Impact Triggers</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#common">Common Trigger Properties</a>	
+		<a class="vertical-navbar-link sub-2" href="triggers#material-count">Material Count</a>														
+		<a class="vertical-navbar-link sub-1" href="triggers#collision">Impact Collision Trigger</a>									
+		<a class="vertical-navbar-link sub-1" href="triggers#slide-and-roll">Impact Slide and Roll Trigger</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#speculative">Impact Speculative Collision Trigger</a>									
+		<a class="vertical-navbar-link sub-1" href="triggers#simple">Impact Simple Collision Trigger</a>													
+		<a class="vertical-navbar-link sub-1" href="triggers#particle">Impact Particle Collision Trigger</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#on-trigger-enter">Impact On Trigger Enter</a>
+		<a class="vertical-navbar-link sub-1" href="triggers#on-trigger-stay">Impact On Trigger Stay</a>																	
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="raycasting">Impact Raycasting</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="fmod">FMOD Integration</a>	
+		<a class="vertical-navbar-link" href="wwise">Wwise Integration</a>	
+		<a class="vertical-navbar-link" href="master-audio">Master Audio Integration</a>	
+	</div>
+	
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="custom-triggers">Custom Triggers</a>
+		<a class="vertical-navbar-link" href="custom-objects">Custom Objects</a>
+		<a class="vertical-navbar-link sub-1" href="custom-objects#component">Creating an Impact Object Script</a>
+		<a class="vertical-navbar-link sub-1" href="custom-objects#processor">Impact Material Processors</a>
+		<a class="vertical-navbar-link" href="custom-effects">Custom Effects</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#asset">Impact Effect Authoring Asset</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#effect-result">Effect Result</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#effect-data">Effect Data</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#processor">Impact Effect Processors</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#simple-processor">Impact Simple Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#pooled-processor">Impact Pooled Effect Processor</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-object">Pooled Effect Object</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-authoring">Pooled Effect Authoring</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-result">Pooled Effect Result</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-data">Pooled Effect Data</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#object-pool">Object Pool</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-processor">Pooled Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#add-to-impact-cfx-manager"">Add to Impact CFX Manager</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#example-download"">Example Effect Download</a>
+	</div>
+</div>  	
+
+    <div class="main-container doc-container">
+    	<div style="padding: 0px 80px;">
+    		<div class="main-body">
+	<div class="content">		
+		<div class="doc-section clearfix">		
+			<h2 id="decal">Decal Effects</h2>
+			<p class="doc-text-section">Decal Effects are used to place decals on surfaces for collisions. You can create a new Decal Effect by going to <span class="doc-menu-path">Assets > Create > Impact CFX > Decal Effect</span>.</p>
+
+			<img class="doc-image left" src="../images/DecalEffectAuthoring.png">
+
+			<p class="doc-text-section">Decal Effects have the following properties:</p>	
+			<ul>	
+				<li><span class="doc-property">Decal Prefabs</span> – A list of decal prefabs that a decal will be chosen from.</li>
+				<li><span class="doc-property">Decal Selection Mode</span> – How decals will be chosen from the list.
+					<ul>
+						<li><span class="doc-property">Random</span> – Select a random decal from the list.</li>			
+						<li><span class="doc-property">Velocity</span> – Base the decal on the collision velocity. Decals should be sorted in order from lowest velocity to highest velocity.</li>										
+					</ul>	
+				</li>		
+				<li><span class="doc-property">Create On Collision</span> – Should decals be created for collisions?</li>
+				<li><span class="doc-property">Create On Slide</span> – Should decals be created when sliding?</li>
+				<li><span class="doc-property">Create On Roll</span> – Should decals be created when rolling?</li>
+				<li><span class="doc-property">Creation Interval</span> – The interval between each decal while the object is sliding or rolling.</li>
+				<li><span class="doc-property">Interval Type</span> – Whether the <span class="doc-property">Creation Interval</span> is based on time (seconds) or distance (units/meters).</li>
+				<li><span class="doc-property">Velocity Reference Range</span> – Collision velocities will be compared against this range for various calculations.
+					If the collision velocity is less than the minimum value of the range, no decal will be placed.
+					When <span class="doc-property">Decal Selection Mode</span> is set to <span class="doc-property">Velocity</span>, this range will be used to determine which prefab to use.</li>
+				<li><span class="doc-property">Collision Normal Influence</span> – How much the collision normal will effect the calculated intensity of the collision. </li>
+				<li><span class="doc-property">Effect ID</span> – Controls how the ID for the effect is determined.
+					<ul>	
+						<li><span class="doc-property">Instance ID</span> – Use the instance ID obtained from <span class="doc-code">GetInstanceID()</span></li>
+						<li><span class="doc-property">Object Name</span> – Use the asset's name to determine the ID. 
+							This is mainly useful if <span class="doc-code">GetInstanceID()</span> is too inconsistent for your needs.
+							This requires that your asset names be unique to avoid duplicate IDs.</li>		
+					</ul>	
+				</li>	
+			</ul>
+
+			
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<h3 id="prefab">Decal Prefab</h2>
+				
+			<p class="doc-text-section">Decal Effects require a prefab with an <span class="doc-property">Impact Decal</span> component attached to it. 
+				You can add this script to an object by going to <span class="doc-menu-path">Add Component > Impact CFX > Decal > Impact Decal</span>.</p>	
+
+			<img class="doc-image left" src="../images/Decal.png">
+
+			<p class="doc-text-section">Impact Decals have the following properties:</p>	
+			<ul>	
+				<li><span class="doc-property">Axis</span> – Which axis of the decal should be aligned to the surface.</li>
+				<li><span class="doc-property">Rotation Mode</span> – How the decal should be rotated on the surface.
+					<ul>	
+						<li><span class="doc-property">Align To Normal Random</span> – Randomly rotate the decal about the surface normal.</li>		
+						<li><span class="doc-property">Align To Normal And Velocity</span> – Align the decal with the surface normal, and also rotate to match the velocity direction.</li>
+						<li><span class="doc-property">Align To Normal Only</span> – Align the decal to the surface normal but do not do any extra rotation.</li>
+					</ul>
+				</li>
+				<li><span class="doc-property">Decal Distance</span> – How far from the contact point the decal will be placed (along the surface normal).</li>
+				<li><span class="doc-property">Scale With Velocity</span> – Allows scaling the decal based on the collision velocity.
+					<ul>	
+						<li><span class="doc-property">Velocity Range</span> – The velocity range to reference when comparing with the collision velocity.</li>		
+						<li><span class="doc-property">Curve</span> – Defines the value that will be multiplied with decal's scale based on the collision velocity and Velocity Range.</li>
+					</ul>
+				</li>	
+				<li><span class="doc-property">Pool Size</span> – The size of the object pool for this decal.</li>
+				<li><span class="doc-property">Stealing</span> – How the object pool should handle cases when you want to retreive a decal, but they are all in use.
+					<ul>	
+						<li><span class="doc-property">None</span> – Do nothing and no decal will be placed.</li>		
+						<li><span class="doc-property">Lower Priority</span> – Attempt to take an active decal with a lower priority than this one. Priority is set on Impact Objects.</li>	
+						<li><span class="doc-property">Oldest</span> – Take the decal that has been active the longest.</li>
+					</ul>	
+				</li>
+				<li><span class="doc-property">Effect Attach Mode</span> – Defines what object involved in the collision, if any, the effect should attach to.
+					This can be useful for long collision effects that you want to follow an object.
+					See <a href="effect-attaching.html">Managing Attached Effects</a> for more info on how to properly manage attached effects.
+					<ul>	
+						<li><span class="doc-property">None</span> – Don't attach to an object.</li>		
+						<li><span class="doc-property">This Object</span> – Attach to the object that triggered the effect, if it is present.</li>	
+						<li><span class="doc-property">Other Object</span> – Attach to the object that was collided with, if it is present.</li>
+					</ul>	
+				</li>
+				<li><span class="doc-property">Pool ID</span> – Controls how the ID for this prefab's object pool is determined.
+					<ul>	
+						<li><span class="doc-property">Instance ID</span> – Use the instance ID obtained from <span class="doc-code">GetInstanceID()</span></li>
+						<li><span class="doc-property">Object Name</span> – Use the object's name to determine the ID. 
+							This is mainly useful if <span class="doc-code">GetInstanceID()</span> is too inconsistent for your needs.
+							This requires that your prefab names be unique to avoid duplicate IDs.</li>		
+					</ul>	
+				</li>	
+			</ul>
+		</div>	
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<h3 id="processor">Decal Effect Processor</h2>
+
+			<img class="doc-image left" src="../images/DecalEffectProcessor.png">
+
+			<p class="doc-text-section">The <span class="doc-property">Decal Effect Processor</span> is responsible for handling all Decal Effects at runtime.</p>
+
+			<p class="doc-text-section">You can create this component by going to <span class="doc-menu-path">Add Component > Impact CFX > Decal > Impact Decal Effect Processor</span>.
+				Make sure that you add this processor to the <span class="doc-property">Impact Effect Processors</span> list on your <span class="doc-property">Impact CFX Manager</span></p>
+
+			<p class="doc-text-section">The <span class="doc-property">Queue Capacity</span> property defines how many decal effects the processor can handle in a single frame. 
+				This is automatically set based on the largest decal template pool size, but you can override it if you wish.</p>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h3 id="decal-management">Decal Management</h3>
+			<p class="doc-text-section">Since decals can be parented to objects as a means of attaching them, special care must be taken when managing the pooled decal objects, particularly when an object with decals attached to it gets destroyed.</p>
+
+			<p class="doc-text-section">Any object that a decal attaches to needs an <span class="doc-property">Impact Decal Manager</span> component. This script is responsible for keeping track of all of the decals attached to an object. 
+				If the object does not already have this component, it will be automatically added. However, you can manually add the component yourself by going to <span class="doc-menu-path">Add Component > Impact CFX > Impact Decal Manager</span>.
+				You have some flexibility as to where you can add this component. For example, if you have a character or a ragdoll that will recieve decals, you can add the Impact Decal Manager component to the root of the character, rather than adding a component to each part of the armature.</p>
+
+			<p class="doc-text-section">The Impact Decal Manager also has a small API you can use if you need to manually manage decals. Most notable is the <span class="doc-code">ReleaseAllAttachedDecals</span> method, which will release all decals attached to the object and return them to their object pools.</p>
+			<pre>
+public void DestroyObjectExample(GameObject go)
+{
+	//Release all decals before destroying the object.
+	if(go.TryGetComponent(out ImpactDecalManager impactDecalManager))
+	{
+		impactDecalManager.ReleaseAllAttachedDecals();
+	}
+
+	//Now you can safely destroy the object.
+	Destroy(go)
+}</pre>
+
+			<p class="doc-text-section">If the object is destroyed, the <span class="doc-property">Impact Decal Manager</span> will automatically move all of the attached decals back into their pools so that they are not also destroyed. However, <span class="bold">this does not work on scene load</span> and decals will still be destroyed. 
+				If this happens, the decal object pools will automatically re-instantiate the destroyed decals on scene load. If you want to avoid re-creating decals, you can use the <span class="doc-code">ReturnAllDecalsToPools</span> method of the <span class="doc-code">ImpactDecalEffectProcessor</span> to return all decals to their pools before loading a scene.</p>
+
+			<pre>
+public void LoadSceneExample(int sceneIndex)
+{
+	//Release all decals before loading the new scene.
+	if (ImpactCFXGlobal.TryGetEffectProcessor(out ImpactDecalEffectProcessor decalEffectProcessor))
+	{
+		decalEffectProcessor.ReturnAllDecalsToPools();
+	}
+
+	//Now you can safely load the scene.
+	SceneManager.LoadScene(sceneIndex);
+}</pre>
+		</div>
+	</div>	
+</div>    		
+    	</div>	
+    </div>
+  </body>
+</html>

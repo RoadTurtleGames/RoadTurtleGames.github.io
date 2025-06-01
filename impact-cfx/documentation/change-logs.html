@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Impact Documentation</title>
+
+  	<meta charset="utf-8" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+  	<link rel="stylesheet" href="/css/main.css"/>
+  	<link rel="stylesheet" href="/css/all.css"> 
+  	
+  	<script src="/js/jquery.min.js"></script>
+  	<script src="/js/main.js"></script>
+</head>
+  <body>
+    <!-- Navigation Bar -->
+<header id="navigation" class="navbar flex-row">
+	<div class="flex-row navbar-title">
+		<a class="navbar-turtle-link" href="/">
+			<img class="navbar-turtle" src="/images/turtle.png">
+		</a>
+
+		<a class="navbar-title-link" href="/">
+			<h1>Road Turtle Games</h1>
+		</a>
+
+		<div class="flexible-space"></div>
+
+		<a class="navbar-link hamburger" href="javascript:void(0);" onclick="openHamburger()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+
+	<a class="navbar-link hide-me" href="/games">Games</a>	
+	<a class="navbar-link hide-me" href="/development-tools">Development Tools</a>
+</header>  	
+
+    <div class="vertical-navbar">
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="/impact-cfx"><i class="fas fa-arrow-left"></i> Impact CFX Main Page</a>	
+		<a class="vertical-navbar-link" href="index"><i class="fas fa-book"></i> Index</a>		
+		<a class="vertical-navbar-link" href="api"><i class="fas fa-book"></i> API Reference</a>		
+		<a class="vertical-navbar-link" href="change-logs"><i class="fas fa-list"></i> Change Logs</a>		
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="conversion">Conversion From Legacy Impact</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="project-settings">Impact CFX Project Settings</a>
+		<a class="vertical-navbar-link sub-1" href="project-settings#tags">Impact Tags</a>
+		<a class="vertical-navbar-link sub-1" href="project-settings#logging">Logging</a>
+		<a class="vertical-navbar-link" href="material-registry">Impact Material Registry</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-cfx-manager">Impact CFX Manager</a>
+		<a class="vertical-navbar-link sub-1" href="impact-cfx-manager#material-mapping">Material Mapping</a>
+		<a class="vertical-navbar-link sub-1" href="impact-cfx-manager#managing-materials">Managing Registered Materials</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="materials">Impact Materials</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="audio-effect">Audio Effect</a>
+		<a class="vertical-navbar-link sub-1" href="audio-effect#prefab">Audio Source Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="audio-effect#processor">Audio Effect Processor</a>
+		<a class="vertical-navbar-link" href="particle-effect">Particle Effect</a>
+		<a class="vertical-navbar-link sub-1" href="particle-effect#prefab">Particle System Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="particle-effect#processor">Particle Effect Processor</a>
+		<a class="vertical-navbar-link" href="decal-effect">Decal Effect</a>
+		<a class="vertical-navbar-link sub-1" href="decal-effect#prefab">Decal Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="decal-effect#processor">Decal Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="decal-urp-hdrp">URP & HDRP Decals</a>
+		<a class="vertical-navbar-link" href="vfxbatch-effect">VFX Batch Effect</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#master">VFX Batch Master</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#creating">Creating a Visual Effect</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#processor">VFX Batch Effect Processor</a>
+		<a class="vertical-navbar-link" href="managing-attached-effects">Managing Attached Effects</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="objects">Impact Objects</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#single-material">Impact Object Single Material</a>										
+		<a class="vertical-navbar-link sub-1" href="objects#rigidbody">Impact Object Rigidbody</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#custom-velocity">Impact Object Custom Velocity</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#multiple-materials">Objects With Multiple Materials</a>									
+		<a class="vertical-navbar-link sub-1" href="objects#terrain">Impact Terrain</a>				
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="triggers">Impact Triggers</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#common">Common Trigger Properties</a>	
+		<a class="vertical-navbar-link sub-2" href="triggers#material-count">Material Count</a>														
+		<a class="vertical-navbar-link sub-1" href="triggers#collision">Impact Collision Trigger</a>									
+		<a class="vertical-navbar-link sub-1" href="triggers#slide-and-roll">Impact Slide and Roll Trigger</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#speculative">Impact Speculative Collision Trigger</a>									
+		<a class="vertical-navbar-link sub-1" href="triggers#simple">Impact Simple Collision Trigger</a>													
+		<a class="vertical-navbar-link sub-1" href="triggers#particle">Impact Particle Collision Trigger</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#on-trigger-enter">Impact On Trigger Enter</a>
+		<a class="vertical-navbar-link sub-1" href="triggers#on-trigger-stay">Impact On Trigger Stay</a>																	
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="raycasting">Impact Raycasting</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="fmod">FMOD Integration</a>	
+		<a class="vertical-navbar-link" href="wwise">Wwise Integration</a>	
+		<a class="vertical-navbar-link" href="master-audio">Master Audio Integration</a>	
+	</div>
+	
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="custom-triggers">Custom Triggers</a>
+		<a class="vertical-navbar-link" href="custom-objects">Custom Objects</a>
+		<a class="vertical-navbar-link sub-1" href="custom-objects#component">Creating an Impact Object Script</a>
+		<a class="vertical-navbar-link sub-1" href="custom-objects#processor">Impact Material Processors</a>
+		<a class="vertical-navbar-link" href="custom-effects">Custom Effects</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#asset">Impact Effect Authoring Asset</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#effect-result">Effect Result</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#effect-data">Effect Data</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#processor">Impact Effect Processors</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#simple-processor">Impact Simple Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#pooled-processor">Impact Pooled Effect Processor</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-object">Pooled Effect Object</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-authoring">Pooled Effect Authoring</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-result">Pooled Effect Result</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-data">Pooled Effect Data</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#object-pool">Object Pool</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-processor">Pooled Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#add-to-impact-cfx-manager"">Add to Impact CFX Manager</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#example-download"">Example Effect Download</a>
+	</div>
+</div>  	
+
+    <div class="main-container doc-container">
+    	<div style="padding: 0px 80px;">
+    		<div class="main-body">
+	<div class="content">
+
+		<h2>Change Logs</h2>
+
+		<div class="doc-section clearfix">
+			<div id="1-5-5" class="changelog-header-container">
+				<h2 class="changelog-header">1.5.5</h2>
+				<span class="changelog-date">(09/05/2025)</span>
+			</div>
+
+			<h4 class="changelog-header">Features</h4>
+			<ul>	
+				<li>Added support for Articulation Bodies to <span class="doc-property">Impact Object Rigidbody</span>.</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<div id="1-5-4" class="changelog-header-container">
+				<h2 class="changelog-header">1.5.4</h2>
+				<span class="changelog-date">(19/03/2025)</span>
+			</div>
+
+			<h4 class="changelog-header">Features</h4>
+			<ul>	
+				<li>Added <span class="doc-property">Trigger Behavior</span> property to collision triggers, which allows swapping of "Trigger" and "Hit" objects for effects.</li>
+				<li>Updated <span class="doc-code">ImpactContactPoint</span> with additional constructors for handling more use cases.</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<div id="1-5-3" class="changelog-header-container">
+				<h2 class="changelog-header">1.5.3</h2>
+				<span class="changelog-date">(03/02/2025)</span>
+			</div>
+
+			<h4 class="changelog-header">Features</h4>
+			<ul>	
+				<li>Added methods to <span class="doc-code">ImpactObjectRigidbody</span>, <span class="doc-code">ImpactObjectRigidbodyCheap</span>, and 
+					<span class="doc-code">RigidbodyContainer</span> to allow for more control over rigidbody component references.</li>
+
+			</ul>
+
+			<h4 class="changelog-header">Changes</h4>
+			<ul>	
+				<li><span class="doc-code">ImpactObjectRigidbody</span> now inherits from <span class="doc-code">ImpactObjectRigidbodyCheap</span> to make use of
+					shared functionality.</li>
+				<li>Exposed <span class="doc-code">RigidbodyContainer</span> property on <span class="doc-code">ImpactObjectRigidbody</span> and <span class="doc-code">ImpactObjectRigidbodyCheap</span>
+					so it can be controlled directly.</li>
+				<li>Added <span class="doc-code">IsAlive</span> and <span class="doc-code">IsDestroyed</span> extension methods to improve object null/destroyed checks.</li>
+			</ul>
+
+			<h4 class="changelog-header">Fixes</h4>
+			<ul>	
+				<li>Fixed 3D and 2D <span class="doc-property">Impact On Trigger Stay</span> components not working due to incorrect "can queue" condition.</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<div id="1-5-2" class="changelog-header-container">
+				<h2 class="changelog-header">1.5.2</h2>
+				<span class="changelog-date">(14/12/2024)</span>
+			</div>
+
+			<h4 class="changelog-header">Fixes</h4>
+			<ul>	
+				<li>Fixed compilation errors when Impact CFX Logging is enabled caused by references to removed <span class="doc-code">MinimumVelocity</span> property.</li>
+				<li>Fixed Burst errors when both Burst Compilation and Impact CFX Logging are enabled.</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<div id="1-5-1" class="changelog-header-container">
+				<h2 class="changelog-header">1.5.1</h2>
+				<span class="changelog-date">(05/12/2024)</span>
+			</div>
+
+			<h4 class="changelog-header">Changes</h4>
+			<ul>	
+				<li>Added <span class="doc-code">GetInstance</span> and <span class="doc-code">TryGetInstance</span> functions to <span class="doc-code">ImpactCFXGlobal</span> 
+					to allow getting a direct reference to the active <span class="doc-code">ImpactCFXManager</span> instance.</li>
+				<li>Added <span class="doc-code">HasInstance</span> property to <span class="doc-code">ImpactCFXGlobal</span> 
+					to allow checking if there is an active <span class="doc-code">ImpactCFXManager</span> instance.</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<div id="1-5-0" class="changelog-header-container">
+				<h2 class="changelog-header">1.5.0</h2>
+				<span class="changelog-date">(21/10/2024)</span>
+			</div>
+
+			<h4 class="changelog-header">Features</h4>
+			<ul>	
+				<li>Particle Effects and Decal Effects can now be assigned multiple prefabs to choose from when playing a particle effect and placing a decal.
+					<ul>
+						<li>Added <span class="doc-property">Particle Prefabs</span>, <span class="doc-property">Particle Selection Mode</span>, and <span class="doc-property">Velocity Reference Range</span> 
+							properties to Particle Effects.</li>
+						<li>Added <span class="doc-property">Decal Prefabs</span>, <span class="doc-property">Decal Selection Mode</span>, and <span class="doc-property">Velocity Reference Range</span> 
+							properties to Decal Effects.</li>
+					</ul>
+				</li>
+				<li>Added new classes and data structures <span class="doc-code">IMultiPrefabEffectData</span>, <span class="doc-code">IMultiPrefabEffectResult</span>, 
+					<span class="doc-code">ImpactMultiPrefabEffectProcessor</span>, and <span class="doc-code">ImpactMultiPrefabEffectAuthoringBase</span> for handling effects that use multiple prefabs.</li>
+			</ul>
+
+			<p class="doc-text-section bold">The updates to Particle and Decal effects will not break existing effects, 
+				however a warning will be displayed on Particle and Decal effects about the now obsolete single particle and decal prefab fields, as shown here:</p>
+
+				<div class="content-list flex-row">
+					<div class="content-list-item" style="padding: 0px 10px;">
+						<img src="../images/ParticleEffectWarning.png" style="max-width: 100%;">
+					</div>	
+					<div class="content-list-item" style="padding: 0px 10px;">
+						<img src="../images/DecalEffectWarning.png" style="max-width: 100%;">
+					</div>									
+				</div>
+
+			<h4 class="changelog-header">Fixes</h4>
+			<ul>	
+				<li>Fixed errors when attempting to register a null Impact Material.</li>
+				<li>Fixed errors when disabling effect processor scripts.</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<div id="1-4-1" class="changelog-header-container">
+				<h2 class="changelog-header">1.4.1</h2>
+				<span class="changelog-date">(09/08/2024)</span>
+			</div>
+
+			<h4 class="changelog-header">Features</h4>
+			<ul>	
+				<li>Added <span class="doc-property">Enable Collision Processing</span> property to Impact CFX Manager, which allows you to disable playing effects from collisions.</li>
+				<li>Added <span class="doc-property">Audio Fade Out Time</span> property to Impact Audio Source, which controls how long it takes audio to fade out for sliding and rolling effects.</li>
+				<li>Added properties in <span class="doc-code">ImpactCFXManager</span> for controlling collision limits via code.</li>
+				<li>IDs for materials, effects, and pools can now be configured to use the object/asset's instance ID or its name.</li>
+			</ul>
+
+			<h4 class="changelog-header">Fixes</h4>
+			<ul>	
+				<li>Fixed <span class="doc-code">CollisionQueueCapacity</span> in <span class="doc-code">ImpactCFXManager</span> returning the wrong field.</li>
+				<li>Material processors now use <span class="doc-code">OnEnable</span> and <span class="doc-code">OnDisable</span> for initialization and cleanup.</li>
+				<li>Audio and Particle effects will now start playing in the rare case that they are updated for sliding and rolling, but not actually playing.</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<div id="1-4-0" class="changelog-header-container">
+				<h2 class="changelog-header">1.4.0</h2>
+				<span class="changelog-date">(08/08/2024)</span>
+			</div>
+
+			<h4 class="changelog-header">Features</h4>
+			<ul>	
+				<li>Added <span class="doc-property">Ignore Same Parents</span> property to Impact Triggers, which allows triggers to ignore collisions with objects that have the same parent.</li>
+				<li>Optional fallback parameters can now be provided to <span class="doc-code">QueueCollision</span> methods if materials cannot be found from the colliding objects.</li>
+				<li>Added <span class="doc-code">OnEffectPlayed</span> and <span class="doc-code">OnPooledEffectPlayed</span> events to effect processors.</li>
+			</ul>
+
+			<h4 class="changelog-header">Changes</h4>
+			<ul>
+				<li>Refactored <span class="doc-code">processResult</span> method into public <span class="doc-code">PlayEffect</span> methods. 
+					These methods can be called to immediately play effects using the provided data.</li>	
+				<li>Impact CFX Manager now runs initialization and cleanup in OnEnable and OnDisable, respectively.</li>
+			</ul>
+
+			<h4 class="changelog-header">Fixes</h4>
+			<ul>	
+				<li>Fixed errors in Impact Terrain Material Processor when terrains are destroyed.</li>
+				<li>Improved active instance handling in <span class="doc-code">ImpactCFXGlobal</span>, to help prevent errors when the Impact CFX Manager instance is destroyed.</li>
+				<li>Fixed errors and warnings in demos.</li>
+				<li>Fixed various issues when the Impact CFX Manager script/game object is enabled and disabled at runtime.</li>
+			</ul>
+		
+			<h4 class="changelog-header">Other Packages</h4>
+			<p class="doc-text-section">The <a href="fmod">FMOD Integration</a>, <a href="wwise">Wwise Integration</a>, <a href="master-audio">Master Audio Integration</a>, and <a href="vfxbatch-effect">VFX Batch</a> packages
+				have also been updated with the following changes:</p>
+			<ul>	
+				<li>Refactored effect processors to derive from <span class="doc-code">ImpactSimpleEffectProcessor</span> to reduce repeated code and make use of new methods and events.</li>
+			</ul>
+
+			<p class="doc-text-section bold">Note that this change to those packages will cause the <span class="doc-property">Queue Capacity</span> property to be reset, 
+				so make sure you double check that property to make sure it is set correctly!</p>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<div id="1-3-1" class="changelog-header-container">
+				<h2 class="changelog-header">1.3.1</h2>
+				<span class="changelog-date">(28/03/2024)</span>
+			</div>
+
+			<h4 class="changelog-header">Changes</h4>
+			<ul>	
+				<li>Logging for material and effect registering and clearing now only appears when logging is enabled.</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<div id="1-3-0" class="changelog-header-container">
+				<h2 class="changelog-header">1.3.0</h2>
+				<span class="changelog-date">(11/02/2024)</span>
+			</div>
+
+			<h4 class="changelog-header">Features</h4>
+			<ul>	
+				<li>Added <span class="doc-property">Register Material On Start</span> property to Impact Objects and the Impact Material Mapping Processor.</li>
+				<li>Added various API methods to <span class="doc-code">ImpactCFXGlobal</span> and <span class="doc-code">ImpactCFXManager</span> for managing registered materials.</li>
+			</ul>
+
+			<h4 class="changelog-header">Changes</h4>
+			<ul>	
+				<li>Changed the impact material registration code in the Impact CFX Manager and effect processors so that materials and effects can now be registered at any time.</li>
+				<li>Added logging for material registering and clearing.</li>
+			</ul>
+
+			<h4 class="changelog-header">Fixes</h4>
+			<ul>	
+				<li>All registered materials and effects, including object pools, are now properly destroyed when the Impact CFX Manager they are created from is destroyed.</li>
+			</ul>
+
+			<p class="doc-text-section bold">If you are using the FMOD, WWise, or MasterAudio integration packages, you will also need to download the latest versions of those packages.</p>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<div id="1-2-5" class="changelog-header-container">
+				<h2 class="changelog-header">1.2.5</h2>
+				<span class="changelog-date">(22/01/2023)</span>
+			</div>
+
+			<h4 class="changelog-header">Fixes</h4>
+			<ul>	
+				<li>Fixed editor script issue that was preventing objects from being assigned to triggers.</li>
+			</ul>
+		</div>
+
+		<hr>
+		
+		<div class="doc-section clearfix">
+			<div id="1-2-4" class="changelog-header-container">
+				<h2 class="changelog-header">1.2.4</h2>
+				<span class="changelog-date">(19/12/2023)</span>
+			</div>
+
+			<h4 class="changelog-header">Fixes</h4>
+			<ul>	
+				<li>Fixed various issues with ObjectPoolJob that could cause errors or unexpected behavior when no objects are available.</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<div id="1-2-3" class="changelog-header-container">
+				<h2 class="changelog-header">1.2.3</h2>
+				<span class="changelog-date">(25/08/2023)</span>
+			</div>
+
+			<h4 class="changelog-header">Features</h4>
+			<ul>	
+				<li><span class="doc-code">ImpactRaycaster</span> methods now include an optional <span class="doc-code">sourceObject</span> parameter for the object that sent the raycast. 
+					This allows for effects to be attached to objects that do raycasts.</li>			
+				<li>Added demo for the Built-In renderer.</li>		
+			</ul>
+
+			<h4 class="changelog-header">Changes</h4>
+			<ul>	
+				<li>Various minor optimizations.</li>
+				<li><span class="doc-code">RigidbodyContainer</span> no longer caches transform data, as this was almost doubling the run time for <span class="doc-code">FixedUpdate</span>.</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<div id="1-2-2" class="changelog-header-container">
+				<h2 class="changelog-header">1.2.2</h2>
+				<span class="changelog-date">(20/07/2023)</span>
+			</div>
+
+			<h4 class="changelog-header">Fixes</h4>
+			<ul>	
+				<li><span class="doc-code">ImpactParticleSystem</span> no longer calls the <span class="doc-code">ParticleSystem.Stop()</span> function for non-looping particles, which was causing the particles to not properly play in some cases.</li>				
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<div id="1-2-1" class="changelog-header-container">
+				<h2 class="changelog-header">1.2.1</h2>
+				<span class="changelog-date">(27/05/2023)</span>
+			</div>
+
+			<h4 class="changelog-header">Changes</h4>
+			<ul>	
+				<li><span class="doc-code">ImpactEffectProcessorJob</span> will now give a material missing error if it cannot find a material for the object triggering the collision.</li>					
+			</ul>
+
+			<h4 class="changelog-header">Fixes</h4>
+			<ul>	
+				<li>Changed GUID of <span class="doc-code">ImpactContactPoint</span> script file to fix GUID collisions when importing Impact CFX into a project that already has legacy Impact.</li>				
+			</ul>
+		</div>
+
+		<hr>
+		
+		<div class="doc-section clearfix">
+			<div id="1-2-0" class="changelog-header-container">
+				<h2 class="changelog-header">1.2.0</h2>
+				<span class="changelog-date">(24/04/2023)</span>
+			</div>
+
+			<h4 class="changelog-header">Features</h4>
+			<ul>		
+				<li>Added <span class="doc-code">ImpactSimpleEffectProcessor</span> and <span class="doc-code">ImpactPooledEffectProcessor</span> abstract classes.
+					These handle a lot of common implementation for effect processors, making effect processors that inherit from them much simpler to write.
+				</li>
+				<li>Added <span class="doc-code">ImpactPooledEffectAuthoringBase</span> abstract class for use by the <span class="doc-code">ImpactPooledEffectProcessor</span> mentioned above.</li>	
+				<li>Added <span class="doc-code">EffectObjectPool</span> abstract class for use by the <span class="doc-code">ImpactPooledEffectProcessor</span> mentioned above.</li>	
+				<li>Added back <span class="doc-property">Impact Object Rigidbody Cheap</span> since this object may still be useful/necessary for some use cases.</li>
+			</ul>
+
+			<h4 class="changelog-header">Changes</h4>
+			<ul>	
+				<li>Refactored built-in <span class="doc-property">Audio</span>, <span class="doc-property">Particle</span>, and <span class="doc-property">Decal</span> effect processors to use new base classes mentioned above.</li>				
+				<li>Changed <span class="doc-code">IEffectResult.IsValid</span> to <span class="doc-code">IEffectResult.IsEffectValid</span> to resolve conflict with <span class="doc-code">IObjectPoolRequest.IsValid</span>.</li>
+				<li>Changed <span class="doc-code">IObjectPoolRequest.IsValid</span> to <span class="doc-code">IObjectPoolRequest.IsObjectPoolRequestValid</span> to resolve conflict with <span class="doc-code">IEffectResult.IsValid</span>.</li>
+				<li><span class="doc-code">EffectID</span>, <span class="doc-code">IncludeTags</span>, and <span class="doc-code">ExcludeTags</span> properties on <span class="doc-code">IEffectData</span> interface now require setters.</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<div id="1-1-0" class="changelog-header-container">
+				<h2 class="changelog-header">1.1.0</h2>
+				<span class="changelog-date">(14/04/2023)</span>
+			</div>
+
+			<h4 class="changelog-header">Features</h4>
+			<ul>		
+				<li>Added new properties to Impact Particle Systems:
+					<ul>
+						<li><span class="doc-property">Scale Size With Velocity</span> – Allows scaling the particle start size based on the collision velocity.</li>			
+						<li><span class="doc-property">Scale Speed With Velocity</span> – Allows scaling the particle start speed based on the collision velocity.</li>
+						<li><span class="doc-property">Scale Lifetime With Velocity</span> – Allows scaling the particle start lifetime based on the collision velocity.</li>
+					</ul>
+				</li>	
+				<li>Added new <span class="doc-property">Scale With Velocity</span> property to Impact Decals to allow scaling the decal based on the collision velocity.</li>		
+				<li>Added new <span class="doc-property">Impact Object Custom Velocity</span> object, which tracks its own velocity rather than relying on the rigidbody's velocity.</li>	
+				<li>Added ability to enable/disable logging from the Impact CFX Project Settings. 
+					Logging is controlled by the scripting define symbol <span class="doc-code">IMPACTCFX_DEBUG</span>.</li>	
+			</ul>
+
+			<h4 class="changelog-header">Changes</h4>
+			<ul>				
+				<li><span class="doc-property">Impact Object Rigidbody Child</span> has been made more generic and renamed to <span class="doc-property">Impact Object Child</span>.</li>
+				<li>Most fields and methods of Impact Audio Source, Impact Particle System, and Impact Decal are now protected instead of private for easier extension.</li>
+			</ul>
+
+			<h4 class="changelog-header">Fixes</h4>
+			<ul>				
+				<li>Fixed incorrect velocity comparisons with the <span class="doc-property">Threshold</span> property.</li>
+				<li>Fixed various issues with the URP and HDRP demos.</li>
+				<li>Fixed Gizmo icons for trigger components being in the wrong folder.</li>
+			</ul>
+
+			<p class="doc-text-section bold">Due to changes in script names, it is highly recommended to delete the <span class="doc-property">Impact CFX</span> folder before updating to avoid asset GUID conflicts.</p>
+		</div>
+	</div>	
+</div>    		
+    	</div>	
+    </div>
+  </body>
+</html>

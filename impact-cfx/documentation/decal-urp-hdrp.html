@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Impact CFX Documentation</title>
+
+  	<meta charset="utf-8" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+  	<link rel="stylesheet" href="/css/main.css"/>
+  	<link rel="stylesheet" href="/css/all.css"> 
+  	
+  	<script src="/js/jquery.min.js"></script>
+  	<script src="/js/main.js"></script>
+</head>
+  <body>
+    <!-- Navigation Bar -->
+<header id="navigation" class="navbar flex-row">
+	<div class="flex-row navbar-title">
+		<a class="navbar-turtle-link" href="/">
+			<img class="navbar-turtle" src="/images/turtle.png">
+		</a>
+
+		<a class="navbar-title-link" href="/">
+			<h1>Road Turtle Games</h1>
+		</a>
+
+		<div class="flexible-space"></div>
+
+		<a class="navbar-link hamburger" href="javascript:void(0);" onclick="openHamburger()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+
+	<a class="navbar-link hide-me" href="/games">Games</a>	
+	<a class="navbar-link hide-me" href="/development-tools">Development Tools</a>
+</header>  	
+
+    <div class="vertical-navbar">
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="/impact-cfx"><i class="fas fa-arrow-left"></i> Impact CFX Main Page</a>	
+		<a class="vertical-navbar-link" href="index"><i class="fas fa-book"></i> Index</a>		
+		<a class="vertical-navbar-link" href="api"><i class="fas fa-book"></i> API Reference</a>		
+		<a class="vertical-navbar-link" href="change-logs"><i class="fas fa-list"></i> Change Logs</a>		
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="conversion">Conversion From Legacy Impact</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="project-settings">Impact CFX Project Settings</a>
+		<a class="vertical-navbar-link sub-1" href="project-settings#tags">Impact Tags</a>
+		<a class="vertical-navbar-link sub-1" href="project-settings#logging">Logging</a>
+		<a class="vertical-navbar-link" href="material-registry">Impact Material Registry</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-cfx-manager">Impact CFX Manager</a>
+		<a class="vertical-navbar-link sub-1" href="impact-cfx-manager#material-mapping">Material Mapping</a>
+		<a class="vertical-navbar-link sub-1" href="impact-cfx-manager#managing-materials">Managing Registered Materials</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="materials">Impact Materials</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="audio-effect">Audio Effect</a>
+		<a class="vertical-navbar-link sub-1" href="audio-effect#prefab">Audio Source Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="audio-effect#processor">Audio Effect Processor</a>
+		<a class="vertical-navbar-link" href="particle-effect">Particle Effect</a>
+		<a class="vertical-navbar-link sub-1" href="particle-effect#prefab">Particle System Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="particle-effect#processor">Particle Effect Processor</a>
+		<a class="vertical-navbar-link" href="decal-effect">Decal Effect</a>
+		<a class="vertical-navbar-link sub-1" href="decal-effect#prefab">Decal Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="decal-effect#processor">Decal Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="decal-urp-hdrp">URP & HDRP Decals</a>
+		<a class="vertical-navbar-link" href="vfxbatch-effect">VFX Batch Effect</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#master">VFX Batch Master</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#creating">Creating a Visual Effect</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#processor">VFX Batch Effect Processor</a>
+		<a class="vertical-navbar-link" href="managing-attached-effects">Managing Attached Effects</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="objects">Impact Objects</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#single-material">Impact Object Single Material</a>										
+		<a class="vertical-navbar-link sub-1" href="objects#rigidbody">Impact Object Rigidbody</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#custom-velocity">Impact Object Custom Velocity</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#multiple-materials">Objects With Multiple Materials</a>									
+		<a class="vertical-navbar-link sub-1" href="objects#terrain">Impact Terrain</a>				
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="triggers">Impact Triggers</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#common">Common Trigger Properties</a>	
+		<a class="vertical-navbar-link sub-2" href="triggers#material-count">Material Count</a>														
+		<a class="vertical-navbar-link sub-1" href="triggers#collision">Impact Collision Trigger</a>									
+		<a class="vertical-navbar-link sub-1" href="triggers#slide-and-roll">Impact Slide and Roll Trigger</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#speculative">Impact Speculative Collision Trigger</a>									
+		<a class="vertical-navbar-link sub-1" href="triggers#simple">Impact Simple Collision Trigger</a>													
+		<a class="vertical-navbar-link sub-1" href="triggers#particle">Impact Particle Collision Trigger</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#on-trigger-enter">Impact On Trigger Enter</a>
+		<a class="vertical-navbar-link sub-1" href="triggers#on-trigger-stay">Impact On Trigger Stay</a>																	
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="raycasting">Impact Raycasting</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="fmod">FMOD Integration</a>	
+		<a class="vertical-navbar-link" href="wwise">Wwise Integration</a>	
+		<a class="vertical-navbar-link" href="master-audio">Master Audio Integration</a>	
+	</div>
+	
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="custom-triggers">Custom Triggers</a>
+		<a class="vertical-navbar-link" href="custom-objects">Custom Objects</a>
+		<a class="vertical-navbar-link sub-1" href="custom-objects#component">Creating an Impact Object Script</a>
+		<a class="vertical-navbar-link sub-1" href="custom-objects#processor">Impact Material Processors</a>
+		<a class="vertical-navbar-link" href="custom-effects">Custom Effects</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#asset">Impact Effect Authoring Asset</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#effect-result">Effect Result</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#effect-data">Effect Data</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#processor">Impact Effect Processors</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#simple-processor">Impact Simple Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#pooled-processor">Impact Pooled Effect Processor</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-object">Pooled Effect Object</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-authoring">Pooled Effect Authoring</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-result">Pooled Effect Result</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-data">Pooled Effect Data</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#object-pool">Object Pool</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-processor">Pooled Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#add-to-impact-cfx-manager"">Add to Impact CFX Manager</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#example-download"">Example Effect Download</a>
+	</div>
+</div>  	
+
+    <div class="main-container doc-container">
+    	<div style="padding: 0px 80px;">
+    		<div class="main-body">
+	<div class="content">		
+		<div class="doc-section clearfix">		
+			<h2 id="decal">URP & HDRP Decals</h2>
+			<p class="doc-text-section">The built-in <span class="doc-property">Impact Decal</span> component is very generic, and has no properties specific to any particular decal system.
+				However, if you are using the URP or HDRP decal projectors included in the URP and HDRP render pipelines, you may want to leverage some of the features those decals provide.
+				So, I have provided Impact Decal implementations for both the URP and HDRP decal projectors.</p>
+
+			<p class="doc-text-section">You can download the URP and HDRP Decal packages below.</p>
+
+			<div class="external-link-container flex-row">
+				<a href="../downloads/ImpactCFX-URPDecal-v1.0.0.unitypackage" class="external-link"><i class="fab fa-unity"></i> URP Decal (1.0.0)</a>
+				<a href="../downloads/ImpactCFX-HDRPDecal-v1.0.0.unitypackage" class="external-link"><i class="fab fa-unity"></i> HDRP Decal (1.0.0)</a>
+			</div>
+
+			<div class="external-link-container flex-row">
+				<p class="package-version-info">URP and HDRP Version: 12.1.10+</p>
+			</div>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<h3 id="prefab">URP and HDRP Decal Component</h2>
+				
+			<p class="doc-text-section">The URP and HDRP decals are replacements for the built-in <span class="doc-property">Impact Decal</span>, and are used in the exact same way.
+				You can add them to a decal by going to <span class="doc-menu-path">Add Component > Impact CFX > Decal > Impact Decal (URP)</span> or <span class="doc-menu-path">Add Component > Impact CFX > Decal > Impact Decal (HDRP)</span>.</p>	
+
+			<img class="doc-image left" src="../images/Decal_URP.png">
+
+			<p class="doc-text-section">In addition to the properties found on the base Impact Decal, both URP and HDRP decals have the following properties:</p>	
+			<ul>	
+				<li><span class="doc-property">Decal Projector</span> – The decal projector component attached to the decal.</li>
+				<li><span class="doc-property">Use Atlas</span> – Allows the decal to randomly select a region to display from an atlas texture.
+					<ul>	
+						<li><span class="doc-property">Atlas UV Region</span> – The area of the texture to use, in UV coordinates.</li>		
+						<li><span class="doc-property">Atlas Tiles</span> – The number of tiles in the X and Y directions.</li>
+					</ul>
+				</li>
+				<li><span class="doc-property">Fade Over Time</span> – Allows the decal to fade away over time.
+					<ul>	
+						<li><span class="doc-property">Life Time</span> – How long the decal will be alive before it begins to fade, in seconds.</li>		
+						<li><span class="doc-property">Fade Time</span> – Once fading, how long the decal takes to fade away, in seconds.</li>
+						<li><span class="doc-property">Fade Curve</span> – Curve for controlling the opacity fade. This should be in the 0 to 1 range for both the X and Y axes.</li>
+					</ul>
+				</li>
+			</ul>
+
+		</div>	
+
+		<div class="doc-section clearfix">
+			<p class="doc-text-section">If <span class="doc-property">Use Atlas</span> is enabled, the scene view will display some guides that will help you make sure your region is in the correct spot with the correct number of tiles.</p>	
+
+			<img class="doc-image left" src="../images/Decal_URP_SceneView.png">
+
+			<p class="doc-text-section">The red and white dashed line shows the border of the UV region, and the white dashed lines inside of the area show each tile.</p>	
+
+			<p class="doc-text-section">So in this example, the decal will randomly select from the red, green, blue, and yellow circles.</p>	
+
+			<p class="doc-text-section">Note that the material Tiling and Offset on the Decal Projector will be overridden when <span class="doc-property">Use Atlas</span> is enabled.</p>	
+		</div>	
+	</div>	
+</div>    		
+    	</div>	
+    </div>
+  </body>
+</html>

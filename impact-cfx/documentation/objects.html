@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Impact CFX Documentation</title>
+
+  	<meta charset="utf-8" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+  	<link rel="stylesheet" href="/css/main.css"/>
+  	<link rel="stylesheet" href="/css/all.css"> 
+  	
+  	<script src="/js/jquery.min.js"></script>
+  	<script src="/js/main.js"></script>
+</head>
+  <body>
+    <!-- Navigation Bar -->
+<header id="navigation" class="navbar flex-row">
+	<div class="flex-row navbar-title">
+		<a class="navbar-turtle-link" href="/">
+			<img class="navbar-turtle" src="/images/turtle.png">
+		</a>
+
+		<a class="navbar-title-link" href="/">
+			<h1>Road Turtle Games</h1>
+		</a>
+
+		<div class="flexible-space"></div>
+
+		<a class="navbar-link hamburger" href="javascript:void(0);" onclick="openHamburger()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+
+	<a class="navbar-link hide-me" href="/games">Games</a>	
+	<a class="navbar-link hide-me" href="/development-tools">Development Tools</a>
+</header>  	
+
+    <div class="vertical-navbar">
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="/impact-cfx"><i class="fas fa-arrow-left"></i> Impact CFX Main Page</a>	
+		<a class="vertical-navbar-link" href="index"><i class="fas fa-book"></i> Index</a>		
+		<a class="vertical-navbar-link" href="api"><i class="fas fa-book"></i> API Reference</a>		
+		<a class="vertical-navbar-link" href="change-logs"><i class="fas fa-list"></i> Change Logs</a>		
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="conversion">Conversion From Legacy Impact</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="project-settings">Impact CFX Project Settings</a>
+		<a class="vertical-navbar-link sub-1" href="project-settings#tags">Impact Tags</a>
+		<a class="vertical-navbar-link sub-1" href="project-settings#logging">Logging</a>
+		<a class="vertical-navbar-link" href="material-registry">Impact Material Registry</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-cfx-manager">Impact CFX Manager</a>
+		<a class="vertical-navbar-link sub-1" href="impact-cfx-manager#material-mapping">Material Mapping</a>
+		<a class="vertical-navbar-link sub-1" href="impact-cfx-manager#managing-materials">Managing Registered Materials</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="materials">Impact Materials</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="audio-effect">Audio Effect</a>
+		<a class="vertical-navbar-link sub-1" href="audio-effect#prefab">Audio Source Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="audio-effect#processor">Audio Effect Processor</a>
+		<a class="vertical-navbar-link" href="particle-effect">Particle Effect</a>
+		<a class="vertical-navbar-link sub-1" href="particle-effect#prefab">Particle System Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="particle-effect#processor">Particle Effect Processor</a>
+		<a class="vertical-navbar-link" href="decal-effect">Decal Effect</a>
+		<a class="vertical-navbar-link sub-1" href="decal-effect#prefab">Decal Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="decal-effect#processor">Decal Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="decal-urp-hdrp">URP & HDRP Decals</a>
+		<a class="vertical-navbar-link" href="vfxbatch-effect">VFX Batch Effect</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#master">VFX Batch Master</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#creating">Creating a Visual Effect</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#processor">VFX Batch Effect Processor</a>
+		<a class="vertical-navbar-link" href="managing-attached-effects">Managing Attached Effects</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="objects">Impact Objects</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#single-material">Impact Object Single Material</a>										
+		<a class="vertical-navbar-link sub-1" href="objects#rigidbody">Impact Object Rigidbody</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#custom-velocity">Impact Object Custom Velocity</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#multiple-materials">Objects With Multiple Materials</a>									
+		<a class="vertical-navbar-link sub-1" href="objects#terrain">Impact Terrain</a>				
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="triggers">Impact Triggers</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#common">Common Trigger Properties</a>	
+		<a class="vertical-navbar-link sub-2" href="triggers#material-count">Material Count</a>														
+		<a class="vertical-navbar-link sub-1" href="triggers#collision">Impact Collision Trigger</a>									
+		<a class="vertical-navbar-link sub-1" href="triggers#slide-and-roll">Impact Slide and Roll Trigger</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#speculative">Impact Speculative Collision Trigger</a>									
+		<a class="vertical-navbar-link sub-1" href="triggers#simple">Impact Simple Collision Trigger</a>													
+		<a class="vertical-navbar-link sub-1" href="triggers#particle">Impact Particle Collision Trigger</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#on-trigger-enter">Impact On Trigger Enter</a>
+		<a class="vertical-navbar-link sub-1" href="triggers#on-trigger-stay">Impact On Trigger Stay</a>																	
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="raycasting">Impact Raycasting</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="fmod">FMOD Integration</a>	
+		<a class="vertical-navbar-link" href="wwise">Wwise Integration</a>	
+		<a class="vertical-navbar-link" href="master-audio">Master Audio Integration</a>	
+	</div>
+	
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="custom-triggers">Custom Triggers</a>
+		<a class="vertical-navbar-link" href="custom-objects">Custom Objects</a>
+		<a class="vertical-navbar-link sub-1" href="custom-objects#component">Creating an Impact Object Script</a>
+		<a class="vertical-navbar-link sub-1" href="custom-objects#processor">Impact Material Processors</a>
+		<a class="vertical-navbar-link" href="custom-effects">Custom Effects</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#asset">Impact Effect Authoring Asset</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#effect-result">Effect Result</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#effect-data">Effect Data</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#processor">Impact Effect Processors</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#simple-processor">Impact Simple Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#pooled-processor">Impact Pooled Effect Processor</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-object">Pooled Effect Object</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-authoring">Pooled Effect Authoring</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-result">Pooled Effect Result</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-data">Pooled Effect Data</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#object-pool">Object Pool</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-processor">Pooled Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#add-to-impact-cfx-manager"">Add to Impact CFX Manager</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#example-download"">Example Effect Download</a>
+	</div>
+</div>  	
+
+    <div class="main-container doc-container">
+    	<div style="padding: 0px 80px;">
+    		<div class="main-body">
+	<div class="content">
+		<div class="doc-section clearfix">		
+			<h2>Impact Objects</h2>
+			<p class="doc-text-section">Impact Objects are components that you attach to the objects in your game’s world to specify their material, so that other objects (and other parts of your game) know how to interact with them. Impact Objects can also provide physics data such as rigidbody velocity.</p>	
+		
+			<img class="doc-image left" src="../images/SingleMaterial.png">
+
+			<p class="doc-text-section">All Impact Objects have a <span class="doc-property">Priority</span> property that can be used to prioritize effects created by a particular object.
+				Priority is only used when the <span class="doc-property">Stealing</span> property of an effect prefab is set to <span class="doc-property">Lower Priority</span>.</p>
+
+			<p class="doc-text-section">Impact Objects also have a <span class="doc-property">Register Material On Start</span> property.
+				When checked, this object will automatically register its material with the Impact CFX Manager.
+				This is convenient, but can potentially cause hitches if effects are first loaded mid-game during gameplay.
+				See the section <a href="./impact-cfx-manager#managing-materials">Managing Registered Materials</a> for more information.</p>
+		</div>
+
+		<div class="doc-section clearfix">		
+			<h3 id="single-material">Impact Object Single Material</h3>
+
+			<img class="doc-image left" src="../images/SingleMaterial.png">
+
+			<p class="doc-text-section">Impact Object Single Material is the simplest type of Impact Object, with only one material for the object. 
+				It is best suited for static objects and level geometry, but can also be used for dynamic objects with appropriate configuration of collision triggers.
+				You can add this script to your objects by going to <span class="doc-menu-path">Add Component > Impact CFX > Impact Object Single Material</span>.</p>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h3 id="rigidbody">Impact Object Rigidbody</h3>
+			
+			<img class="doc-image left" src="../images/Rigidbody.png">
+
+			<p class="doc-text-section">Impact Object Rigidbody is an Impact Object that provides increased collision accuracy for objects that have a 
+				<span class="doc-property">Rigidbody</span>, <span class="doc-property">Rigidbody2D</span> or <span class="doc-property">ArticulationBody</span> component. 
+				You can add this script to your objects by going to <span class="doc-menu-path">Add Component > Impact CFX > Impact Object Rigidbody</span>.</p>
+				
+			<p class="doc-text-section">Impact Object Rigidbody uses FixedUpdate to cache rigidbody data for use in accurately calculating collision velocities.
+				The overhead from this may become significant if there are many Impact Object Rigidbodies in the scene.</p>
+		</div>			
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h3 id="custom-velocity">Impact Object Custom Velocity</h3>
+
+			<p class="doc-text-section">Sometimes your object may be moved by things like animation that don't correctly update the rigidbody's velocity, and thus will prevent collisions from being processed properly.</p>
+			
+			<p class="doc-text-section">To account for these scenarios, <span class="doc-property">Impact Object Custom Velocity</span> is an Impact Object that tracks its own velocity, rather than relying on the velocity of a Rigidbody or Rigidbody2D. 
+				You can add this script to your objects by going to <span class="doc-menu-path">Add Component > Impact CFX > Impact Object Custom Velocity</span>.</p>				
+			
+			<img class="doc-image left" src="../images/CustomVelocity.png">
+
+			<p class="doc-text-section">In addition to the properties found on Impact Object Single Material, this object has a <span class="doc-property">Velocity Scale</span> property that can be used to scale the velocity of the object.</p>
+
+			<p class="doc-text-section">Note that Impact Object Custom Velocity contains a FixedUpdate method, which is used to keep track of the object's velocity. 
+				The overhead from this may become significant if there are many Impact Object Custom Velocity objects in the scene.	</p>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h3 id="multiple-materials">Objects with Multiple Materials</h3>
+			
+			<p class="doc-text-section">It is possible to have an object with children that have different materials by using an Impact Object together with <span class="doc-property">Impact Object Child</span> components.</p>	
+
+			<img class="doc-image left" src="../images/Child.png">
+
+			<p class="doc-text-section">To add an Impact Object Child, go to <span class="doc-menu-path">Add Component > Impact CFX > Impact Object Child</span> and assign the Impact Material and Priority as you would with any normal Impact Object. If you have already added a Impact Object to the root of the object, you will see it in the <span class="doc-property">Parent</span> field.</p>	
+
+			<img class="doc-image right" src="../images/WithChildren.png">
+
+			<p class="doc-text-section">Once you have added Impact Object Child components, the root Impact Object will show a list of all of its children.</p>	
+
+
+			<p class="doc-text-section">Any Impact Triggers must be on the root of the object (the same object as the Rigidbody), and should have their Impact Object field empty. Impact Triggers must be on the same component as the Rigidbody, otherwise they will not recieve collision messages. When the Impact Object is not set, the trigger will attempt to find the first Impact Object on the collider that was hit or on one of its parent objects.</p>				
+			
+			<img class="doc-image left" src="../images/CollisionTriggerNoImpactObject.png">	
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h3 id="terrain">Impact Terrain</h3>
+			
+			<img class="doc-image left" src="../images/Terrain.png">
+
+			<p class="doc-text-section">Impact Terrain is a special Impact Object for handling Terrains. It allows you to specify a material for each terrain layer on your terrain. You can add this script to your terrain by going to <span class="doc-menu-path">Add Component > Impact CFX > Impact Terrain</span>.</p>
+			
+			<p class="doc-text-section">You can assign an Impact Material to each of your terrain layers.
+				The <span class="doc-property">Default Material</span> property lets you define a material to use if a terrain layer does not have one assigned to it.</p>
+
+			<p class="doc-text-section">The <span class="doc-property">Refresh Terrain Layers</span> button will manually re-sync the the data stored in the Impact Terrain script with the terrain’s layers.</p>
+		</div>
+	</div>	
+</div>    		
+    	</div>	
+    </div>
+  </body>
+</html>

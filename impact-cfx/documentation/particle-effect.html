@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Impact CFX Documentation</title>
+
+  	<meta charset="utf-8" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+  	<link rel="stylesheet" href="/css/main.css"/>
+  	<link rel="stylesheet" href="/css/all.css"> 
+  	
+  	<script src="/js/jquery.min.js"></script>
+  	<script src="/js/main.js"></script>
+</head>
+  <body>
+    <!-- Navigation Bar -->
+<header id="navigation" class="navbar flex-row">
+	<div class="flex-row navbar-title">
+		<a class="navbar-turtle-link" href="/">
+			<img class="navbar-turtle" src="/images/turtle.png">
+		</a>
+
+		<a class="navbar-title-link" href="/">
+			<h1>Road Turtle Games</h1>
+		</a>
+
+		<div class="flexible-space"></div>
+
+		<a class="navbar-link hamburger" href="javascript:void(0);" onclick="openHamburger()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+
+	<a class="navbar-link hide-me" href="/games">Games</a>	
+	<a class="navbar-link hide-me" href="/development-tools">Development Tools</a>
+</header>  	
+
+    <div class="vertical-navbar">
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="/impact-cfx"><i class="fas fa-arrow-left"></i> Impact CFX Main Page</a>	
+		<a class="vertical-navbar-link" href="index"><i class="fas fa-book"></i> Index</a>		
+		<a class="vertical-navbar-link" href="api"><i class="fas fa-book"></i> API Reference</a>		
+		<a class="vertical-navbar-link" href="change-logs"><i class="fas fa-list"></i> Change Logs</a>		
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="conversion">Conversion From Legacy Impact</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="project-settings">Impact CFX Project Settings</a>
+		<a class="vertical-navbar-link sub-1" href="project-settings#tags">Impact Tags</a>
+		<a class="vertical-navbar-link sub-1" href="project-settings#logging">Logging</a>
+		<a class="vertical-navbar-link" href="material-registry">Impact Material Registry</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-cfx-manager">Impact CFX Manager</a>
+		<a class="vertical-navbar-link sub-1" href="impact-cfx-manager#material-mapping">Material Mapping</a>
+		<a class="vertical-navbar-link sub-1" href="impact-cfx-manager#managing-materials">Managing Registered Materials</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="materials">Impact Materials</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="audio-effect">Audio Effect</a>
+		<a class="vertical-navbar-link sub-1" href="audio-effect#prefab">Audio Source Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="audio-effect#processor">Audio Effect Processor</a>
+		<a class="vertical-navbar-link" href="particle-effect">Particle Effect</a>
+		<a class="vertical-navbar-link sub-1" href="particle-effect#prefab">Particle System Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="particle-effect#processor">Particle Effect Processor</a>
+		<a class="vertical-navbar-link" href="decal-effect">Decal Effect</a>
+		<a class="vertical-navbar-link sub-1" href="decal-effect#prefab">Decal Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="decal-effect#processor">Decal Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="decal-urp-hdrp">URP & HDRP Decals</a>
+		<a class="vertical-navbar-link" href="vfxbatch-effect">VFX Batch Effect</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#master">VFX Batch Master</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#creating">Creating a Visual Effect</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#processor">VFX Batch Effect Processor</a>
+		<a class="vertical-navbar-link" href="managing-attached-effects">Managing Attached Effects</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="objects">Impact Objects</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#single-material">Impact Object Single Material</a>										
+		<a class="vertical-navbar-link sub-1" href="objects#rigidbody">Impact Object Rigidbody</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#custom-velocity">Impact Object Custom Velocity</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#multiple-materials">Objects With Multiple Materials</a>									
+		<a class="vertical-navbar-link sub-1" href="objects#terrain">Impact Terrain</a>				
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="triggers">Impact Triggers</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#common">Common Trigger Properties</a>	
+		<a class="vertical-navbar-link sub-2" href="triggers#material-count">Material Count</a>														
+		<a class="vertical-navbar-link sub-1" href="triggers#collision">Impact Collision Trigger</a>									
+		<a class="vertical-navbar-link sub-1" href="triggers#slide-and-roll">Impact Slide and Roll Trigger</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#speculative">Impact Speculative Collision Trigger</a>									
+		<a class="vertical-navbar-link sub-1" href="triggers#simple">Impact Simple Collision Trigger</a>													
+		<a class="vertical-navbar-link sub-1" href="triggers#particle">Impact Particle Collision Trigger</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#on-trigger-enter">Impact On Trigger Enter</a>
+		<a class="vertical-navbar-link sub-1" href="triggers#on-trigger-stay">Impact On Trigger Stay</a>																	
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="raycasting">Impact Raycasting</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="fmod">FMOD Integration</a>	
+		<a class="vertical-navbar-link" href="wwise">Wwise Integration</a>	
+		<a class="vertical-navbar-link" href="master-audio">Master Audio Integration</a>	
+	</div>
+	
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="custom-triggers">Custom Triggers</a>
+		<a class="vertical-navbar-link" href="custom-objects">Custom Objects</a>
+		<a class="vertical-navbar-link sub-1" href="custom-objects#component">Creating an Impact Object Script</a>
+		<a class="vertical-navbar-link sub-1" href="custom-objects#processor">Impact Material Processors</a>
+		<a class="vertical-navbar-link" href="custom-effects">Custom Effects</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#asset">Impact Effect Authoring Asset</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#effect-result">Effect Result</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#effect-data">Effect Data</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#processor">Impact Effect Processors</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#simple-processor">Impact Simple Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#pooled-processor">Impact Pooled Effect Processor</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-object">Pooled Effect Object</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-authoring">Pooled Effect Authoring</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-result">Pooled Effect Result</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-data">Pooled Effect Data</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#object-pool">Object Pool</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-processor">Pooled Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#add-to-impact-cfx-manager"">Add to Impact CFX Manager</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#example-download"">Example Effect Download</a>
+	</div>
+</div>  	
+
+    <div class="main-container doc-container">
+    	<div style="padding: 0px 80px;">
+    		<div class="main-body">
+	<div class="content">
+		<div class="doc-section clearfix">		
+			<h2 id="particle">Particle Effects</h2>
+			<p class="doc-text-section">Particle Effects are used to display particle effects for interactions. You can create a new Particle Effect by going to <span class="doc-menu-path">Assets > Create > Impact CFX > Particle Effect</span>.</p>
+
+			<img class="doc-image left" src="../images/ParticleEffectAuthoring.png">
+
+			<p class="doc-text-section">Particle Effects have the following properties:</p>	
+			<ul>	
+				<li><span class="doc-property">Particle Effect Type</span> – The kind of particle effect.
+					<ul>	
+						<li><span class="doc-property">One Shot</span> – A one-shot effect for single collisions.</li>		
+						<li><span class="doc-property">Looped</span> – Looped particles for sliding or rolling effects. 
+							<span class="doc-warning">Looped particles only support a single Particle Prefab.</span>
+						</li>
+					</ul>
+				</li>	
+				<li><span class="doc-property">Particle Prefabs</span> – A list of particle prefabs that a particle effect will be chosen from.
+					If <span class="doc-property">Particle Effect Type</span> is set to <span class="doc-property">Looped</span>, you can only use a single Particle Prefab.
+				</li>	
+				<li><span class="doc-property">Particle Selection Mode</span> – How particle effects will be chosen from the list.
+					<ul>
+						<li><span class="doc-property">Random</span> – Select a particle effect from the list.</li>			
+						<li><span class="doc-property">Velocity</span> – Base the particle effect on the collision velocity. Particle effects should be sorted in order from lowest velocity to highest velocity.</li>										
+					</ul>	
+				</li>	
+				<li><span class="doc-property">Emit On Slide</span> – Should particles be displayed when sliding?</li>
+				<li><span class="doc-property">Emit On Roll</span> – Should particles be displayed when rolling?</li>
+				<li><span class="doc-property">Velocity Reference Range</span> – Collision velocities will be compared against this range for various calculations.
+					If the collision velocity is less than the minimum value of the range, no effect will be played.
+					When <span class="doc-property">Particle Selection Mode</span> is set to <span class="doc-property">Velocity</span>, this range will be used to determine which prefab to use.</li>
+				<li><span class="doc-property">Collision Normal Influence</span> – How much the collision normal will effect the calculated intensity of the collision. </li>
+				<li><span class="doc-property">Effect ID</span> – Controls how the ID for the effect is determined.
+					<ul>	
+						<li><span class="doc-property">Instance ID</span> – Use the instance ID obtained from <span class="doc-code">GetInstanceID()</span></li>
+						<li><span class="doc-property">Object Name</span> – Use the asset's name to determine the ID. 
+							This is mainly useful if <span class="doc-code">GetInstanceID()</span> is too inconsistent for your needs.
+							This requires that your asset names be unique to avoid duplicate IDs.</li>		
+					</ul>	
+				</li>	
+			</ul>
+
+
+		</div>
+		<hr>
+
+		<div class="doc-section clearfix">
+			<h3 id="prefab">Particle Prefab</h2>
+				
+			<p class="doc-text-section">Particle Effects require a prefab with an <span class="doc-property">Impact Particle System</span> component attached to it. 
+				You can add this script to your prefab by going to <span class="doc-menu-path">Add Component > Impact CFX > Particle > Impact Particle System</span>.</p>	
+
+			<img class="doc-image left" src="../images/ParticleSystem.png">
+
+			<p class="doc-text-section">Impact Particle Systems have the following properties:</p>	
+			<ul>				
+				<li><span class="doc-property">Particle Systems</span> – The Particle Systems that are being controlled.</li>	
+				<li><span class="doc-property">Rotation Mode</span> – How the particles should be rotated on the surface.
+					<ul>	
+						<li><span class="doc-property">Align To Normal</span> – Align the particles to the surface normal.</li>		
+						<li><span class="doc-property">Align To Velocity</span> – Align the particles with the velocity direction.</li>
+						<li><span class="doc-property">Align To Normal And Velocity</span> – Align the particles to the surface normal, and also rotate them to match the velocity direction.</li>
+						<li><span class="doc-property">No Rotation</span> – Don't do any rotation.</li>
+					</ul>
+				</li>
+				<li><span class="doc-property">Axis</span> – Which axis of the particles should be aligned to the surface.</li>
+				<li><span class="doc-property">Scale Size With Velocity</span> – Allows scaling the particle start size based on the collision velocity.
+					<ul>	
+						<li><span class="doc-property">Velocity Range</span> – The velocity range to reference when comparing with the collision velocity.</li>		
+						<li><span class="doc-property">Curve</span> – Defines the scalar value that will be applied to the particles based on the collision velocity and Velocity Range.</li>
+					</ul>
+				</li>			
+				<li><span class="doc-property">Scale Speed With Velocity</span> – Allows scaling the particle start speed based on the collision velocity.</li>
+				<li><span class="doc-property">Scale Lifetime With Velocity</span> – Allows scaling the particle start lifetime based on the collision velocity.</li>
+				<li><span class="doc-property">Pool Size</span> – The size of the object pool created for this particle system.</li>	
+				<li><span class="doc-property">Stealing</span> – How the object pool should handle cases when you want to retreive a particle system, but they are all in use.
+					<ul>	
+						<li><span class="doc-property">None</span> – Do nothing and no effect will be played.</li>		
+						<li><span class="doc-property">Lower Priority</span> – Attempt to take an active particle system with a lower priority than this one. Priority is set on Impact Objects.</li>	
+						<li><span class="doc-property">Oldest</span> – Take the particle system that has been active the longest.</li>
+					</ul>	
+				</li>
+				<li><span class="doc-property">Effect Attach Mode</span> – Defines what object involved in the collision, if any, the effect should attach to. 
+					This can be useful for long collision effects that you want to follow an object.
+					See <a href="effect-attaching.html">Managing Attached Effects</a> for more info on how to properly manage attached effects.
+					<ul>	
+						<li><span class="doc-property">None</span> – Don't attach to an object.</li>		
+						<li><span class="doc-property">This Object</span> – Attach to the object that triggered the effect, if it is present.</li>	
+						<li><span class="doc-property">Other Object</span> – Attach to the object that was collided with, if it is present.</li>
+					</ul>	
+				</li>
+				<li><span class="doc-property">Pool ID</span> – Controls how the ID for this prefab's object pool is determined.
+					<ul>	
+						<li><span class="doc-property">Instance ID</span> – Use the instance ID obtained from <span class="doc-code">GetInstanceID()</span></li>
+						<li><span class="doc-property">Object Name</span> – Use the object's name to determine the ID. 
+							This is mainly useful if <span class="doc-code">GetInstanceID()</span> is too inconsistent for your needs.
+							This requires that your prefab names be unique to avoid duplicate IDs.</li>		
+					</ul>	
+				</li>	
+			</ul>
+		</div>	
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<h3 id="processor">Particle Effect Processor</h2>
+
+			<img class="doc-image left" src="../images/ParticleEffectProcessor.png">
+
+			<p class="doc-text-section">The <span class="doc-property">Particle Effect Processor</span> is responsible for handling all Particle Effects at runtime.</p>
+
+			<p class="doc-text-section">You can create this component by going to <span class="doc-menu-path">Add Component > Impact CFX > Particle > Impact Particle Effect Processor</span>.
+				Make sure that you add this processor to the <span class="doc-property">Impact Effect Processors</span> list on your <span class="doc-property">Impact CFX Manager</span></p>
+
+			<p class="doc-text-section">The <span class="doc-property">Queue Capacity</span> property defines how many particle effects the processor can handle in a single frame. 
+				This is automatically set based on the largest particle template pool size, but you can override it if you wish.</p>
+		</div>
+	</div>	
+</div>    		
+    	</div>	
+    </div>
+  </body>
+</html>

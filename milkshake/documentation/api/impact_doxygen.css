@@ -1,0 +1,23 @@
+#projectname {
+    font: 200% Tahoma, Arial,sans-serif;
+}
+
+.sm-dox {
+	background-image: none;
+	background-color: #282828;
+}
+
+.sm-dox a {
+	text-shadow: none;
+	background-image: none;
+	color: white;
+}
+
+.sm-dox a:hover {
+	background-image: none;
+	background-color: #0085ff;
+}
+
+.sm-dox a span.sub-arrow {
+	border-color: white transparent transparent transparent;
+}

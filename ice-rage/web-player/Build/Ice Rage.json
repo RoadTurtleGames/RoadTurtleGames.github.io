@@ -1,0 +1,9 @@
+{
+"TOTAL_MEMORY": 268435456,
+"dataUrl": "Ice Rage.data.unityweb",
+"asmCodeUrl": "Ice Rage.asm.code.unityweb",
+"asmMemoryUrl": "Ice Rage.asm.memory.unityweb",
+"asmFrameworkUrl": "Ice Rage.asm.framework.unityweb",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#222C36"
+}

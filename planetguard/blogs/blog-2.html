@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html style="background-image: url('images/page_background.jpg'); background-size: cover;">
+  <head>
+	<title>Planetguard</title>
+
+  	<meta charset="utf-8" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+  	<link rel="stylesheet" href="/css/main.css"/>
+  	<link rel="stylesheet" href="/css/all.css"> 
+  	
+  	<script src="/js/jquery.min.js"></script>
+  	<script src="/js/main.js"></script>
+</head>
+  <body>
+    <!-- Navigation Bar -->
+<header id="navigation" class="navbar flex-row">
+	<div class="flex-row navbar-title">
+		<a class="navbar-turtle-link" href="/">
+			<img class="navbar-turtle" src="/images/turtle.png">
+		</a>
+
+		<a class="navbar-title-link" href="/">
+			<h1>Road Turtle Games</h1>
+		</a>
+
+		<div class="flexible-space"></div>
+
+		<a class="navbar-link hamburger" href="javascript:void(0);" onclick="openHamburger()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+
+	<a class="navbar-link hide-me" href="/games">Games</a>	
+	<a class="navbar-link hide-me" href="/development-tools">Development Tools</a>
+</header>  	
+
+    <div class="main-container">
+      <link rel="stylesheet" href="../css/page.css"> 
+
+<div class="main-body" >
+	<div class="content ">
+		<div class="content-section">	
+			<h2>Procedural Planets in Blender</h2>
+			<h5>18 March 2022</h5>	
+
+			<hr>
+
+			<div class="blog-section">
+				<p>
+                    Being set in various star systems throughout space, the planets and moons of said star systems feature prominently in the Planetguard's world.
+                    In this blog, I'll walk through the process I used to create one of my planets, <span class="bold">Perses</span>.
+                    Perses is named after the Greek Titan whose name means "to sack", "to ravage", or "to destroy".
+                    As such, Perses is characterized by its very rugged and rough terrain.
+				</p>
+			</div>	
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-2/planet_12.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+                    Let's start off by making Perses' defining feature: its craters. First, add a Voronoi Texture, and connect it to the Base Color input just so we can visualize it.
+				</p>
+			</div>	
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-2/planet_02.png"/>
+                <img class="blog-image" src="images/blog-2/Shader_02.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+                    Right now we are making the displacement map, or height map, for the planet. White indicates the highest point, while black indicates the lowest.
+                    Let's add a Color Ramp so that we can finely control the output. With some adjustments to the color ramp, the Voronoi Texture turns into many circles, and you can start to see the beginnings of some craters.
+                    (The colors are backwards for now, we will fix that later.)
+				</p>
+			</div>	
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-2/planet_03.png"/>
+                <img class="blog-image" src="images/blog-2/Shader_03.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+                    Now we can expand upon that by adding more Voronoi Texture nodes, and adjusting the scales to make circles of different sizes before combining them all. 
+                    You can play around with whatever method of combining you think looks good, I just chose Minimum.
+				</p>
+			</div>	
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-2/planet_04.png"/>
+                <img class="blog-image" src="images/blog-2/Shader_04.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+                    To make the craters look more natural, we should roughen them up a bit. 
+                    We can do this by adding some Noise Textures and, using a Mapping node, offset the Location of the generated Texture Coordinate.
+                    This will distort the Voronoi Textures slightly, giving them a more irregular look. You can use Map Range nodes to adjust the strength of the distortion.
+				</p>
+			</div>	
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-2/planet_05.png"/>
+                <img class="blog-image" src="images/blog-2/Shader_05.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+                    Now we need to adjust the Color Ramp to make a correct displacement map. Remember, White = High, and Black = Low. 
+                    The inside of our craters should be the lowest point, with a high ridge around the outside.
+				</p>
+			</div>	
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-2/planet_06.png"/>
+                <img class="blog-image" src="images/blog-2/Shader_06.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+                    Let's connect the output of our Color Ramp to a Displacement node, and see how it looks.
+				</p>
+			</div>	
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-2/planet_07.png"/>
+                <img class="blog-image" src="images/blog-2/Shader_07.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+                    Our craters are looking pretty good so far, with only some adjusting needed. 
+                    But now we can look at adding a bit of extra noise to our planet.
+                    I love using Musgrave Textures for this, as they provide a lot more flexibility than the regular Noise Texture node.
+				</p>
+			</div>	
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-2/planet_08.png"/>
+                <img class="blog-image" src="images/blog-2/Shader_08.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+                    Combining the Color Ramp from our crater setup and the Musgrave Texture gives us this result. I also reduced the Scale of the Displacement by a lot.
+				</p>
+			</div>	
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-2/planet_09.png"/>
+                <img class="blog-image" src="images/blog-2/Shader_09.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+                    Our displacement map is done! Now we can look at coloring the planet. My favorite way to do this is to just use our displacement value plugged into a Color Ramp.
+                    You'll probably need to add a Map Range node, since the height value may be outside the 0 to 1 range needed by the Color ramp.
+				</p>
+			</div>	
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-2/planet_10.png"/>
+                <img class="blog-image" src="images/blog-2/Shader_10.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+                    It doesn't look great at first, but by adding many different colors in your Color Ramp, you can get good results.
+				</p>
+			</div>	
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-2/planet_11.png"/>
+                <img class="blog-image" src="images/blog-2/Shader_11.png"/>
+			</div>
+
+            <div class="blog-section">
+				<p>
+                    You can also add in another layer of noise to get some extra irregularity in the coloring. Notice the difference in the dark spots on the lower left.
+				</p>
+			</div>	
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-2/planet_12.png"/>
+                <img class="blog-image" src="images/blog-2/Shader_12.png"/>
+			</div> 
+	
+            <div class="blog-section">
+				<p>
+                    And now we have a 100% procedurally created planet! Click the link below if you would like to download this planet for yourself.
+				</p>
+                <div class="external-link-container text-section flex-row">
+                    <a href="../downloads/Procedural_Planet.blend" class="external-link"><i class="fas fa-file-alt"></i> Download the Blend File</a>
+                </div>
+    
+			</div>
+
+            <div class="blog-section">
+				<p>
+                    
+                    Having the planet be procedurally generated is great because we can easily change any parameter we want to adjust how the planet looks.
+                    Doing things this way works for all kinds of planets, you just have to be creative with your nodes.
+				</p>
+			</div>
+
+			<div class="blog-section">
+				<p>
+                    For instance, use different kinds of noise textures and feed noise into different inputs:
+				</p>
+			</div>	
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-2/Shader_16.png"/>
+			</div> 
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-2/planet_18.png"/>
+			</div> 
+
+			<div class="blog-section">
+				<p>
+                    You can use a gradient texture to color the planet differently at the poles:
+				</p>
+			</div>
+			
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-2/Shader_17.png"/>
+			</div> 
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-2/planet_17.png"/>
+			</div> 
+
+			<div class="blog-section">
+				<a href="../" class="main-page-link"><i class="fas fa-arrow-left"></i> Back to Main Page</a>
+			</div>	
+
+		</div>
+	</div>	
+</div>
+
+      <div class="footer">
+    <a class="footer-title-link" href="/">
+        Road Turtle Games
+    </a>
+    <div class="flexible-space"></div>
+
+    <a href="mailto:contact@roadturtlegames.com" class="footer-button hide-me"><i class="fas fa-envelope"></i> Contact Us</a>	
+    <a href="mailto:contact@roadturtlegames.com" class="footer-button mobile"><i class="fas fa-envelope"></i></a>	
+</div>
+    </div>   
+  </body>
+</html>

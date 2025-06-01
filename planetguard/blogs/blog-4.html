@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html style="background-image: url('images/page_background.jpg'); background-size: cover;">
+  <head>
+	<title>Planetguard</title>
+
+  	<meta charset="utf-8" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+  	<link rel="stylesheet" href="/css/main.css"/>
+  	<link rel="stylesheet" href="/css/all.css"> 
+  	
+  	<script src="/js/jquery.min.js"></script>
+  	<script src="/js/main.js"></script>
+</head>
+  <body>
+    <!-- Navigation Bar -->
+<header id="navigation" class="navbar flex-row">
+	<div class="flex-row navbar-title">
+		<a class="navbar-turtle-link" href="/">
+			<img class="navbar-turtle" src="/images/turtle.png">
+		</a>
+
+		<a class="navbar-title-link" href="/">
+			<h1>Road Turtle Games</h1>
+		</a>
+
+		<div class="flexible-space"></div>
+
+		<a class="navbar-link hamburger" href="javascript:void(0);" onclick="openHamburger()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+
+	<a class="navbar-link hide-me" href="/games">Games</a>	
+	<a class="navbar-link hide-me" href="/development-tools">Development Tools</a>
+</header>  	
+
+    <div class="main-container">
+      <link rel="stylesheet" href="../css/page.css"> 
+
+<div class="main-body" >
+	<div class="content ">
+		<div class="content-section">	
+			<h2>Creating Space Skyboxes - Part 1</h2>
+			<h5>15 April 2022</h5>	
+
+			<hr>
+
+			<div class="blog-section">
+				<p>
+					Being set in the exotic reaches of fictional space allows Planetguard to have unique environments inspired by real phenomena in our universe.
+					Perhaps the most visually dazzling phenomena in space are nebulas, huge congregations of dust and gases making up beautiful cosmic structures.
+					It would certainly be a missed opportunity to not include these in the environments of Planetguard. 
+					In this dev blog, I'll walk through the process of creating space skyboxes with stars and nebulas.
+				</p>
+			</div>
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-4/Render_10.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					As a disclaimer, this is not necessarily a realistic depiction of a nebula.
+					Many nebulas are very dim and are difficult to see with the naked eye, with photos of them typically taken with very long exposure times.
+					On top of that, some of the more spectacularly colored images of nebulas are taken in false color, and do not represent the "true" color as our eyes would see it.
+				</p>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					With that said however, I am making a game, and games are supposed to look cool. So, realism can be set aside in favor of impressive visuals.
+				</p>
+			</div>
+
+			<h3>Creating Background Stars with a World Shader</h3>
+
+			<div class="blog-section">
+				<p>
+					First, let's start with the easy part and create the thousands of stars that will be in the background.
+					We can accomplish this with a relatively simple World shader that uses Voronoi noise.
+					When fed into a color ramp, a Voronoi texture can be used to make random circles.
+				</p>
+			</div>
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-4/Render_01.jpg"/>
+				<img class="blog-image" src="images/blog-4/Shader_01.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					By increasing the scale of the Voronoi texture and adjusting the color ramp, we can turn these circles into many small points.
+					You can even add multiple Voronoi textures together for more variation in point sizes.
+				</p>
+			</div>
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-4/Render_02.jpg"/>
+				<img class="blog-image" src="images/blog-4/Shader_02.png"/>
+			</div>
+
+			<h3>Creating Nebulae with Volumetrics</h3>
+
+			<div class="blog-section">
+				<p>
+					Now we can begin creating the nebula clouds.
+					First, we need an object to apply our volumetric material to.
+					Any object can be used, and in my case I will be using a sphere.
+					Next, the basic setup for material is to feed a Noise Texture into the Density input of a Principled Volume shader.
+					Color Ramp and Multiply nodes can be added to control the contrast and density of the clouds.
+					To better see what we are doing, I added a Sun light and am now looking at the nebula from the outside.
+				</p>
+			</div>
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-4/Render_03.jpg"/>
+				<img class="blog-image" src="images/blog-4/Shader_03.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					We don't need to worry about the hard edges around the sphere since we will be taking renders from inside.
+					Now let's give our nebula some color.
+					The simplest way to do this is to route our density into another Color Ramp, and then connect that to the Color input of the Principled Volume shader.
+				</p>
+			</div>
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-4/Render_04.jpg"/>
+				<img class="blog-image" src="images/blog-4/Shader_04.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					To add more detail to our nebula, we can use a secondary Color Ramp to create these interesting bands throughout the clouds.
+				</p>
+			</div>
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-4/Render_05.jpg"/>
+				<img class="blog-image" src="images/blog-4/Shader_05.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					Then, do some additional color mixing using this new Color Ramp.
+				</p>
+			</div>
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-4/Render_06.jpg"/>
+				<img class="blog-image" src="images/blog-4/Shader_06.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					Now let's turn our attention back to the inside of the nebula.
+					Let's remove the sun light and replace it with several point lights scattered throughout the nebula clouds.
+					These lights can have many different sizes, colors, and brightnesses.
+					I am also continuously adjusting and refining the nebula shader to produce better results.
+				</p>
+			</div>
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-4/Render_07.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					To add a little bit more of a soft glow to the nebula, we can add a secondary Principled Volume shader, made in much the same way as the primary shader.
+				</p>
+			</div>
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-4/Render_08.png"/>
+				<img class="blog-image" src="images/blog-4/Shader_08.png"/>
+			</div>
+
+			<h3>Close Stars with Particle Systems</h3>
+
+			<div class="blog-section">
+				<p>
+					The final piece to add to our nebula is some closer stars, that is, stars that are inside of the nebula, as opposed to the far away background stars we created earlier.
+					While you could manually place these stars, I like to use Particle Systems instead because it's less tedious.
+				</p>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					The first thing we need to do is create a star particle object and material.
+					This can just be a simple Sphere or Icosphere.
+					For the material, we can use the Particle Info to randomize the material for each particle.
+					I simply used a color ramp to color the stars from red to orange, yellow, white and blue.
+				</p>
+			</div>
+
+			<div class="text-section">
+				<img class="blog-image" src="images/blog-4/Shader_09.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					Next we need to create the Particle System itself.
+					For the shape, I like to use a hollow sphere.
+					I create a hollow sphere my making a new sphere object, duplicating it, scaling the duplicated sphere down, and flipping the normals.
+					Making the sphere hollow ensures that the particles can't get too close to the camera.
+				</p>
+			</div>
+
+			<div class="text-section">
+				<img class="blog-image" src="images/blog-4/ParticleSystem_01.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					Now for the Particle System settings.
+					Make sure that Physics is turned off so the particles don't use gravity.
+					Also make sure that Show Emitter is unchecked for both Render and Viewport Display.
+					I set the Frame Start and End to 0 so all of the particles spawn immediately.
+				</p>
+			</div>
+
+			<div class="text-section">
+				<img class="blog-image" src="images/blog-4/ParticleSystem_02.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					The current particle system distributes stars evenly over the entire sphere.
+					However, I would like to have some clusters of stars, particularly in some of the denser areas of the nebula cloud.
+					We can do this by adding another smaller Particle System object and positioning it in our nebula cloud.
+					The particle system settings can be copied from our previous particle system and adjusted for the smaller volume.
+					The shape can also be deformed to fit in the cloud.
+				</p>
+			</div>
+
+			<div class="text-section">
+				<img class="blog-image" src="images/blog-4/ParticleSystem_03.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					With all of that we get the final result (with some post processing to add Bloom/Glare).
+				</p>
+			</div>
+
+			<div class="text-section">
+				<img class="blog-image" src="images/blog-4/Render_10.png"/>
+			</div>
+
+			<h3>Rendering to a Skybox</h3>
+
+			<div class="blog-section">
+				<p>
+					Since I am going to use this for a skybox in a game engine, I will need to render the skybox textures.
+					I prefer rendering out 6 textures for a cubemap, since this produces the least amount of distortion.
+					To do this we will need to set up a camera to render the 6 sides.
+					The camera should be positioned at the origin, and have a field of view of 90 degrees.
+				</p>
+			</div>
+
+			<div class="text-section">
+				<img class="blog-image" src="images/blog-4/Camera_01.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					While we could manually render each side and rotate the camera ourselves, it is much easier to create an animation for the camera and render an image sequence.
+					So, we need to create an Action for our camera.
+					This action consists of only 6 frames, one for each side of the skybox.
+					The order of the faces and the rotation of the camera at each face is dependent on your game engine.
+					I am using the order: Front, Back, Left, Right, Up, Down.
+				</p>
+			</div>
+
+			<div class="text-section">
+				<img class="blog-image" src="images/blog-4/Camera_02.gif"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					In your Output properties, make sure you are using an Image format as your output.
+					In many cases you will want a format that can handle HDR (High Dyanmic Range), such as OpenEXR or Radiance HDR.
+					This will allow for Bloom effects to take advantage of the bright stars in the skybox.
+				</p>
+			</div>
+
+			<div class="text-section">
+				<img class="blog-image" src="images/blog-4/Output_01.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					Dealing with noise in the rendered skybox can be difficult.
+					Denoising can have inconsitencies along the edges of each image, leading to seams.
+					I've found that, while not a perfect solution, a good middle ground is to use the Compositor to blend between the noisy and denoised image.
+				</p>
+			</div>
+
+			<div class="text-section">
+				<img class="blog-image" src="images/blog-4/Shader_11.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					Now we are ready to render the animation.
+					Each side of the skybox will be saved to a separate file, which may need to be combined into a single texture depending on the game engine.
+				</p>
+			</div>
+
+			<div class="text-section">
+				<img class="blog-image" src="images/blog-4/Unity_01.png"/>
+				<p class="blog-image-caption">Skybox as viewed in Unity (HDRP)</p>
+			</div>
+
+            <div class="blog-section">
+				<p>
+                    This nebula is relatively simple, however these concepts and ideas can be expanded upon to create much more complex nebulas of all shapes and sizes.
+					Experimentation is key!
+				</p>
+			</div>
+
+			<div class="text-section">
+				<img class="blog-image" src="images/blog-4/Nebula_01.png"/>
+				<img class="blog-image" src="images/blog-4/Nebula_02.png"/>
+				<img class="blog-image" src="images/blog-4/Nebula_03.png"/>
+				<img class="blog-image" src="images/blog-4/Nebula_04.png"/>
+			</div>
+
+            <div class="blog-section">
+				<p>
+					Use the link below to download the source .blend files. This includes the nebula created in this blog as well as the other nebulas shown above (4 nebulas in total).
+					You can also download the skyboxes from the Unity Asset Store!
+				</p>
+                <div class="external-link-container text-section flex-row">
+                    <a href="../downloads/Planetguard Nebulas.zip" class="external-link"><i class="fas fa-file-alt"></i> Download Source Files</a>
+					<a href="http://u3d.as/2PuT" class="external-link"><i class="fab fa-unity"></i> Download Skyboxes from the Unity Asset Store</a>
+                </div>
+			</div>
+			<div class="blog-section">
+				<p>
+					In Part 2 of this blog, I will go through how to make skyboxes for the surfaces of planets, including how to make atmospheres and clouds, so stay tuned!
+				</p>
+			</div>
+
+			<div class="blog-section">
+				<a href="../" class="main-page-link"><i class="fas fa-arrow-left"></i> Back to Main Page</a>
+			</div>	
+
+		</div>
+	</div>	
+</div>
+
+      <div class="footer">
+    <a class="footer-title-link" href="/">
+        Road Turtle Games
+    </a>
+    <div class="flexible-space"></div>
+
+    <a href="mailto:contact@roadturtlegames.com" class="footer-button hide-me"><i class="fas fa-envelope"></i> Contact Us</a>	
+    <a href="mailto:contact@roadturtlegames.com" class="footer-button mobile"><i class="fas fa-envelope"></i></a>	
+</div>
+    </div>   
+  </body>
+</html>

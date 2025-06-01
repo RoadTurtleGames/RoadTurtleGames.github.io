@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Impact Objects</title>
+
+  	<meta charset="utf-8" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+  	<link rel="stylesheet" href="/css/main.css"/>
+  	<link rel="stylesheet" href="/css/all.css"> 
+  	
+  	<script src="/js/jquery.min.js"></script>
+  	<script src="/js/main.js"></script>
+</head>
+  <body>
+    <!-- Navigation Bar -->
+<header id="navigation" class="navbar flex-row">
+	<div class="flex-row navbar-title">
+		<a class="navbar-turtle-link" href="/">
+			<img class="navbar-turtle" src="/images/turtle.png">
+		</a>
+
+		<a class="navbar-title-link" href="/">
+			<h1>Road Turtle Games</h1>
+		</a>
+
+		<div class="flexible-space"></div>
+
+		<a class="navbar-link hamburger" href="javascript:void(0);" onclick="openHamburger()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+
+	<a class="navbar-link hide-me" href="/games">Games</a>	
+	<a class="navbar-link hide-me" href="/development-tools">Development Tools</a>
+</header>  	
+
+    <div class="vertical-navbar">
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="/impact-interaction-system"><i class="fas fa-arrow-left"></i> Impact Main Page</a>	
+		<a class="vertical-navbar-link" href="api"><i class="fas fa-book"></i> API Reference</a>		
+		<a class="vertical-navbar-link" href="change-logs"><i class="fas fa-list"></i> Change Logs</a>				
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="installation">Installation</a>			
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-tags">Impact Tags</a>		
+		<a class="vertical-navbar-link sub-1" href="impact-tags#tag-library">Impact Tag Library</a>	
+		<a class="vertical-navbar-link sub-1" href="impact-tags#using-tags">Using Impact Tags</a>		
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-manager">Impact Manager</a>		
+		<a class="vertical-navbar-link sub-1" href="impact-manager#material-mapping">Material Mapping</a>		
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-materials">Impact Materials</a>	
+		<a class="vertical-navbar-link sub-1" href="impact-materials#material-interaction-sets">Impact Material Interaction Sets</a>			
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-interactions">Impact Interactions</a>	
+		<a class="vertical-navbar-link sub-1" href="impact-interactions#audio">Audio Interactions</a>	
+		<a class="vertical-navbar-link sub-1" href="impact-interactions#particle">Particle Interactions</a>	
+		<a class="vertical-navbar-link sub-1" href="impact-interactions#decal">Decal Interactions</a>	
+		<a class="vertical-navbar-link sub-2" href="impact-interactions#decal-management">Decal Management</a>				
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-objects">Impact Objects</a>	
+		<a class="vertical-navbar-link sub-1" href="impact-objects#single-material">Impact Object Single Material</a>										
+		<a class="vertical-navbar-link sub-1" href="impact-objects#rigidbody">Impact Object Rigidbody</a>	
+		<a class="vertical-navbar-link sub-2" href="impact-objects#rigidbodies-multiple-materials">Rigidbodies With Multiple Materials</a>
+		<a class="vertical-navbar-link sub-2" href="impact-objects#rigidbody-cheap">Impact Object Rigidbody (Cheap)</a>											
+		<a class="vertical-navbar-link sub-1" href="impact-objects#terrain">Impact Terrain</a>				
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-triggers">Impact Triggers</a>										
+		<a class="vertical-navbar-link sub-1" href="impact-triggers#physics-triggers">Physics Triggers</a>										
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#collision">Impact Collision Trigger</a>	
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#velocity-collision">Impact Velocity Collision Trigger</a>										
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#slide-and-roll">Impact Slide and Roll Trigger</a>										
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#simple">Impact Simple Collision Trigger</a>										
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#speculative">Impact Speculative Collision Trigger</a>										
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#particle">Impact Particle Collision Trigger</a>		
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#on-trigger-enter">Impact On Trigger Enter</a>	
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#on-trigger-stay">Impact On Trigger Stay</a>									
+		<a class="vertical-navbar-link sub-1" href="impact-triggers#other-triggers">Other Triggers</a>										
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#raycast">Impact Raycast Trigger</a>				
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="extending-impact">Extending Impact</a>										
+		<a class="vertical-navbar-link sub-1" href="extending-impact#triggers">Custom Impact Triggers</a>										
+		<a class="vertical-navbar-link sub-2" href="extending-impact#interaction-data">Interaction Data</a>										
+		<a class="vertical-navbar-link sub-1" href="extending-impact#custom-interactions">Custom Impact Interactions</a>										
+		<a class="vertical-navbar-link sub-2" href="extending-impact#interactions">Impact Interactions</a>										
+		<a class="vertical-navbar-link sub-2" href="extending-impact#interaction-results">Interaction Results</a>										
+		<a class="vertical-navbar-link sub-3" href="extending-impact#iinteractionresult">IInteractionResult</a>										
+		<a class="vertical-navbar-link sub-3" href="extending-impact#icontinuousinteractionresult">IContinuousInteractionResult</a>										
+		<a class="vertical-navbar-link sub-1" href="extending-impact#objects">Custom Impact Objects</a>										
+		<a class="vertical-navbar-link sub-1" href="extending-impact#materials">Custom Impact Materials</a>		
+		<a class="vertical-navbar-link sub-1" href="extending-impact#tag-libraries">Custom Impact Tag Libraries</a>					
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="fmod-integration">FMOD Integration</a>		
+		<a class="vertical-navbar-link sub-1" href="fmod-integration#setup">Setup</a>	
+		<a class="vertical-navbar-link sub-1" href="fmod-integration#fmod-audio-interaction">FMOD Audio Interaction</a>			
+		<a class="vertical-navbar-link sub-1" href="fmod-integration#fmod-parameters">FMOD Parameters</a>	
+		<a class="vertical-navbar-link sub-1" href="fmod-integration#notes">Notes</a>	
+	</div>	
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="wwise-integration">Wwise Integration</a>		
+		<a class="vertical-navbar-link sub-1" href="wwise-integration#setup">Setup</a>	
+		<a class="vertical-navbar-link sub-1" href="wwise-integration#wwise-audio-interaction">Wwise Audio Interaction</a>			
+		<a class="vertical-navbar-link sub-1" href="wwise-integration#wwise-rtpcs">Wwise RTPCs</a>	
+		<a class="vertical-navbar-link sub-1" href="wwise-integration#notes">Notes</a>	
+	</div>	
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="masteraudio-integration">Master Audio Integration</a>		
+		<a class="vertical-navbar-link sub-1" href="masteraudio-integration#setup">Setup</a>	
+		<a class="vertical-navbar-link sub-1" href="masteraudio-integration#master-audio-interaction">Master Audio Interaction</a>			
+		<a class="vertical-navbar-link sub-1" href="masteraudio-integration#notes">Notes</a>	
+	</div>
+</div>  	
+
+    <div class="main-container doc-container">
+    	<div style="padding: 0px 80px;">
+    		<div class="main-body">
+	<div class="content">
+		<div class="doc-section clearfix">		
+			<h2>Impact Objects</h2>
+			<p class="doc-text-section">Impact Objects are components that you attach to the objects in your game’s world to specify their material, so that other objects (and other parts of your game) know how to interact with them. Impact Objects can also provide physics data such as rigidbody velocity.</p>
+
+			<img class="doc-image" src="../images/ImpactObject_Rigidbody.png">
+
+			<p class="doc-text-section">Most Impact Objects have the same 2 properties:</p>
+			<ul>
+				<li><span class="doc-property">Material</span> – The Impact Material used by the object.</li>			
+				<li><span class="doc-property">Priority</span> – Impact uses object pools for its Audio, Particle, and Decal interactions. So, there may be times where an object needs to, for example, play a collision sound, but all of the audio sources in the pool are currently being used. Priority can be used to ensure that certain objects will always play their interactions, even if it requires "stealing" resources that are already in use.</li>							
+			</ul>		
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h3 id="single-material">Impact Object Single Material</h3>
+
+			<img class="doc-image left" src="../images/ImpactObject_SingleMaterial.png">
+
+			<p class="doc-text-section">Impact Object Single Material is the simplest type of Impact Object, with a single material used for the object. It is most suited for static objects and level geometry. You can add this script to your objects by going to <span class="doc-menu-path">Add Component > Impact > Impact Object Single Material</span>.</p>
+	
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h3 id="rigidbody">Impact Object Rigidbody</h3>
+			
+			<img class="doc-image left" src="../images/ImpactObject_Rigidbody.png">
+
+			<p class="doc-text-section">Impact Object Rigidbody is an Impact Object used for objects that have a <span class="doc-property">Rigidbody</span> or <span class="doc-property">Rigidbody2D</span>. You can add this script to your objects by going to <span class="doc-menu-path">Add Component > Impact > Impact Object Rigidbody</span>.</p>	
+		</div>		
+
+		<div class="doc-section clearfix">		
+			<h4 id="rigidbodies-multiple-materials">Rigidbodies with Multiple Materials</h4>
+			
+			<p class="doc-text-section">It is possible to have a Rigidbody with children that have different materials by using an Impact Object Rigidbody with <span class="doc-property">Impact Object Rigidbody Child</span> components.</p>	
+
+			<img class="doc-image left" src="../images/ImpactObject_RigidbodyChild.png">
+
+			<p class="doc-text-section">To add an Impact Object Rigidbody Child, go to <span class="doc-menu-path">Add Component > Impact > Impact Object Rigidbody Child</span> and assign the Impact Material and Priority as you would with the normal Impact Object Rigidbody. If you have already added a Impact Object Rigidbody to the root of the object, you will see it in the <span class="doc-property">Parent</span> field.</p>	
+
+			<img class="doc-image right" src="../images/ImpactObject_Rigidbody_Children.png">
+						
+			<p class="doc-text-section">Once you have added Impact Object Rigidbody Child components, the root Impact Object Rigidbody will show a list of all of its children.</p>	
+
+			<img class="doc-image left" src="../images/ImpactTrigger_NoImpactObject.png">
+
+			<p class="doc-text-section">Any Impact Triggers must be on the root of the object (the same object as the Rigidbody), and should have their Impact Object field empty. Impact Triggers must be on the same component as the Rigidbody, otherwise they will not recieve collision messages. When the Impact Object is not set, the trigger will attempt to find the first Impact Object on the collider that was hit or on one of its parent objects.</p>	
+		</div>	
+
+		<div class="doc-section clearfix">		
+			<h4 id="rigidbody-cheap">Impact Object Rigidbody (Cheap)</h3>
+			
+			<img class="doc-image left" src="../images/ImpactObject_RigidbodyCheap.png">
+
+			<p class="doc-text-section">Sometimes you may have a lot of objects in your scene and need to make sure performance stays acceptable. Impact Object Rigidbody uses <span class="doc-code">FixedUpdate</span> to ensure accurate interactions, especially when sliding and rolling. However, this can cause overhead if there are a lot of objects.</p>	
+		
+			<p class="doc-text-section">If high accuracy is not needed, then you can use <span class="doc-property">Impact Object Rigidbody (Cheap)</span> instead. This version does not use <span class="doc-code">FixedUpdate</span> and so does not incur the same overhead as the normal Impact Object Rigidbody.</p>	
+		
+			<p class="doc-text-section">Note that if using multiple materials as described in the previous section, you do not need to use <span class="doc-property">Impact Object Rigidbody Child</span>. You can simply add <span class="doc-property">Impact Object Rigidbody (Cheap)</span> components to all of your child objects.</p>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h3 id="terrain">Impact Terrain</h3>
+			
+			<img class="doc-image left" src="../images/ImpactObject_Terrain.png">
+
+			<p class="doc-text-section">Impact Terrain is a special Impact Object for handling Terrains. It allows you to specify a material for each terrain layer on your terrain. You can add this script to your terrain by going to <span class="doc-menu-path">Add Component > Impact > Impact Terrain</span>.</p>
+
+			<p class="doc-text-section">The <span class="doc-property">Refresh Terrain Layers</span> button will manually re-sync the the data stored in the Impact Terrain script with the terrain’s layers.</p>
+		</div>
+	</div>	
+</div>    		
+    	</div>	
+    </div>
+  </body>
+</html>

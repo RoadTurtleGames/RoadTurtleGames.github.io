@@ -1,0 +1,77 @@
+@font-face {
+	font-family: "zekton";
+	src: url("../fonts/zekton rg.ttf");
+}
+
+@font-face {
+	font-family: "quantum";
+	src: url("../fonts/Quantum.otf");
+}
+
+h2 {
+	font-family: "quantum";
+	text-transform: uppercase;
+}
+
+h3 {
+	font-family: "zekton";
+}
+
+h4 {
+	font-family: "zekton";
+}
+
+h5 {
+	font-family: "zekton";
+}
+
+html {
+	background-color: #303030;
+}
+
+.main-body {
+	font-family: "zekton";
+	color: #f0f0f0;
+	background-color: rgba(48, 48, 48, 0.5);
+}
+
+.content-section {
+	border: none;
+}
+
+.content-section.alt {
+	background-color: rgba(8, 8, 8, 0.3);
+}
+
+.content-list-item {
+	color: #f0f0f0;
+}
+
+.content-list-item.link:hover {
+    background-color: #606060;
+}
+
+.external-link {	
+	border-radius: 0px;
+	padding: 20px;
+	font-size: 22px;
+	background-color: rgba(128, 128, 128, 0.6);
+}
+
+.external-link:hover {
+	background-color: #0085ff;
+}
+
+.main-page-link {	
+	border-radius: 0px;
+	padding: 12px 16px;
+	font-size: 18px;
+	color: #f0f0f0;
+	background-color: rgba(128, 128, 128, 0.6);
+	text-decoration: none;
+}
+
+.main-page-link:hover {	
+	background-color: #0085ff;
+}
+
