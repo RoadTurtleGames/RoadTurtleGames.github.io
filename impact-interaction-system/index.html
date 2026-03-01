@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html style="background-image: url('images/page_background.jpg'); background-size: cover;">
+  <head>
+	<title>Impact</title>
+
+  	<meta charset="utf-8" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+  	<link rel="stylesheet" href="/css/main.css"/>
+  	<link rel="stylesheet" href="/css/all.css"> 
+  	
+  	<script src="/js/jquery.min.js"></script>
+  	<script src="/js/main.js"></script>
+</head>
+  <body>
+    <!-- Navigation Bar -->
+<header id="navigation" class="navbar flex-row">
+	<div class="flex-row navbar-title">
+		<a class="navbar-turtle-link" href="/">
+			<img class="navbar-turtle" src="/images/turtle.png">
+		</a>
+
+		<a class="navbar-title-link" href="/">
+			<h1>Road Turtle Games</h1>
+		</a>
+
+		<div class="flexible-space"></div>
+
+		<a class="navbar-link hamburger" href="javascript:void(0);" onclick="openHamburger()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+
+	<a class="navbar-link hide-me" href="/games">Games</a>	
+	<a class="navbar-link hide-me" href="/development-tools">Development Tools</a>
+</header>  	
+
+    <div class="main-container">
+      <div class="main-body">
+	<!-- Banner -->
+	<div style="background-image: url('images/banner_background.png');" class="banner-background">
+		<img src="images/banner_logo.png" class="banner-image">
+	</div>
+
+	<!-- Featured Content -->
+	<div class="content ">
+
+		<div class="text-section">
+			<p class="large-body">Impact is a powerful and flexible material-based interaction system for producing interactions such as audio, particle, and decal interactions in the Unity game engine.</p>
+		</div>	
+
+		<div class="text-section">
+			<p>Impact can be used for a wide variety of applications from physics interactions to footsteps to weapon impacts.</p>
+		</div>	
+
+		<div class="external-link-container text-section flex-row">
+			<a href="http://u3d.as/1JZ6" class="external-link"><i class="fab fa-unity"></i> Get it on the Asset Store</a>
+			<a href="demo" class="external-link"><i class="fab fa-unity"></i> Check Out The Web Demo</a>
+			<a href="documentation" class="external-link"><i class="fas fa-file-alt"></i> Read The Docs</a>
+		</div>
+
+		<div class="content-section alt">
+			<div class="content-list flex-row">
+				<div class="content-list-item">
+					<img src="images/ImpactTrigger_Collision.png" class="image-vertical-list-item">
+					<img src="images/ImpactTrigger_SlideAndRoll.png" class="image-vertical-list-item">
+					<img src="images/ImpactTrigger_Simple.png" class="image-vertical-list-item">
+					<img src="images/ImpactTrigger_Particle.png" class="image-vertical-list-item">	
+					<img src="images/ImpactTrigger_Speculative.png" class="image-vertical-list-item">									
+				</div>	
+
+				<div class="content-list-item left-justify">
+					<h3>Impact Triggers</h3>
+					<p class="text-section large-body">Modular physics trigger components allow you to pick and choose exactly how you want to trigger your physics interactions.</p>
+
+					<p>• Triggers for single collisions.</p>
+					<p>• Triggers for sliding and rolling.</p>
+					<p>• Triggers for particle collisions.</p>
+					<p>• API for triggering interactions from Raycasts.</p>
+					<p>• Components for both 3D and 2D physics.</p>
+					<p>• Use material compositions to blend materials together (great for terrains).</p>
+				</div>								
+			</div>
+		</div>
+
+		<div class="content-section">
+			<div class="content-list flex-row">
+				<div class="content-list-item left-justify">
+					<h3>Impact Objects</h3>
+					<p class="text-section large-body">Easily set up any kind of object to be ready for Impact.</p>
+					<p>• Static objects like level geometry.</p>
+					<p>• Rigidbodies (Both 3D and 2D).</p>
+					<p>• Complex Rigidbodies that have children with different materials.</p>			
+					<p>• Rigidbodies connected by joints.</p>				
+					<p>• Terrains.</p>		
+					<p>• Ragdolls.</p>
+				</div>	
+
+				<div class="content-list-item">
+					<img src="images/ImpactObject_SingleMaterial.png" class="image-vertical-list-item">
+					<img src="images/ImpactObject_Rigidbody.png" class="image-vertical-list-item">
+					<img src="images/ImpactObject_Terrain.png" class="image-vertical-list-item">
+				</div>						
+			</div>
+		</div>
+
+		<div class="content-section alt">
+			<div class="content-list flex-row">
+				<div class="content-list-item">
+					<img src="images/ImpactMaterial.png" class="image-vertical-list-item">
+				</div>	
+
+				<div class="content-list-item left-justify">
+					<h3>Impact Materials</h3>
+					<p class="text-section large-body">Impact's flexible materials system allows you to set up interactions exactly how you want.</p>
+					<p>• Create as many materials as you need.</p>						
+					<p>• Create Interaction Sets to group related interactions together.</p>	
+					<p>• Include and Exclude tags allow you to specify exactly when interactions will be played.</p>		
+				</div>								
+			</div>
+		</div>
+
+		<div class="content-section">
+			<div class="content-list flex-row">
+				<div class="content-list-item left-justify">
+					<h3>Impact Manager</h3>
+					<p class="text-section large-body">Use the Impact Manager to configure the Impact system.</p>
+
+					<h3>Material Mapping</h3>
+					<p class="text-section large-body">Map from Physics Materials to Impact Materials, so you don't need to add Impact components to every object.</p>
+				</div>
+
+				<div class="content-list-item">
+					<img src="images/Impact_Manager_Expanded.png" class="image-vertical-list-item">
+				</div>								
+			</div>
+		</div>
+
+		<div class="content-section alt">
+			<h2>Audio, Particle, and Decal Interactions</h2>
+
+			<div class="text-section">
+				<p class="large-body">Impact comes with 3 different types of interactions: <span class="bold">Audio Interactions</span> for playing sounds, <span class="bold">Particle Interactions</span> for showing particle systems, and <span class="bold">Decal Interactions</span> for placing decals in the world.</p>
+			</div>	
+
+			<div class="content-list flex-row">
+				<div class="content-list-item">
+					<img src="images/Interaction_Audio.png" style="max-width: 100%;">
+				</div>	
+				<div class="content-list-item">
+					<img src="images/Interaction_Particles.png" style="max-width: 100%;">
+				</div>	
+				<div class="content-list-item">
+					<img src="images/Interaction_Decal.png" style="max-width: 100%;">
+				</div>								
+			</div>
+		</div>
+
+		<div class="content-section alt">
+			<h2>Integrate & Extend</h2>
+
+			<div class="text-section">
+				<p class="large-body">Easily integrate with existing code and create your own Triggers, Objects, and Interactions to suit your game's needs.</p>
+			</div>	
+
+			<div class="text-section">
+				<p class="large-body">Also features <span class="doc-property">FMOD</span> and <span class="doc-property">Wwise</span> integration packages!</p>
+			</div>	
+
+			<div class="external-link-container text-section flex-row">
+				<a href="documentation" class="external-link"><i class="fas fa-file-alt"></i> Documentation</a>
+				<a href="documentation/api" class="external-link"><i class="fas fa-book"></i> API Reference</a>
+			</div>
+		</div>
+
+		<div class="content-section">
+			<h2>Get Support</h2>
+
+			<div class="text-section">
+				<p class="large-body">Discuss and get help from our community Discord or e-mail us directly.</p>
+			</div>	
+
+			<div class="external-link-container text-section flex-row">
+				<a href="https://discord.gg/HvFxpEY" class="external-link discord"><i class="fab fa-discord"></i> Discord</a>
+				<a href="mailto:support@roadturtlegames.com" class="external-link"><i class="fas fa-envelope"></i> Support E-Mail</a>
+			</div>
+		</div>
+	</div>	
+</div>
+
+      <div class="footer">
+    <a class="footer-title-link" href="/">
+        Road Turtle Games
+    </a>
+    <div class="flexible-space"></div>
+
+    <a href="mailto:contact@roadturtlegames.com" class="footer-button hide-me"><i class="fas fa-envelope"></i> Contact Us</a>	
+    <a href="mailto:contact@roadturtlegames.com" class="footer-button mobile"><i class="fas fa-envelope"></i></a>	
+</div>
+    </div>   
+  </body>
+</html>

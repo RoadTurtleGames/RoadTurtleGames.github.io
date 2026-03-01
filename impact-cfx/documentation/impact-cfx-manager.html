@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Impact CFX Documentation</title>
+
+  	<meta charset="utf-8" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+  	<link rel="stylesheet" href="/css/main.css"/>
+  	<link rel="stylesheet" href="/css/all.css"> 
+  	
+  	<script src="/js/jquery.min.js"></script>
+  	<script src="/js/main.js"></script>
+</head>
+  <body>
+    <!-- Navigation Bar -->
+<header id="navigation" class="navbar flex-row">
+	<div class="flex-row navbar-title">
+		<a class="navbar-turtle-link" href="/">
+			<img class="navbar-turtle" src="/images/turtle.png">
+		</a>
+
+		<a class="navbar-title-link" href="/">
+			<h1>Road Turtle Games</h1>
+		</a>
+
+		<div class="flexible-space"></div>
+
+		<a class="navbar-link hamburger" href="javascript:void(0);" onclick="openHamburger()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+
+	<a class="navbar-link hide-me" href="/games">Games</a>	
+	<a class="navbar-link hide-me" href="/development-tools">Development Tools</a>
+</header>  	
+
+    <div class="vertical-navbar">
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="/impact-cfx"><i class="fas fa-arrow-left"></i> Impact CFX Main Page</a>	
+		<a class="vertical-navbar-link" href="index"><i class="fas fa-book"></i> Index</a>		
+		<a class="vertical-navbar-link" href="api"><i class="fas fa-book"></i> API Reference</a>		
+		<a class="vertical-navbar-link" href="change-logs"><i class="fas fa-list"></i> Change Logs</a>		
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="conversion">Conversion From Legacy Impact</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="project-settings">Impact CFX Project Settings</a>
+		<a class="vertical-navbar-link sub-1" href="project-settings#tags">Impact Tags</a>
+		<a class="vertical-navbar-link sub-1" href="project-settings#logging">Logging</a>
+		<a class="vertical-navbar-link" href="material-registry">Impact Material Registry</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-cfx-manager">Impact CFX Manager</a>
+		<a class="vertical-navbar-link sub-1" href="impact-cfx-manager#material-mapping">Material Mapping</a>
+		<a class="vertical-navbar-link sub-1" href="impact-cfx-manager#managing-materials">Managing Registered Materials</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="materials">Impact Materials</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="audio-effect">Audio Effect</a>
+		<a class="vertical-navbar-link sub-1" href="audio-effect#prefab">Audio Source Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="audio-effect#processor">Audio Effect Processor</a>
+		<a class="vertical-navbar-link" href="particle-effect">Particle Effect</a>
+		<a class="vertical-navbar-link sub-1" href="particle-effect#prefab">Particle System Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="particle-effect#processor">Particle Effect Processor</a>
+		<a class="vertical-navbar-link" href="decal-effect">Decal Effect</a>
+		<a class="vertical-navbar-link sub-1" href="decal-effect#prefab">Decal Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="decal-effect#processor">Decal Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="decal-urp-hdrp">URP & HDRP Decals</a>
+		<a class="vertical-navbar-link" href="vfxbatch-effect">VFX Batch Effect</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#master">VFX Batch Master</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#creating">Creating a Visual Effect</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#processor">VFX Batch Effect Processor</a>
+		<a class="vertical-navbar-link" href="managing-attached-effects">Managing Attached Effects</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="objects">Impact Objects</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#single-material">Impact Object Single Material</a>										
+		<a class="vertical-navbar-link sub-1" href="objects#rigidbody">Impact Object Rigidbody</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#custom-velocity">Impact Object Custom Velocity</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#multiple-materials">Objects With Multiple Materials</a>									
+		<a class="vertical-navbar-link sub-1" href="objects#terrain">Impact Terrain</a>				
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="triggers">Impact Triggers</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#common">Common Trigger Properties</a>	
+		<a class="vertical-navbar-link sub-2" href="triggers#material-count">Material Count</a>														
+		<a class="vertical-navbar-link sub-1" href="triggers#collision">Impact Collision Trigger</a>									
+		<a class="vertical-navbar-link sub-1" href="triggers#slide-and-roll">Impact Slide and Roll Trigger</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#speculative">Impact Speculative Collision Trigger</a>									
+		<a class="vertical-navbar-link sub-1" href="triggers#simple">Impact Simple Collision Trigger</a>													
+		<a class="vertical-navbar-link sub-1" href="triggers#particle">Impact Particle Collision Trigger</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#on-trigger-enter">Impact On Trigger Enter</a>
+		<a class="vertical-navbar-link sub-1" href="triggers#on-trigger-stay">Impact On Trigger Stay</a>																	
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="raycasting">Impact Raycasting</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="fmod">FMOD Integration</a>	
+		<a class="vertical-navbar-link" href="wwise">Wwise Integration</a>	
+		<a class="vertical-navbar-link" href="master-audio">Master Audio Integration</a>	
+	</div>
+	
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="custom-triggers">Custom Triggers</a>
+		<a class="vertical-navbar-link" href="custom-objects">Custom Objects</a>
+		<a class="vertical-navbar-link sub-1" href="custom-objects#component">Creating an Impact Object Script</a>
+		<a class="vertical-navbar-link sub-1" href="custom-objects#processor">Impact Material Processors</a>
+		<a class="vertical-navbar-link" href="custom-effects">Custom Effects</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#asset">Impact Effect Authoring Asset</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#effect-result">Effect Result</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#effect-data">Effect Data</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#processor">Impact Effect Processors</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#simple-processor">Impact Simple Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#pooled-processor">Impact Pooled Effect Processor</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-object">Pooled Effect Object</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-authoring">Pooled Effect Authoring</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-result">Pooled Effect Result</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-data">Pooled Effect Data</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#object-pool">Object Pool</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-processor">Pooled Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#add-to-impact-cfx-manager"">Add to Impact CFX Manager</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#example-download"">Example Effect Download</a>
+	</div>
+</div>  	
+
+    <div class="main-container doc-container">
+    	<div style="padding: 0px 80px;">
+    		<div class="main-body">
+	<div class="content">
+		<div class="doc-section clearfix">	
+			<h2>Impact CFX Manager</h2>
+			<p class="doc-text-section">To create an Impact CFX Manager, the easiest way is to navigate to <span class="doc-menu-path">GameObject > Impact CFX > Create Impact CFX Manager</span>. 
+				An Impact CFX Manager game object will be created in your scene, along with several other objects and components that will likely be needed for the system to function as expected.</p>	
+			
+			<p class="doc-text-section">You can also add the Impact CFX Manager component by itself by going to <span class="doc-menu-path">Add Component > Impact CFX > Impact CFX Manager</span>.</p>	
+
+			<img class="doc-image left" src="../images/ImpactCFXManager.png">
+
+			<p class="doc-text-section">Once you have an Impact CFX Manager, there are many properties you can edit:</p>	
+
+			<ul>
+				<li><span class="doc-property">Enable Collision Processing</span> – If false, collisions will not be queued and processed, meaning no effects will be played. 
+					However, updates will still be run on any active effects.</li>
+				<li><span class="doc-property">Collision Queue Capacity</span> – The maximum number of collisions that can be processed in a single frame.</li>
+				<li><span class="doc-property">Collision Limits</span> – Optional limits for the different kinds of collisions. 
+					Setting limits can help prevent the Collision Capacity being used up by one particular type of collision.
+					For example, Unity calls all <span class="bold">OnCollisionEnter</span> methods before <span class="bold">OnCollisionStay</span>, 
+					and so when a lot of collisions are happening, the Collision Capacity may get filled up before <span class="bold">OnCollisionStay</span> is called.</li>
+				<li><span class="doc-property">Material Queue Capacity</span> – The capacity of the array used to gather material data from the colliding objects. 
+					This should be at least twice as much as the Collision Queue Capacity, to allow for at least 1 material for both objects involved in a collision.</li>
+				<li><span class="doc-property">Impact Effect Processors</span> – These are processors used for calculating the results for specific effect types (e.g. Audio, Particle, and Decal).
+					Processors must be present for the corresponding effect type to be played.</li>
+				<li><span class="doc-property">Impact Material Processors</span> – These are processors used for retrieving Impact Materials for specific object types.
+					Processors must be present for material data to be retrieved from the corresponding object type.</li>
+				<li><span class="doc-property">Material Mapping</span> – The processor used for Material Mapping.</li>
+				<li><span class="doc-property">Material Registry</span> – An Impact Material Registry that contains materials to pre-load.
+					If an Impact Material is not present in the registry, effects will not work for it.</li>
+				<li><span class="doc-property">Don't Destroy On Load</span> – Make this manager and its effects persist between level loads. 
+					If you want to have separate Impact CFX Managers in each scene, disable this.</li>
+				<li><span class="doc-property">Set as Active Instance</span> – Make this manager the primary Impact CFX Manager instance on Awake.</li>
+			</ul>
+
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">	
+			<h3 id="material-mapping">Material Mapping</h3>
+
+			<p class="doc-text-section"><span class="doc-property">Material Mapping</span> allows you to map Unity's Physics Materials to Impact Materials. This is useful so that you don't necessarily have to add an Impact Object component to all of the objects in your scene.</p>
+		
+			<p class="doc-text-section">The <span class="doc-property">Impact Material Mapping Processor</span> is responsible for handling material mapping.
+				This component is automatically created if you used the <span class="doc-menu-path">Create Impact CFX Manager</span> option above,
+				but you can manually add this component by going to <span class="doc-menu-path">Add Component > Impact CFX > Impact Material Mapping Processor</span>.</p>	
+
+			<img class="doc-image left" src="../images/MaterialMappingProcessor.png">
+
+			<p class="doc-text-section">Simply add an entry to the list, assign a Physic Material or Physics Material 2D, and assign the Impact Material it will map to.</p>
+
+			<p class="doc-text-section">The <span class="doc-property">Capacity</span> property defines how many materials the processor can process in a single frame. 
+				This automatically matches the Material Capacity of the Impact CFX Manager, but you can override it if you wish.</p>
+
+				<p class="doc-text-section">If the <span class="doc-property">Register Materials On Start</span> property is enabled, 
+					all Impact Materials defined in the mappings will automatically be registered with the Impact CFX Manager.</p>
+		</div>		
+
+		<hr>
+
+		<div class="doc-section clearfix">	
+			<h3 id="managing-materials">Managing Registered Materials</h3>
+
+			<p class="doc-text-section">As mentioned in previous sections, Impact Materials must be registered with the Impact CFX Manager in order to work. 
+				Impact CFX provides several options for registering Impact Materials.
+			</p>
+
+			<ul>
+				<li><span class="doc-property">Impact Material Registry</span> - You can create an Impact Material Registry asset and assign it to your Impact CFX Manager so that all materials and effects in the registry will be pre-loaded on Start.
+					This has the benefit of loading everything up-front so that there are no loading hitches during gameplay.</li>
+				<li><span class="doc-property">Register Materials On Start</span> - Individual Impact Objects as well as some other components have the option to register their own materials when they load.
+					This has the benefit that you don't have to maintain an Impact Material Registry, and it also ensures that the materials an object uses will always be registered.
+					However, the downside is that first-time loading of the effects can cause hitches during gameplay.</li>
+				<li><span class="doc-property">Scripting API</span> - <span class="doc-code">ImpactCFXGlobal</span> and <span class="doc-code">ImpactCFXManager</span> have methods that allow you to manually manage registered materials from your own scripts.
+					This gives you the most control over how materials are registered. See the API Reference for <a href="./api/class_impact_c_f_x_1_1_impact_c_f_x_global">ImpactCFXGlobal</a> and <a href="./api/class_impact_c_f_x_1_1_impact_c_f_x_manager">ImpactCFXManager</a> for more details.</li>
+			</ul>
+		</div>		
+	</div>	
+</div>    		
+    	</div>	
+    </div>
+  </body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Impact CFX Documentation</title>
+
+  	<meta charset="utf-8" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+  	<link rel="stylesheet" href="/css/main.css"/>
+  	<link rel="stylesheet" href="/css/all.css"> 
+  	
+  	<script src="/js/jquery.min.js"></script>
+  	<script src="/js/main.js"></script>
+</head>
+  <body>
+    <!-- Navigation Bar -->
+<header id="navigation" class="navbar flex-row">
+	<div class="flex-row navbar-title">
+		<a class="navbar-turtle-link" href="/">
+			<img class="navbar-turtle" src="/images/turtle.png">
+		</a>
+
+		<a class="navbar-title-link" href="/">
+			<h1>Road Turtle Games</h1>
+		</a>
+
+		<div class="flexible-space"></div>
+
+		<a class="navbar-link hamburger" href="javascript:void(0);" onclick="openHamburger()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+
+	<a class="navbar-link hide-me" href="/games">Games</a>	
+	<a class="navbar-link hide-me" href="/development-tools">Development Tools</a>
+</header>  	
+
+    <div class="vertical-navbar">
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="/impact-cfx"><i class="fas fa-arrow-left"></i> Impact CFX Main Page</a>	
+		<a class="vertical-navbar-link" href="index"><i class="fas fa-book"></i> Index</a>		
+		<a class="vertical-navbar-link" href="api"><i class="fas fa-book"></i> API Reference</a>		
+		<a class="vertical-navbar-link" href="change-logs"><i class="fas fa-list"></i> Change Logs</a>		
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="conversion">Conversion From Legacy Impact</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="project-settings">Impact CFX Project Settings</a>
+		<a class="vertical-navbar-link sub-1" href="project-settings#tags">Impact Tags</a>
+		<a class="vertical-navbar-link sub-1" href="project-settings#logging">Logging</a>
+		<a class="vertical-navbar-link" href="material-registry">Impact Material Registry</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-cfx-manager">Impact CFX Manager</a>
+		<a class="vertical-navbar-link sub-1" href="impact-cfx-manager#material-mapping">Material Mapping</a>
+		<a class="vertical-navbar-link sub-1" href="impact-cfx-manager#managing-materials">Managing Registered Materials</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="materials">Impact Materials</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="audio-effect">Audio Effect</a>
+		<a class="vertical-navbar-link sub-1" href="audio-effect#prefab">Audio Source Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="audio-effect#processor">Audio Effect Processor</a>
+		<a class="vertical-navbar-link" href="particle-effect">Particle Effect</a>
+		<a class="vertical-navbar-link sub-1" href="particle-effect#prefab">Particle System Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="particle-effect#processor">Particle Effect Processor</a>
+		<a class="vertical-navbar-link" href="decal-effect">Decal Effect</a>
+		<a class="vertical-navbar-link sub-1" href="decal-effect#prefab">Decal Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="decal-effect#processor">Decal Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="decal-urp-hdrp">URP & HDRP Decals</a>
+		<a class="vertical-navbar-link" href="vfxbatch-effect">VFX Batch Effect</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#master">VFX Batch Master</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#creating">Creating a Visual Effect</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#processor">VFX Batch Effect Processor</a>
+		<a class="vertical-navbar-link" href="managing-attached-effects">Managing Attached Effects</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="objects">Impact Objects</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#single-material">Impact Object Single Material</a>										
+		<a class="vertical-navbar-link sub-1" href="objects#rigidbody">Impact Object Rigidbody</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#custom-velocity">Impact Object Custom Velocity</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#multiple-materials">Objects With Multiple Materials</a>									
+		<a class="vertical-navbar-link sub-1" href="objects#terrain">Impact Terrain</a>				
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="triggers">Impact Triggers</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#common">Common Trigger Properties</a>	
+		<a class="vertical-navbar-link sub-2" href="triggers#material-count">Material Count</a>														
+		<a class="vertical-navbar-link sub-1" href="triggers#collision">Impact Collision Trigger</a>									
+		<a class="vertical-navbar-link sub-1" href="triggers#slide-and-roll">Impact Slide and Roll Trigger</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#speculative">Impact Speculative Collision Trigger</a>									
+		<a class="vertical-navbar-link sub-1" href="triggers#simple">Impact Simple Collision Trigger</a>													
+		<a class="vertical-navbar-link sub-1" href="triggers#particle">Impact Particle Collision Trigger</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#on-trigger-enter">Impact On Trigger Enter</a>
+		<a class="vertical-navbar-link sub-1" href="triggers#on-trigger-stay">Impact On Trigger Stay</a>																	
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="raycasting">Impact Raycasting</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="fmod">FMOD Integration</a>	
+		<a class="vertical-navbar-link" href="wwise">Wwise Integration</a>	
+		<a class="vertical-navbar-link" href="master-audio">Master Audio Integration</a>	
+	</div>
+	
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="custom-triggers">Custom Triggers</a>
+		<a class="vertical-navbar-link" href="custom-objects">Custom Objects</a>
+		<a class="vertical-navbar-link sub-1" href="custom-objects#component">Creating an Impact Object Script</a>
+		<a class="vertical-navbar-link sub-1" href="custom-objects#processor">Impact Material Processors</a>
+		<a class="vertical-navbar-link" href="custom-effects">Custom Effects</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#asset">Impact Effect Authoring Asset</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#effect-result">Effect Result</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#effect-data">Effect Data</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#processor">Impact Effect Processors</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#simple-processor">Impact Simple Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#pooled-processor">Impact Pooled Effect Processor</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-object">Pooled Effect Object</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-authoring">Pooled Effect Authoring</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-result">Pooled Effect Result</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-data">Pooled Effect Data</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#object-pool">Object Pool</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-processor">Pooled Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#add-to-impact-cfx-manager"">Add to Impact CFX Manager</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#example-download"">Example Effect Download</a>
+	</div>
+</div>  	
+
+    <div class="main-container doc-container">
+    	<div style="padding: 0px 80px;">
+    		<div class="main-body">
+	<div class="content">
+		<div class="doc-section clearfix">		
+			<h2>Impact Triggers</h2>
+
+			<p class="doc-text-section">Impact Triggers are components that tell Impact Objects when to play effects and with what data. They are the origin that provides the data which is sent to the object’s Impact Material to ultimately play the effects defined on the material.</p>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h3 id="common">Common Trigger Properties</h3>
+
+			<p class="doc-text-section">Included with Impact are a set of Impact Triggers that utilize Unity’s collision and trigger messages to trigger physics effects. These triggers come in both 3D and 2D components.</p>
+
+			<img class="doc-image left" src="../images/CollisionTrigger.png">
+
+			<p class="doc-text-section">Most Impact Triggers have the following common properties:</p>
+
+			<ul>				
+				<li><span class="doc-property">Trigger Enabled</span> – Whether or not the trigger will process collision messages. You should use this if you want to disable the trigger, since the normal <span class="doc-code">Behaviour.enabled</span> property will still recieve collision messages if the component is disabled.</li>
+				<li><span class="doc-property">Impact Object</span> – The Impact Object collision data will be sent to. If empty, it will attempt to find an Impact Object on the collider that was hit or one of its parents.</li>	
+				<li><span class="doc-property">Threshold</span> – An optional threshold that the collision velocity provided by the collision message must be greater than.
+					This will cut off processing early, increasing performance.</li>
+				<li><span class="doc-property">Contact Mode</span> – How the trigger will handle collision contacts.
+					<ul>
+						<li><span class="doc-property">Single</span> – Use only the first contact of the collision. This is the cheapest method.</li>
+						<li><span class="doc-property">Average</span> – Average all contact points together. 
+							This is slightly more expensive but results in more accurate positioning of the effect when multiple contact points are present.</li>
+					</ul>
+				</li>	
+				<li><span class="doc-property">Collision Normal Mode</span> – Behavior for the collision normal, which determines how effects are rotated.
+					<ul>
+						<li><span class="doc-property">Default</span> – Use the default collision normal that points away from the surface of the object being hit.</li>
+						<li><span class="doc-property">Inverted</span> –  Invert the collision normal so that it points into the surface of the object being hit.</li>
+					</ul>
+				</li>	
+				<li><span class="doc-property">Trigger Behavior</span> – How the trigger handles assignment of the "Trigger" and "Hit" objects for effects. Note that both options can be active at the same time.
+					<ul>
+						<li><span class="doc-property">Default</span> – The object this trigger component is attached to will be the "Trigger" object responsible for playing effects.</li>
+						<li><span class="doc-property">Inverted</span> – Objects will be swapped, so that the object that was collided with will be the "Trigger" object responsible for playing effects.</li>
+					</ul>
+				</li>	
+				<li><span class="doc-property">Ignore Same Parents</span> – If enabled, this trigger will ignore collisions with objects that have the same parent. 
+					This can be useful for things like ragdolls if you don't want the limbs to produce collision effects with each other.
+					<ul>
+						<li><span class="doc-property">Root Parent</span> – If set, collisions will be ignored if both objects have the given object as a parent (at any level, not just as an immediate parent).
+							If not set, the topmost root parent of the objects will be compared.</li>
+					</ul>
+				</li>
+			</ul>	
+		</div>
+
+		<div class="doc-section clearfix">		
+			<h4 id="material-count">Material Count</h3>
+
+			<p class="doc-text-section">The <span class="doc-property">Material Count</span> properties allow collisions to retrieve multiple materials from the collision contact point.
+				This means that effects for multiple materials can be played at the same time, allowing for blending between effects.
+				Having a Material Count greater than 1 is primarily useful when colliding with objects with blended textures like terrains.</p>
+
+			<ul>				
+				<li><span class="doc-property">Trigger Material Count</span> – The number of materials that should be retrieved from this trigger's Impact Object.</li>
+				<li><span class="doc-property">Hit Material Count</span> – The number of materials that should be retrieved from the Impact Object that was hit.</li>
+			</ul>			
+			
+			<p class="doc-text-section doc-warning">Increasing the Material Count increases the Material Capacity used by the trigger, so make sure the Material Capacity on your Impact CFX Manager is configured accordingly.</p>
+		</div>
+
+		<hr>
+
+		<div id="collision" class="doc-section clearfix">		
+			<h3 >Impact Collision Trigger</h3>
+
+			<img class="doc-image left" src="../images/CollisionTrigger.png">
+			<p class="doc-text-section">The Impact Collision Trigger is used to play effects for single collisions using the <span class="doc-property">OnCollisionEnter</span> message.</p>
+				
+			<p class="doc-text-section">In addition to the common trigger properties, the Collision Trigger has the following extra properties:</p>
+			<ul>
+				<li><span class="doc-property">Collision Velocity Method</span> – How to calculate the collision velocity.
+					<ul>
+						<li><span class="doc-property">Relative Velocities</span> – Calculate the difference in velocities of the 2 objects at the contact point. This is the most accurate method.</li>
+						<li><span class="doc-property">Change In Velocity</span> – Measure the difference in velocity from before and after the collision.</li>	
+						<li><span class="doc-property">Collision Message</span> – Use the Collision Velocity provided by the collision message. This is the cheapest method, but is less accurate, especially when objects have a significant angular velocity.</li>	
+					</ul>
+				</li>
+				<li><span class="doc-property">Cooldown</span> – An optional cooldown between collision triggers, in seconds.</li>	
+			</ul>	
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h3 id="slide-and-roll">Impact Slide and Roll Trigger</h3>
+
+			<p class="doc-text-section">The Impact Slide and Roll Trigger is used to play effects when objects slide and roll against each other. This trigger uses the <span class="doc-property">OnCollisionStay</span> message.</p>
+
+			<img class="doc-image left" src="../images/SlideAndRollTrigger.png">
+
+			<p class="doc-text-section">In addition to the common trigger properties, the Slide and Roll Trigger has the following extra properties:</p>
+			<ul>
+				<li><span class="doc-property">Enable Sliding</span> – Whether or not to trigger sliding effects.</li>
+				<li><span class="doc-property">Enable Rolling</span> – Whether or not to trigger rolling effects.</li>	
+				<li><span class="doc-property">Slide Velocity Method</span> – How to calculate the sliding and rolling velocity.
+					<ul>
+						<li><span class="doc-property">Relative Velocities</span> – Calculate the difference in velocities of the 2 objects at the contact point. This is the most accurate method.</li>
+						<li><span class="doc-property">Collision Message</span> – Use the Collision Velocity provided by the collision message. This is the cheapest method, but is less accurate, especially when objects have a significant angular velocity.</li>	
+					</ul>
+				</li>
+			</ul>	
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h3 id="speculative">Impact Speculative Collision Trigger</h3>
+
+			<p class="doc-text-section">The Impact Speculative Collision Trigger is a special trigger that acts similarly to the normal Impact Collision Trigger, but attempts to handle scenarios that may not register due to the Impact Collision Trigger's use of <span class="doc-property">OnCollisionEnter</span>. For example:</p>
+			<ul>
+				<li>A large, long object that falls over, but stays in contact with the ground the entire time and so does not trigger an <span class="doc-property">OnCollisionEnter</span> message when it hits the ground.</li>
+				<li>Collisions against a single large non-convex mesh collider, where the floor and walls are part of the same mesh collider. If an object were to slide along the floor and hit a wall in this case, <span class="doc-property">OnCollisionEnter</span> would not be triggered.</li>	
+			</ul>
+
+			<img class="doc-image left" src="../images/SpeculativeCollisionTrigger.png">
+
+			<p class="doc-text-section">In addition to the properties from the <span class="doc-property">Impact Collision Trigger</span>, the Speculative Collision Trigger has the following extra properties:</p>
+			<ul>
+				<li><span class="doc-property">Max Collisions Per Frame</span> – The maximum number of collisions that can be generated in a single frame.</li>
+				<li><span class="doc-property">Contact Point Comparison</span> – The threshold to use when comparing contact points. If the square distance of the 2 contact points is less than this value, those 2 contact points are considered the same. A lower value will typically result in more contact points, while a higher value will result in fewer.</li>
+				<li><span class="doc-property">Contact Point Lifetime</span> – How many Fixed Update frames a contact point should be alive for before it is removed from the list of active contacts. Increasing this value can reduce the likelyhood of effects happening in quick succession for the same contact point.</li>	
+			</ul>	
+
+			<p class="doc-text-section">This trigger should only be used if absolutely necessary, as it requires more processing, is not always predictable, and may produce an over-abundance of effects. Generally speaking the normal Collision Trigger is much more predictable.</p>
+
+			<p class="doc-text-section">Before using this trigger, it may be a good idea to examine your colliders to see if you can split single large colliders into multiple smaller colliders, since OnCollisionEnter will be called when different colliders of the same rigidbody are collided with.</p>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h3 id="particle">Impact Particle System Collision Trigger</h3>
+
+			<p class="doc-text-section">The Impact Particle System Collision Trigger is a special trigger for dealing with Particle System collisions.</p>
+
+			<img class="doc-image left" src="../images/ParticleSystemCollisionTrigger.png">
+
+			<p class="doc-text-section">In addition to some of the properties from the <span class="doc-property">Impact Collision Trigger</span>, the Particle System Collision Trigger has the following extra properties:</p>
+			
+			<ul>
+				<li><span class="doc-property">Is Particle System</span> – This determines how the trigger behaves.
+					<ul>
+						<li><span class="doc-property">When Checked</span> – The trigger will trigger effects when the particles of the assigned Particle System collide with other objects.</li>
+						<li><span class="doc-property">When Unchecked</span> – The trigger will recieve collision messages when particles collide with this object.</li>	
+					</ul>	
+				</li>
+			</ul>	
+
+			<p class="doc-text-section">For the Particle System Collision Trigger to recieve collision messages, <span class="doc-property">Collision</span> must be enabled on the Particle System and <span class="doc-property">Send Collision Messages</span> must be enabled.</p>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h3 id="simple">Impact Simple Collision Trigger</h3>
+
+			<img class="doc-image left" src="../images/SimpleCollisionTrigger.png">
+			<p class="doc-text-section">The Impact Simple Collision Trigger is similar to the normal Impact Collision Trigger, but it does not receive any collision data (such as velocity, contact point, or even the object that was collided with). </p>
+				
+				<p class="doc-text-section">You should only use this in cases where you do not need detailed collision data and you want to remove the overhead of generating collision data for the collision message.</p>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h3 id="on-trigger-enter">Impact On Trigger Enter</h3>
+
+			<p class="doc-text-section">Impact On Trigger Enter is a trigger that can be used for "Trigger" type colliders.</p>
+
+			<img class="doc-image left" src="../images/OnTriggerEnter.png">
+
+			<p class="doc-text-section">This trigger uses the <span class="doc-property">OnTriggerEnter</span> message to trigger effects. 
+				It behaves similarly to the <span class="doc-property"></span>Impact Collision Trigger</span>.
+				OnTriggerEnter only provides the collider that intersected with the trigger, and so does not have detailed contact point and velocity information.</p>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h3 id="on-trigger-stay">Impact On Trigger Stay</h3>
+
+			<p class="doc-text-section">Impact On Trigger Stay is a trigger that can be used for "Trigger" type colliders.</p>
+
+			<img class="doc-image left" src="../images/OnTriggerStay.png">
+
+			<p class="doc-text-section">This trigger uses the <span class="doc-property">OnTriggerStay</span> message to trigger effects. 
+				It behaves similarly to the <span class="doc-property"></span>Impact Slide and Roll Trigger</span>.
+				OnTriggerStay only provides the collider that intersected with the trigger, and so does not have detailed contact point and velocity information.</p>
+		</div>
+	</div>	
+</div>    		
+    	</div>	
+    </div>
+  </body>
+</html>

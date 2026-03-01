@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Impact CFX Documentation</title>
+
+  	<meta charset="utf-8" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+  	<link rel="stylesheet" href="/css/main.css"/>
+  	<link rel="stylesheet" href="/css/all.css"> 
+  	
+  	<script src="/js/jquery.min.js"></script>
+  	<script src="/js/main.js"></script>
+</head>
+  <body>
+    <!-- Navigation Bar -->
+<header id="navigation" class="navbar flex-row">
+	<div class="flex-row navbar-title">
+		<a class="navbar-turtle-link" href="/">
+			<img class="navbar-turtle" src="/images/turtle.png">
+		</a>
+
+		<a class="navbar-title-link" href="/">
+			<h1>Road Turtle Games</h1>
+		</a>
+
+		<div class="flexible-space"></div>
+
+		<a class="navbar-link hamburger" href="javascript:void(0);" onclick="openHamburger()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+
+	<a class="navbar-link hide-me" href="/games">Games</a>	
+	<a class="navbar-link hide-me" href="/development-tools">Development Tools</a>
+</header>  	
+
+    <div class="vertical-navbar">
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="/impact-cfx"><i class="fas fa-arrow-left"></i> Impact CFX Main Page</a>	
+		<a class="vertical-navbar-link" href="index"><i class="fas fa-book"></i> Index</a>		
+		<a class="vertical-navbar-link" href="api"><i class="fas fa-book"></i> API Reference</a>		
+		<a class="vertical-navbar-link" href="change-logs"><i class="fas fa-list"></i> Change Logs</a>		
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="conversion">Conversion From Legacy Impact</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="project-settings">Impact CFX Project Settings</a>
+		<a class="vertical-navbar-link sub-1" href="project-settings#tags">Impact Tags</a>
+		<a class="vertical-navbar-link sub-1" href="project-settings#logging">Logging</a>
+		<a class="vertical-navbar-link" href="material-registry">Impact Material Registry</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-cfx-manager">Impact CFX Manager</a>
+		<a class="vertical-navbar-link sub-1" href="impact-cfx-manager#material-mapping">Material Mapping</a>
+		<a class="vertical-navbar-link sub-1" href="impact-cfx-manager#managing-materials">Managing Registered Materials</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="materials">Impact Materials</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="audio-effect">Audio Effect</a>
+		<a class="vertical-navbar-link sub-1" href="audio-effect#prefab">Audio Source Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="audio-effect#processor">Audio Effect Processor</a>
+		<a class="vertical-navbar-link" href="particle-effect">Particle Effect</a>
+		<a class="vertical-navbar-link sub-1" href="particle-effect#prefab">Particle System Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="particle-effect#processor">Particle Effect Processor</a>
+		<a class="vertical-navbar-link" href="decal-effect">Decal Effect</a>
+		<a class="vertical-navbar-link sub-1" href="decal-effect#prefab">Decal Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="decal-effect#processor">Decal Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="decal-urp-hdrp">URP & HDRP Decals</a>
+		<a class="vertical-navbar-link" href="vfxbatch-effect">VFX Batch Effect</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#master">VFX Batch Master</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#creating">Creating a Visual Effect</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#processor">VFX Batch Effect Processor</a>
+		<a class="vertical-navbar-link" href="managing-attached-effects">Managing Attached Effects</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="objects">Impact Objects</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#single-material">Impact Object Single Material</a>										
+		<a class="vertical-navbar-link sub-1" href="objects#rigidbody">Impact Object Rigidbody</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#custom-velocity">Impact Object Custom Velocity</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#multiple-materials">Objects With Multiple Materials</a>									
+		<a class="vertical-navbar-link sub-1" href="objects#terrain">Impact Terrain</a>				
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="triggers">Impact Triggers</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#common">Common Trigger Properties</a>	
+		<a class="vertical-navbar-link sub-2" href="triggers#material-count">Material Count</a>														
+		<a class="vertical-navbar-link sub-1" href="triggers#collision">Impact Collision Trigger</a>									
+		<a class="vertical-navbar-link sub-1" href="triggers#slide-and-roll">Impact Slide and Roll Trigger</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#speculative">Impact Speculative Collision Trigger</a>									
+		<a class="vertical-navbar-link sub-1" href="triggers#simple">Impact Simple Collision Trigger</a>													
+		<a class="vertical-navbar-link sub-1" href="triggers#particle">Impact Particle Collision Trigger</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#on-trigger-enter">Impact On Trigger Enter</a>
+		<a class="vertical-navbar-link sub-1" href="triggers#on-trigger-stay">Impact On Trigger Stay</a>																	
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="raycasting">Impact Raycasting</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="fmod">FMOD Integration</a>	
+		<a class="vertical-navbar-link" href="wwise">Wwise Integration</a>	
+		<a class="vertical-navbar-link" href="master-audio">Master Audio Integration</a>	
+	</div>
+	
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="custom-triggers">Custom Triggers</a>
+		<a class="vertical-navbar-link" href="custom-objects">Custom Objects</a>
+		<a class="vertical-navbar-link sub-1" href="custom-objects#component">Creating an Impact Object Script</a>
+		<a class="vertical-navbar-link sub-1" href="custom-objects#processor">Impact Material Processors</a>
+		<a class="vertical-navbar-link" href="custom-effects">Custom Effects</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#asset">Impact Effect Authoring Asset</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#effect-result">Effect Result</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#effect-data">Effect Data</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#processor">Impact Effect Processors</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#simple-processor">Impact Simple Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#pooled-processor">Impact Pooled Effect Processor</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-object">Pooled Effect Object</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-authoring">Pooled Effect Authoring</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-result">Pooled Effect Result</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-data">Pooled Effect Data</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#object-pool">Object Pool</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-processor">Pooled Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#add-to-impact-cfx-manager"">Add to Impact CFX Manager</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#example-download"">Example Effect Download</a>
+	</div>
+</div>  	
+
+    <div class="main-container doc-container">
+    	<div style="padding: 0px 80px;">
+    		<div class="main-body">
+	<div class="content">
+		<div class="doc-section clearfix">		
+			<h2>VFX Batch Effects</h2>
+			<p class="doc-text-section">The <span class="doc-property">VFX Batch Effect</span> is a special kind of effect used to play particle effects using Unity's Visual Effect system.</p>
+
+			<p class="doc-text-section">Rather than using an object pool consisting of many object instances, which can cause significant overhead especially with Visual Effects, 
+				VFX Batch Effects are based on a technique that uses a single "Master" visual effect to show particles at many positions at once.
+				This takes advantage of the Visual Effect system's ability to efficiently handle many thousands of particles.</p>
+
+			<p class="doc-text-section">You can download the VFX Batch Effect package below.</p>
+
+			<div class="external-link-container flex-row">
+				<a href="../downloads/ImpactCFX-VFXBatchEffect-v1.1.1.unitypackage" class="external-link"><i class="fab fa-unity"></i> VFX Batch Effect (1.1.1)</a>
+			</div>
+
+			<div class="external-link-container flex-row">
+				<p class="package-version-info">Impact CFX Version: 1.4.1+</p>
+				<p class="package-version-info">VFX Graph Version: 12.1.10+</p>
+			</div>
+
+			<p class="doc-text-section">You will also need to make sure you have the <span class="doc-property">Visual Effect Graph</span> package installed in the <span class="doc-property">Package Manager</span>.</p>
+
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<p class="doc-text-section">Once you have imported the package, 
+			you can create a new VFX Batch Effect by going to <span class="doc-menu-path">Assets > Create > Impact CFX > VFX Batch > VFX Batch Effect</span>.</p>
+
+			<img class="doc-image left" src="../images/VFXBatchEffectAuthoring.png">
+
+			<p class="doc-text-section">VFX Batch Effects have the following properties:</p>	
+			<ul>	
+				<li><span class="doc-property">Visual Effect Prefab</span> – The prefab for the visual effect that will be used.</li>		
+				<li><span class="doc-property">Visual Effect Type</span> – The kind of visual effect.
+					<ul>	
+						<li><span class="doc-property">One Shot</span> – A one-shot effect good for single collisions.</li>		
+						<li><span class="doc-property">Looped</span> – Looped particles good for sliding or rolling effects.</li>
+					</ul>
+				</li>	
+				<li><span class="doc-property">Emit On Slide</span> – Should particles be displayed when sliding?</li>
+				<li><span class="doc-property">Emit On Roll</span> – Should particles be displayed when rolling?</li>
+				<li><span class="doc-property">Minimum Velocity</span> – The minimum collision velocity required for then particle effect to be shown.</li>	
+				<li><span class="doc-property">Collision Normal Influence</span> – How much the collision normal will effect the calculated intensity of the collision. </li>	
+			</ul>
+
+
+		</div>
+		
+		<hr>
+
+		<div class="doc-section clearfix">
+			<h3 id="master">VFX Batch Master</h2>
+				
+			<p class="doc-text-section">VFX Batch Effects require a prefab with an <span class="doc-property">Impact VFX Batch Master</span> component attached to it 
+				You can add this script to your prefab by going to <span class="doc-menu-path">Add Component > Impact CFX > Impact VFX Batch Master</span>.</p>	
+
+			<img class="doc-image left" src="../images/VFXBatchMaster.png">
+
+			<p class="doc-text-section">Impact VFX Batch Masters have the following properties:</p>	
+			<ul>				
+				<li><span class="doc-property">Visual Effect</span> – The Visual Effect component that is being controlled.</li>	
+				<li><span class="doc-property">Vectors Property</span> – The Texture property of the Visual Effect that will be used to input position, normal, and velocity information.</li>
+				<li><span class="doc-property">Count Property</span> – The Integer property of the Visual Effect that will be used to input the number of effects that are currently playing.</li>	
+				<li><span class="doc-property">Capacity Property</span> – The Integer property of the Visual Effect that will be used to input the total capacity of the effect.</li>
+				<li><span class="doc-property">Capacity</span> – How many effects can be processed in a single frame.</li>		
+			</ul>
+		</div>	
+
+		<div class="doc-section clearfix">
+			<h3 id="creating">Creating a Visual Effect</h2>
+				
+			<p class="doc-text-section">Creating a visual effect that is compatible with VFX Batch Effect requires some extra set-up in the Visual Effect Graph.</p>	
+
+			<img class="doc-image left" src="../images/VFXBatchProperties.png">
+
+			<p class="doc-text-section">First, you will need to add 3 properties to your visual effect graph:</p>	
+			<ul>				
+				<li><span class="doc-property">Vectors (Texture 2D)</span> – Inputs position, normal, and velocity vectors.</li>	
+				<li><span class="doc-property">Count (Int)</span> – Inputs the number of effects being displayed in a frame.</li>
+				<li><span class="doc-property">Capacity (Int)</span> – How many effects can be processed in a single frame.</li>
+			</ul>
+
+			<p class="doc-text-section">These properties can be named anything you like, you will be able to select them in the VFX Batch Master component.</p>	
+
+			<p class="doc-text-section">Next, you will need to add an <span class="doc-property">Impact CFX VFX Batch Subgraph</span> to your visual effect.</p>	
+
+			<img class="doc-image center" src="../images/VFXBatchSubgraph.png">
+
+			<p class="doc-text-section">This subgraph takes the 3 input properties created above and extracts the following values from them:</p>	
+				<ul>				
+					<li><span class="doc-property">Position</span> – The position of the effect contact point.</li>	
+					<li><span class="doc-property">Normal</span> – The normal of the collision surface.</li>
+					<li><span class="doc-property">Velocity</span> – The velocity of the collision.</li>
+					<li><span class="doc-property">Composition</span> – The influence of the material at the contact point.</li>
+				</ul>
+
+			<p class="doc-text-section">Finally, you will need to plug in the values into your visual effect's systems. There are 2 requirements here:</p>	
+			<ul>				
+				<li>The <span class="doc-property">Position</span> output of the Impact CFX VFX Batch Subgraph 
+					must be connected to a <span class="doc-property">Set Position</span> block in <span class="doc-property">Initialize Particle</span>.
+					This will make sure the particle is spawned at the correct position.</li>	
+				<li>The <span class="doc-property">Count</span> property of your visual effect must be hooked up to the Count of your spawn system.
+					You can multiply the Count by the number of particles you want to spawn at a single position.</li>
+			</ul>
+
+			<p class="doc-text-section">Here is an example of how this is set up:</p>	
+			<img class="doc-image center" src="../images/VFXBatchPositionCount.png">
+
+			<p class="doc-text-section">The <span class="doc-property">Normal</span>, <span class="doc-property">Velocity</span>, and <span class="doc-property">Composition</span> outputs are optional
+				and can be used in any way you see fit. For example, you can use the Normal to set the velocity of the particles for a directional effect:</p>	
+
+			<img class="doc-image center" src="../images/VFXBatchNormal.png">
+
+		</div>	
+		<hr>
+
+		<div class="doc-section clearfix">
+			<h3 id="processor">VFX Batch Effect Processor</h2>
+
+			<img class="doc-image left" src="../images/VFXBatchEffectProcessor.png">
+
+			<p class="doc-text-section">The <span class="doc-property">VFX Batch Effect Processor</span> is responsible for handling all VFX Batch Effects at runtime.</p>
+
+			<p class="doc-text-section">You can create this component by going to <span class="doc-menu-path">Add Component > Impact CFX > VFX Batch > Impact VFX Batch Effect Processor</span>.
+				Make sure that you add this processor to the <span class="doc-property">Impact Effect Processors</span> list on your <span class="doc-property">Impact CFX Manager</span></p>
+
+			<p class="doc-text-section">The <span class="doc-property">Queue Capacity</span> property defines how many VFX Batch Effects the processor can process in a single frame. 
+				This is automatically set based on the largest VFX Batch Master capacity, but you can override it if you wish.</p>
+		</div>
+	</div>	
+</div>    		
+    	</div>	
+    </div>
+  </body>
+</html>

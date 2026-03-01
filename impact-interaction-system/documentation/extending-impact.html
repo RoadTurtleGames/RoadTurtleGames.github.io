@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Impact Documentation</title>
+
+  	<meta charset="utf-8" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+  	<link rel="stylesheet" href="/css/main.css"/>
+  	<link rel="stylesheet" href="/css/all.css"> 
+  	
+  	<script src="/js/jquery.min.js"></script>
+  	<script src="/js/main.js"></script>
+</head>
+  <body>
+    <!-- Navigation Bar -->
+<header id="navigation" class="navbar flex-row">
+	<div class="flex-row navbar-title">
+		<a class="navbar-turtle-link" href="/">
+			<img class="navbar-turtle" src="/images/turtle.png">
+		</a>
+
+		<a class="navbar-title-link" href="/">
+			<h1>Road Turtle Games</h1>
+		</a>
+
+		<div class="flexible-space"></div>
+
+		<a class="navbar-link hamburger" href="javascript:void(0);" onclick="openHamburger()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+
+	<a class="navbar-link hide-me" href="/games">Games</a>	
+	<a class="navbar-link hide-me" href="/development-tools">Development Tools</a>
+</header>  	
+
+    <div class="vertical-navbar">
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="/impact-interaction-system"><i class="fas fa-arrow-left"></i> Impact Main Page</a>	
+		<a class="vertical-navbar-link" href="api"><i class="fas fa-book"></i> API Reference</a>		
+		<a class="vertical-navbar-link" href="change-logs"><i class="fas fa-list"></i> Change Logs</a>				
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="installation">Installation</a>			
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-tags">Impact Tags</a>		
+		<a class="vertical-navbar-link sub-1" href="impact-tags#tag-library">Impact Tag Library</a>	
+		<a class="vertical-navbar-link sub-1" href="impact-tags#using-tags">Using Impact Tags</a>		
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-manager">Impact Manager</a>		
+		<a class="vertical-navbar-link sub-1" href="impact-manager#material-mapping">Material Mapping</a>		
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-materials">Impact Materials</a>	
+		<a class="vertical-navbar-link sub-1" href="impact-materials#material-interaction-sets">Impact Material Interaction Sets</a>			
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-interactions">Impact Interactions</a>	
+		<a class="vertical-navbar-link sub-1" href="impact-interactions#audio">Audio Interactions</a>	
+		<a class="vertical-navbar-link sub-1" href="impact-interactions#particle">Particle Interactions</a>	
+		<a class="vertical-navbar-link sub-1" href="impact-interactions#decal">Decal Interactions</a>	
+		<a class="vertical-navbar-link sub-2" href="impact-interactions#decal-management">Decal Management</a>				
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-objects">Impact Objects</a>	
+		<a class="vertical-navbar-link sub-1" href="impact-objects#single-material">Impact Object Single Material</a>										
+		<a class="vertical-navbar-link sub-1" href="impact-objects#rigidbody">Impact Object Rigidbody</a>	
+		<a class="vertical-navbar-link sub-2" href="impact-objects#rigidbodies-multiple-materials">Rigidbodies With Multiple Materials</a>
+		<a class="vertical-navbar-link sub-2" href="impact-objects#rigidbody-cheap">Impact Object Rigidbody (Cheap)</a>											
+		<a class="vertical-navbar-link sub-1" href="impact-objects#terrain">Impact Terrain</a>				
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-triggers">Impact Triggers</a>										
+		<a class="vertical-navbar-link sub-1" href="impact-triggers#physics-triggers">Physics Triggers</a>										
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#collision">Impact Collision Trigger</a>	
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#velocity-collision">Impact Velocity Collision Trigger</a>										
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#slide-and-roll">Impact Slide and Roll Trigger</a>										
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#simple">Impact Simple Collision Trigger</a>										
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#speculative">Impact Speculative Collision Trigger</a>										
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#particle">Impact Particle Collision Trigger</a>		
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#on-trigger-enter">Impact On Trigger Enter</a>	
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#on-trigger-stay">Impact On Trigger Stay</a>									
+		<a class="vertical-navbar-link sub-1" href="impact-triggers#other-triggers">Other Triggers</a>										
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#raycast">Impact Raycast Trigger</a>				
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="extending-impact">Extending Impact</a>										
+		<a class="vertical-navbar-link sub-1" href="extending-impact#triggers">Custom Impact Triggers</a>										
+		<a class="vertical-navbar-link sub-2" href="extending-impact#interaction-data">Interaction Data</a>										
+		<a class="vertical-navbar-link sub-1" href="extending-impact#custom-interactions">Custom Impact Interactions</a>										
+		<a class="vertical-navbar-link sub-2" href="extending-impact#interactions">Impact Interactions</a>										
+		<a class="vertical-navbar-link sub-2" href="extending-impact#interaction-results">Interaction Results</a>										
+		<a class="vertical-navbar-link sub-3" href="extending-impact#iinteractionresult">IInteractionResult</a>										
+		<a class="vertical-navbar-link sub-3" href="extending-impact#icontinuousinteractionresult">IContinuousInteractionResult</a>										
+		<a class="vertical-navbar-link sub-1" href="extending-impact#objects">Custom Impact Objects</a>										
+		<a class="vertical-navbar-link sub-1" href="extending-impact#materials">Custom Impact Materials</a>		
+		<a class="vertical-navbar-link sub-1" href="extending-impact#tag-libraries">Custom Impact Tag Libraries</a>					
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="fmod-integration">FMOD Integration</a>		
+		<a class="vertical-navbar-link sub-1" href="fmod-integration#setup">Setup</a>	
+		<a class="vertical-navbar-link sub-1" href="fmod-integration#fmod-audio-interaction">FMOD Audio Interaction</a>			
+		<a class="vertical-navbar-link sub-1" href="fmod-integration#fmod-parameters">FMOD Parameters</a>	
+		<a class="vertical-navbar-link sub-1" href="fmod-integration#notes">Notes</a>	
+	</div>	
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="wwise-integration">Wwise Integration</a>		
+		<a class="vertical-navbar-link sub-1" href="wwise-integration#setup">Setup</a>	
+		<a class="vertical-navbar-link sub-1" href="wwise-integration#wwise-audio-interaction">Wwise Audio Interaction</a>			
+		<a class="vertical-navbar-link sub-1" href="wwise-integration#wwise-rtpcs">Wwise RTPCs</a>	
+		<a class="vertical-navbar-link sub-1" href="wwise-integration#notes">Notes</a>	
+	</div>	
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="masteraudio-integration">Master Audio Integration</a>		
+		<a class="vertical-navbar-link sub-1" href="masteraudio-integration#setup">Setup</a>	
+		<a class="vertical-navbar-link sub-1" href="masteraudio-integration#master-audio-interaction">Master Audio Interaction</a>			
+		<a class="vertical-navbar-link sub-1" href="masteraudio-integration#notes">Notes</a>	
+	</div>
+</div>  	
+
+    <div class="main-container doc-container">
+    	<div style="padding: 0px 80px;">
+    		<div class="main-body">
+	<div class="content">
+		<div class="doc-section clearfix">		
+			<h2>Extending Impact</h2>
+
+			<p class="doc-text-section">Impact is designed to be modular and easily extensible in case the built-in components do not meet your needs. This section will detail how you can create your own components and assets that extend the Impact system.</p>
+
+			<p class="doc-warning">Note: Impact has Interfaces available for most of its classes that the built-in base components and assets implement. You are free to use these interfaces to implement your custom classes, but be aware you will not be able to use the inspector to assign these classes to your objects due to Unity’s limitations with serializing interfaces.</p>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h3 id="triggers">Custom Impact Triggers</h3>
+
+			<p class="doc-text-section">Impact Triggers are the simplest part of the Impact system to extend. You do not necessarily need to inherit from any class, but the <span class="doc-code">ImpactTriggerBase</span> class has properties and functions that you may find useful.</p>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h4 id="interaction-data">Interaction Data</h4>
+
+			<p class="doc-text-section">A key part of a trigger's job is generating Interaction Data. Interaction Data is a data structure that contains various information about an interaction like velocity, normal, the objects that were involved, etc. In your custom trigger, you will need to create a class that implements the <span class="doc-code">IInteractionData</span> interface, and send this data to the <span class="doc-code">Impact Manager</span> via one of these methods:</p>
+
+			<ul>
+				<li><span class="doc-code">ProcessInteraction</span> – Process an interaction for a single interaction event such as a collision.</li>		
+				<li><span class="doc-code">ProcessContinuousInteraction</span> – Process an interaction that may persist over many frames and needs to be updated, such as sliding and rolling.</li>
+			</ul>	
+
+			<p class="doc-text-section">The <span class="doc-code">InteractionData</span> class provides an out-of-the-box implementation of the <span class="doc-code">IInteractionData</span> interface and has the following properties that can be set:</p>
+			<ul>
+				<li><span class="doc-code">int InteractionType</span> – An integer that can be used to identify the type of interaction. For example, Collision, Slide, Roll, and Simple have integer values that are defined as constants on the <span class="doc-code">InteractionData</span> class. It is up to the Impact Interaction implementation to determine what to do with the value of this property.</li>
+				<li><span class="doc-code">Vector3 Velocity</span> – The velocity (direction and magnitude) of the interaction, such as the collision velocity.</li>
+				<li><span class="doc-code">Vector3 Point</span> – The world space position where the interaction occurred.</li>
+				<li><span class="doc-code">Vector3 Normal</span> – The normal of the surface where the interaction occurred.</li>
+				<li><span class="doc-code">ImpactTagMask TagMask</span> – he tag mask obtained from the object being interacted with, typically obtained from the object's material at the interaction point. This can be null if it is unknown.</li>
+				<li><span class="doc-code">float CompositionValue</span> –  If using material composition, a 0 to 1 value representing the influence of the material at the contact point.</li>
+				<li><span class="doc-code">int? PriorityOverride</span> – If specified, this will override the Priority value of the Impact Object(s) this data is sent to.</li>
+				<li><span class="doc-code">GameObject ThisObject</span> – The object that originated the interaction. Typically this game object will have an <span class="doc-code">IImpactObject</span> component attached to it.</li>
+				<li><span class="doc-code">GameObject OtherObject</span> – The object we are interacting with. May or may not have an <span class="doc-code">IImpactObject</span> component attached to it.</li>
+			</ul>
+
+			<p class="doc-text-section">Typically you do not need to create a custom implementation of <span class="doc-code">IInteractionData</span>, but you are absolutely able to do so if you need to implement certain things differently.</p>	
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h3 id="custom-interactions">Custom Impact Interactions</h3>
+
+			<p class="doc-text-section">Custom Impact Interactions allow you to create custom behaviors that occur for interactions outside of the standard Audio, Particle, and Decal interactions. There are 3 parts to creating your own custom Impact Interactions.</p>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h4 id="interactions">Impact Interactions</h4>
+
+			<p class="doc-text-section">Impact Interactions take <span class="doc-property">Interaction Data</span> as input and return an <span class="doc-property">Interaction Result</span> as output. Whatever properties and logic is required to do this is 100% up to you.</p>
+
+			<p class="doc-text-section">To create a custom Impact Interaction, you should inherit from the <span class="doc-code">ImpactMaterialInteractionBase</span> abstract class (which is a <span class="doc-code">ScriptableObject</span>) or the <span class="doc-code">IImpactMaterialInteraction</span> interface. You only need to implement 2 functions:</p>
+
+			<ul>
+				<li><span class="doc-code">IInteractionResult GetInteractionResult(IInteractionData data)</span> – Takes the given <span class="doc-code">IInteractionData</span> and returns an <span class="doc-code">IInteractionResult</span>.</li>
+				<li><span class="doc-code">void Preload()</span> – Pre-load any data needed by the interaction, such as object pools.</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h4  id="interaction-results">Interaction Results</h4>
+
+			<p class="doc-text-section">Interaction Results contain all of the data built by an Impact Interaction and also hold the logic that needs to be performed for an interaction (for example: instantiating objects, playing sounds, etc). Depending on your needs there are 2 interfaces you can implement:</p>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h5  id="iinteractionresult">IInteractionResult</h5>
+
+			<p class="doc-text-section">The <span class="doc-code">IInteractionResult</span> interface is the simplest type of interaction result. It is useful for single-event interactions such as collisions. It has 2 members that must be implemented:</p>
+			<ul>
+				<li><span class="doc-code">bool IsValid</span> – Does this result contain any useful data? For example, audio interaction results are considered not valid if their volume is close to 0 or no audio clip is specified. If this is false, the result will be ignored completely.</li>
+				<li><span class="doc-code">void Process(IImpactObject parent)</span> – Here you write the code that executes when this interaction occurs. <span class="doc-code">Parent</span> is the Impact Object that created the interaction.</li>				
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h5 id="icontinuousinteractionresult">IContinuousInteractionResult</h5>
+
+			<p class="doc-text-section">The <span class="doc-code">IContinuousInteractionResult</span> interface allows you to create interaction results that persist over multiple frames, such as sliding and rolling. </p>
+
+			<p class="doc-text-section">In addition to the members of <span class="doc-code">IInteractionResult</span>, there are a few extra members that must be implemented:</p>		
+			<ul>
+				<li><span class="doc-code">long Key</span> – A 64-bit integer identifying this interaction result so that it can be identified and updated in subsequent frames.</li>
+				<li><span class="doc-code">bool IsAlive</span> – Is the interaction still alive and should continue being updated? If this is false it will be removed from the Impact Manager's list of interaction results and will no longer receive <span class="doc-code">FixedUpdate</span> and <span class="doc-code">KeepAlive</span>.</li>
+				<li><span class="doc-code">void FixedUpdate()</span> – Update anything that needs to be updated.</li>
+				<li><span class="doc-code">void KeepAlive(IInteractionResult newResult)</span> – Update this result with data from a new Interaction Result.</li>				
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h3 id="objects">Custom Impact Objects</h3>
+
+			<p class="doc-text-section">Typically you would want to create a custom Impact Object if you needed specific algorithms for getting the Impact Material(s) of an object. For example, if you wanted to get a material based on the vertex colors of a mesh.</p>
+
+			<p class="doc-text-section">To write a custom Impact Object class, you will need to inherit from <span class="doc-code">ImpactObjectBase</span> (or one if its subclasses). Impact Objects have several methods for retrieving Impact Materials:</p>		
+			<ul>
+				<li><span class="doc-code">IImpactMaterial GetPrimaryMaterial()</span> – Get the main Impact Material when no contact point data is available.</li>
+				<li><span class="doc-code">IImpactMaterial GetPrimaryMaterial(Vector3 point)</span> – Get the main Impact Material at a given point on the object.</li>
+				<li><span class="doc-code">int GetMaterialCompositionNonAlloc(Vector3 point, ImpactMaterialComposition[] results)</span> – This method is useful if a given point on your object can have a combination of Impact Materials, such as on a terrain. You can populate the given array with the materials present at the given point and their influence, and return the number of materials returned.</li>			
+			</ul>	
+
+			<p class="doc-text-section"><span class="doc-code">ImpactObjectBase</span> also has other methods you can override:</p>							
+			<ul>
+				<li><span class="doc-code">VelocityData GetVelocityDataAtPoint(Vector3 contactPoint)</span> – Get the velocity data for a (world-space position) point relative to this object. The <span class="doc-code">VelocityData</span> struct has 2 properties that should be populated:
+					<ul>
+						<li><span class="doc-code">LinearVelocity</span> – The velocity of the object as a whole.</li>
+						<li><span class="doc-code">TangentialVelocity</span> – The velocity of the point, not taking into account the velocity of the object. This typically would be a function of the point's position relative to the center of mass of the object and the object's angular velocity</li>						
+					</ul>	
+				</li>
+				<li><span class="doc-code">Vector3 GetContactPointRelativePosition(Vector3 point)</span> – Get the point's position relative to this object's transform.</li>	
+			</ul>	
+
+			<p class="doc-text-section">You may want to implement the <span class="doc-code">IImpactObject</span> interface instead. In that case, you must implement the above methods as well as the following members:</p>		
+			<ul>
+				<li><span class="doc-code">int Priority</span> – An integer denoting how important an object is.</li>
+				<li><span class="doc-code">GameObject GameObject</span> – The game object that the impact object is attached to.</li>	
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h3 id="materials">Custom Impact Materials</h3>
+
+			<p class="doc-text-section">You may find that you need to implement your own custom Impact Materials. To do this, create a class that inherits from <span class="doc-code">ImpactMaterialBase</span> and implement the following methods:</p>	
+			<ul>
+				<li><span class="doc-code">int GetInteractionResultsNonAlloc(IInteractionData data, IInteractionResult[] results)</span> – Takes Interaction Data as input and fills the given array with Interaction Results. Typically this will pass the interaction data to one or more Impact Material Interactions to get the Interaction Results.</li>
+				<li><span class="doc-code">void Preload()</span> – Pre-load any data needed by the material, such as object pools.</li>
+			</ul>
+
+			<p class="doc-text-section">You can also choose to implement the <span class="doc-code">IImpactMaterial</span> interface, in which case you will also have to implement the following:</p>	
+			<ul>
+				<li><span class="doc-code">ImpactTagMask MaterialTagsMask</span> – The tags associated with this material.</li>
+			</ul>			
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h3 id="tag-libraries">Custom Impact Tag Libraries</h3>
+
+			<p class="doc-text-section">Finally, you can implement your own custom Impact Tag Library by inheriting from <span class="doc-code">ImpactTagLibraryBase</span> or by implementing the <span class="doc-code">IImpactTagLibrary</span> interface.</p>	
+
+			<p class="doc-text-section">The only thing you need to implement for a custom Impact Tag Library is an indexer that can get and set a string at a given index.</p>	
+
+			<p class="doc-warning">Note: Remember that Impact Tag Libraries can have a maximum of 32 tags, since tag masks are represented by 32-bit integer bitmasks.</p>
+		</div>		
+	</div>	
+</div>    		
+    	</div>	
+    </div>
+  </body>
+</html>

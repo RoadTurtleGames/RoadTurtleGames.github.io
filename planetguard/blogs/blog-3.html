@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html style="background-image: url('images/page_background.jpg'); background-size: cover;">
+  <head>
+	<title>Planetguard</title>
+
+  	<meta charset="utf-8" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+  	<link rel="stylesheet" href="/css/main.css"/>
+  	<link rel="stylesheet" href="/css/all.css"> 
+  	
+  	<script src="/js/jquery.min.js"></script>
+  	<script src="/js/main.js"></script>
+</head>
+  <body>
+    <!-- Navigation Bar -->
+<header id="navigation" class="navbar flex-row">
+	<div class="flex-row navbar-title">
+		<a class="navbar-turtle-link" href="/">
+			<img class="navbar-turtle" src="/images/turtle.png">
+		</a>
+
+		<a class="navbar-title-link" href="/">
+			<h1>Road Turtle Games</h1>
+		</a>
+
+		<div class="flexible-space"></div>
+
+		<a class="navbar-link hamburger" href="javascript:void(0);" onclick="openHamburger()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+
+	<a class="navbar-link hide-me" href="/games">Games</a>	
+	<a class="navbar-link hide-me" href="/development-tools">Development Tools</a>
+</header>  	
+
+    <div class="main-container">
+      <link rel="stylesheet" href="../css/page.css"> 
+
+<div class="main-body" >
+	<div class="content ">
+		<div class="content-section">	
+			<h2>Authoring Realistic Stars</h2>
+			<h5>1 April 2022</h5>	
+
+			<hr>
+
+			<div class="blog-section">
+				<p>
+					Star systems play an important role in the world of Planetguard, just as they do in the real universe. 
+					They provide homes for countless planets and are the primary source of life as we know it.
+					In Planetgaurd, star systems play the role of what you could call "Worlds" (like the worlds in the Super Mario games), containing all of the playable levels in the game.
+				</p>
+			</div>
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-3/Heimdal_System.jpg"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					Given their significance both in the game and real life, I wanted to provide a depiction of stars that was based in real science.
+					Sure, I could have taken the simple route and arbitrarily decided the stars' colors, sizes, and brightnesses, but I wanted to respect stellar astronomy to the best of my ability.
+				</p>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					So with that goal in mind, how do I go about determining a star's color, size, and brightness in a way that matches reality?
+					The first step is to learn about <a class="blog-link" href="https://en.wikipedia.org/wiki/Stellar_classification">Stellar Classification</a> and the <a class="blog-link" href="https://en.wikipedia.org/wiki/Hertzsprung%E2%80%93Russell_diagram">Hertzsprung–Russell Diagram</a>.
+				</p>
+			</div>
+
+			<div class="text-section">
+                <img class="blog-image" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/HRDiagram.png"/>
+				<p class="blog-image-caption"><a class="blog-link" href="https://en.wikipedia.org/wiki/Hertzsprung%E2%80%93Russell_diagram">Wikipedia - Hertzsprung–Russell diagram</a></p>
+				<p class="blog-image-caption">This file is licensed under the <a class="blog-link" href="https://creativecommons.org/licenses/by-sa/2.5/deed.en">Creative Commons Attribution-Share Alike 2.5 Generic license</a>.</p>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					Stellar classification provides a lot of information about the stars in our universe and their properties, particularly <span class="bold">Temperature</span> and <span class="bold">Luminosity</span>.
+					The Hertzsprung–Russell diagram (or HR diagram for short) further provides a neat visualization of how stars tend to follow specific patterns in the relationship between their temperature and luminosity, and is the main way we will be making sure our stars are accurate.
+				</p>
+			</div>
+
+
+			<div class="blog-section">
+				<p>
+					Luckily, a star's temperature is directly related to it's color. The coolest stars are a deep red, and as temperature increases, the color becomes orange, yellow, white, and finally blue.
+					While there are formulas and such for these colors ( <a class="blog-link" href="https://en.wikipedia.org/wiki/Black-body_radiation">black-body radiation</a> ), for the sake of some artistic liberties I simply made my own color ramp, which I will use later.
+				</p>
+			</div>
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-3/Star_TemperatureColorMap.png"/>
+				<p class="blog-image-caption">The left side corresponds to the coolest stars, and the right side corresponds to the hottest.</p>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					On the other hand, luminosity is not as straight-forward of a trait to deal with. 
+					I would really like to be able to calculate the radius of a star, so that in-game I can show the star at an accurate scale.
+					Fortunately, we have the <a class="blog-link" href="https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_law">Stefan–Boltzmann Law</a>.
+					More specifically, we have <a class="blog-link" href="https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_law#Examples">formulas</a> that we can use to interchange between a star's radius, temperature and luminosity (assuming we know the other two values).
+				</p>
+			</div>
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-3/Stefan–Boltzmann_Formulas.png"/>
+				<p class="blog-image-caption"><a class="blog-link" href="https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_law#Examples">Wikipedia - Stefan–Boltzmann law</a></p>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					So now we should have all of the tools we need to author our stars. We have a relationship between a star's temperature and it's color, and we have relationships between temperature, radius, and luminosity.
+					With a bunch of Unity Editor scripting and conversion of the above formulas into code, we can make a custom editor for authoring stars.
+				</p>
+			</div>	
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-3/HR_Diagram_Inspector.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					Several properties are exposed, providing a lot of ways to author the star.
+					The HR diagram display ensures that the chosen values are within the realm of possibility.
+					The HR diagram can also be clicked on directly, and all of the values will change accordingly.
+				</p>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					Now all that is needed is a shader that can take our values and display them appropriately. This is where the color ramp created earlier is used.
+				</p>
+			</div>
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-3/Star_Shader.png"/>
+			</div>
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-3/Star_Shader_Inspector.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					There is a lot of extra stuff going on to make the stars look cool, but the important properties, just like before, are the Temperature and Luminosity.
+					A separate script is used to actually scale the star game object appropriately.
+				</p>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					As a disclaimer, this shader is based on false-color pictures of stars that are often used to visualize them. 
+					It does not provide a necessarily accurate representation of stars as our eyes would actually see them.
+					(Reminder to never look directly at the sun).
+				</p>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					Just for fun, we can plug in values from real stars and see what kind of results we get, which should hopefully be fairly accurate (but note that scales are heavily adjusted).
+				</p>
+			</div>	
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-3/Stars.jpg"/>
+			</div>
+
+            <div class="blog-section">
+				<p>
+                    And now we have a scientifically accruate way of authoring all of the stars in Planetguard. 
+					Use the GitHub link below if you want to play with this stuff yourself! 
+					The package contains the HR Diagram editor utility, Star Utilities for calculating the various properties of a star, and a custom shader graph for the star object (URP only).
+				</p>
+                <div class="external-link-container text-section flex-row">
+                    <a href="https://github.com/Crazymonkay/star-utilities" class="external-link"><i class="fas fa-file-alt"></i> Download from GitHub</a>
+                </div>
+			</div>
+
+			<div class="blog-section">
+				<a href="../" class="main-page-link"><i class="fas fa-arrow-left"></i> Back to Main Page</a>
+			</div>	
+
+		</div>
+	</div>	
+</div>
+
+      <div class="footer">
+    <a class="footer-title-link" href="/">
+        Road Turtle Games
+    </a>
+    <div class="flexible-space"></div>
+
+    <a href="mailto:contact@roadturtlegames.com" class="footer-button hide-me"><i class="fas fa-envelope"></i> Contact Us</a>	
+    <a href="mailto:contact@roadturtlegames.com" class="footer-button mobile"><i class="fas fa-envelope"></i></a>	
+</div>
+    </div>   
+  </body>
+</html>

@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Impact CFX Documentation</title>
+
+  	<meta charset="utf-8" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+  	<link rel="stylesheet" href="/css/main.css"/>
+  	<link rel="stylesheet" href="/css/all.css"> 
+  	
+  	<script src="/js/jquery.min.js"></script>
+  	<script src="/js/main.js"></script>
+</head>
+  <body>
+    <!-- Navigation Bar -->
+<header id="navigation" class="navbar flex-row">
+	<div class="flex-row navbar-title">
+		<a class="navbar-turtle-link" href="/">
+			<img class="navbar-turtle" src="/images/turtle.png">
+		</a>
+
+		<a class="navbar-title-link" href="/">
+			<h1>Road Turtle Games</h1>
+		</a>
+
+		<div class="flexible-space"></div>
+
+		<a class="navbar-link hamburger" href="javascript:void(0);" onclick="openHamburger()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+
+	<a class="navbar-link hide-me" href="/games">Games</a>	
+	<a class="navbar-link hide-me" href="/development-tools">Development Tools</a>
+</header>  	
+
+    <div class="vertical-navbar">
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="/impact-cfx"><i class="fas fa-arrow-left"></i> Impact CFX Main Page</a>	
+		<a class="vertical-navbar-link" href="index"><i class="fas fa-book"></i> Index</a>		
+		<a class="vertical-navbar-link" href="api"><i class="fas fa-book"></i> API Reference</a>		
+		<a class="vertical-navbar-link" href="change-logs"><i class="fas fa-list"></i> Change Logs</a>		
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="conversion">Conversion From Legacy Impact</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="project-settings">Impact CFX Project Settings</a>
+		<a class="vertical-navbar-link sub-1" href="project-settings#tags">Impact Tags</a>
+		<a class="vertical-navbar-link sub-1" href="project-settings#logging">Logging</a>
+		<a class="vertical-navbar-link" href="material-registry">Impact Material Registry</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-cfx-manager">Impact CFX Manager</a>
+		<a class="vertical-navbar-link sub-1" href="impact-cfx-manager#material-mapping">Material Mapping</a>
+		<a class="vertical-navbar-link sub-1" href="impact-cfx-manager#managing-materials">Managing Registered Materials</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="materials">Impact Materials</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="audio-effect">Audio Effect</a>
+		<a class="vertical-navbar-link sub-1" href="audio-effect#prefab">Audio Source Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="audio-effect#processor">Audio Effect Processor</a>
+		<a class="vertical-navbar-link" href="particle-effect">Particle Effect</a>
+		<a class="vertical-navbar-link sub-1" href="particle-effect#prefab">Particle System Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="particle-effect#processor">Particle Effect Processor</a>
+		<a class="vertical-navbar-link" href="decal-effect">Decal Effect</a>
+		<a class="vertical-navbar-link sub-1" href="decal-effect#prefab">Decal Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="decal-effect#processor">Decal Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="decal-urp-hdrp">URP & HDRP Decals</a>
+		<a class="vertical-navbar-link" href="vfxbatch-effect">VFX Batch Effect</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#master">VFX Batch Master</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#creating">Creating a Visual Effect</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#processor">VFX Batch Effect Processor</a>
+		<a class="vertical-navbar-link" href="managing-attached-effects">Managing Attached Effects</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="objects">Impact Objects</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#single-material">Impact Object Single Material</a>										
+		<a class="vertical-navbar-link sub-1" href="objects#rigidbody">Impact Object Rigidbody</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#custom-velocity">Impact Object Custom Velocity</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#multiple-materials">Objects With Multiple Materials</a>									
+		<a class="vertical-navbar-link sub-1" href="objects#terrain">Impact Terrain</a>				
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="triggers">Impact Triggers</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#common">Common Trigger Properties</a>	
+		<a class="vertical-navbar-link sub-2" href="triggers#material-count">Material Count</a>														
+		<a class="vertical-navbar-link sub-1" href="triggers#collision">Impact Collision Trigger</a>									
+		<a class="vertical-navbar-link sub-1" href="triggers#slide-and-roll">Impact Slide and Roll Trigger</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#speculative">Impact Speculative Collision Trigger</a>									
+		<a class="vertical-navbar-link sub-1" href="triggers#simple">Impact Simple Collision Trigger</a>													
+		<a class="vertical-navbar-link sub-1" href="triggers#particle">Impact Particle Collision Trigger</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#on-trigger-enter">Impact On Trigger Enter</a>
+		<a class="vertical-navbar-link sub-1" href="triggers#on-trigger-stay">Impact On Trigger Stay</a>																	
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="raycasting">Impact Raycasting</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="fmod">FMOD Integration</a>	
+		<a class="vertical-navbar-link" href="wwise">Wwise Integration</a>	
+		<a class="vertical-navbar-link" href="master-audio">Master Audio Integration</a>	
+	</div>
+	
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="custom-triggers">Custom Triggers</a>
+		<a class="vertical-navbar-link" href="custom-objects">Custom Objects</a>
+		<a class="vertical-navbar-link sub-1" href="custom-objects#component">Creating an Impact Object Script</a>
+		<a class="vertical-navbar-link sub-1" href="custom-objects#processor">Impact Material Processors</a>
+		<a class="vertical-navbar-link" href="custom-effects">Custom Effects</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#asset">Impact Effect Authoring Asset</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#effect-result">Effect Result</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#effect-data">Effect Data</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#processor">Impact Effect Processors</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#simple-processor">Impact Simple Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#pooled-processor">Impact Pooled Effect Processor</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-object">Pooled Effect Object</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-authoring">Pooled Effect Authoring</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-result">Pooled Effect Result</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-data">Pooled Effect Data</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#object-pool">Object Pool</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-processor">Pooled Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#add-to-impact-cfx-manager"">Add to Impact CFX Manager</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#example-download"">Example Effect Download</a>
+	</div>
+</div>  	
+
+    <div class="main-container doc-container">
+    	<div style="padding: 0px 80px;">
+    		<div class="main-body">
+	<div class="content">
+		<div class="doc-section clearfix">	
+			<div class="doc-section clearfix">		
+				<h2>Custom Effects</h2>
+	
+				<p class="doc-text-section">This section provides some direction for creating custom Impact Effects.
+					Creating custom Impact Effects is very open-ended, and there is no one required way that you should implement a custom effect.
+				</p>
+
+				<p class="doc-text-section">This section will follow an example of an effect that logs a message based on the collision velocity.</p>
+
+				<p class="doc-text-section">For comprehensive documentation of the entire Impact CFX API, please refer to the <a href="api">API Reference</a>.</p>
+			</div>	
+
+			<hr>
+
+			<div class="doc-section clearfix">		
+				<h3 id="asset">Impact Effect Authoring Asset</h3>
+	
+				<p class="doc-text-section">The first step to create a custom effect is to create a script that inherits from <span class="doc-code">ImpactEffectAuthoringBase</span>.
+					This will be the asset that you create in the editor to modify your effect.
+					This class does not require you to implement anything, and All properties of the effect are entirely up to you.</p>
+
+<pre>
+//Asset for authoring the effect in the editor.
+[CreateAssetMenu(fileName = "New Example Effect", menuName = "Impact CFX/Example Effect")]
+public class ExampleEffectAuthoring : ImpactEffectAuthoringBase
+{
+	//Can have any fields and properties that are needed for the effect.
+	public float ValueRoundingIncrement;
+
+	//Convenience method for creating an ExampleEffectData instance and copying properties.
+	public ExampleEffectData GetEffectData()
+	{
+		return new ExampleEffectData()
+		{
+			ValueRoundingIncrement = this.ValueRoundingIncrement
+		};
+	}
+}
+</pre>
+				<hr>	
+				<h3 id="effect-result">Effect Result</h3>
+
+				<p class="doc-text-section">Now that we have our editor asset, we need to create data structures that will actually be used to process the effect in jobs.
+					This example uses the <span class="doc-code">IEffectResult</span> and <span class="doc-code">IEffectData</span> interfaces to implement jobs-suitable effect data.
+					This is the same pattern used by the built-in audio, particle, and decal effects.</p>				
+
+				<p class="doc-text-section">First there is the effect result, which holds all of the result data needed for the effect to play.
+					In our case, we just need a field for the message to display.</p>	
+<pre>
+//The result of the effect. This is created when a collision is processed.
+public struct ExampleEffectResult : IEffectResult
+{
+	//Properties used internally by Impact CFX
+	public bool IsEffectValid { get; set; }
+	public int CollisionIndex { get; set; }
+	public int MaterialCompositionIndex { get; set; }
+
+	//Fields and properties for results specific to the effect.
+	public float ValueResult;
+}
+</pre>
+				<hr>	
+				<h3 id="effect-data">Effect Data</h3>
+
+				<p class="doc-text-section">Next there is the effect data.
+					This is essentially a copy of the effect asset, but as a struct and with data structures suitable for jobs, 
+					such as using <span class="doc-code">FixedString128Bytes</span> instead of  <span class="doc-code">string</span>.
+				</p>	
+
+				<p class="doc-text-section">This data structure also defines the <span class="doc-code">GetResult</span> method, 
+					which is responsible for taking the collision data and returning an effect result.
+				</p>
+<pre>
+//Holds data for the effect that is suitable for use in burst-compiled jobs.
+public struct ExampleEffectData : IEffectData&lt;ExampleEffectResult&gt;
+{
+	//Properties used internally by Impact CFX
+	public int EffectID { get; set; }
+	public ImpactTagMaskFilter IncludeTags { get; set; }
+	public ImpactTagMaskFilter ExcludeTags { get; set; }
+
+	//Fields and properties for parameters specific to the effect.
+	public float ValueRoundingIncrement;
+
+	//Takes the given collision data to produce a result.
+	public ExampleEffectResult GetResult(CollisionInputData collisionData, MaterialCompositionData materialCompositionData, ImpactVelocityData velocityData, ref Unity.Mathematics.Random random)
+	{
+		//Initialize result
+		ExampleEffectResult result = new ExampleEffectResult();
+
+		//Get the velocity magnitude and compare it to the velocity threshold to determine which message to display.
+		float velocityMagnitude = math.length(velocityData.ImpactVelocity);
+
+		//Round the value as defined by the rounding increment.
+		result.ValueResult = math.round(velocityMagnitude / ValueRoundingIncrement) * ValueRoundingIncrement;
+
+		//Can optionally add checks for validity. Invalid results will be discarded.
+		result.IsEffectValid = true;
+
+		return result;
+	}
+}
+</pre>
+			</div>	
+
+			<hr>
+
+			<div class="doc-section clearfix">		
+				<h3 id="processor">Impact Effect Processor</h3>
+	
+				<p class="doc-text-section">In order for your effect to actually be shown, you will need to make a custom <span class="doc-property">Impact Effect Processor</span>.</p>
+
+				<p class="doc-text-section">Impact Effect Processors are responsible for handling <span class="bold">everything</span> related to a specific kind of effect.
+					The <span class="doc-property">Impact Audio Effect Processor</span>, <span class="doc-property">Impact Particle Effect Processor</span>, and <span class="doc-property">Impact Decal Effect Processor</span> are the built-in Impact Effect Processors,
+					responsible for handling <span class="doc-property">Audio Effects</span>, <span class="doc-property">Particle Effects</span>, and <span class="doc-property">Decal Effects</span> respectively.
+				</p>
+	
+				<p class="doc-text-section">There are a few ways you can implement an effect processor, detailed in the following sections.</p>
+
+			</div>	
+
+			<hr>
+
+			<div class="doc-section clearfix">
+				<h3 id="simple-processor">Impact Simple Effect Processor</h3>
+
+				<p class="doc-text-section">For relatively simple effects, your processor can inherit from <span class="doc-code">ImpactSimpleEffectProcessor</span>.
+					This provides a basic common implementation that handles most of the effect processing for you, assuming that you use IEffectData and IEffectResult as shown in the previous section.</p>
+
+				<p class="doc-text-section">The following example is an effect processor for the previously defined example effect.
+					It simply logs the result of the effect.</p>
+<pre>
+//Uses the ImpactSimpleEffectProcessor as a base for handling most of the implementation.
+public class ExampleEffectProcessor : ImpactSimpleEffectProcessor&lt;ExampleEffectAuthoring, ExampleEffectData, ExampleEffectResult&gt;
+{
+	//Return an instance using the convenience method from ExampleEffectAuthoring.
+	protected override ExampleEffectData getEffect(ExampleEffectAuthoring effectAuthoring)
+	{
+		return effectAuthoring.GetEffectData();
+	}
+
+	//Return a new ImpactEffectProcessorJob&lt;ExampleEffectData, ExampleEffectResult&gt; instance.
+	//This is only needed so that Burst knows to compile the generic job with these type arguments.
+	protected override ImpactEffectProcessorJob&lt;ExampleEffectData, ExampleEffectResult&gt; getEffectProcessorJobBase()
+	{
+		return new ImpactEffectProcessorJob&lt;ExampleEffectData, ExampleEffectResult&gt;();
+	}
+
+	//Process the effect result, in this case just logging the result value.
+	public override void PlayEffect(ExampleEffectResult effectResult, CollisionResultData collisionResultData)
+	{
+		Debug.Log($"The Value Result is: {effectResult.ValueResult}!");
+	}
+}	
+</pre>
+			</div>
+
+			<hr>
+
+			<div class="doc-section clearfix">
+				<h3 id="pooled-processor">Impact Pooled Effect Processor</h3>
+
+				<p class="doc-text-section">The <span class="doc-code">ImpactPooledEffectProcessor</span> can be used in more complex cases, 
+					when your effect has object instances it needs to manage through object pooling.
+					It also provides support for updating effect instances for sliding and rolling.
+				</p>
+
+				<p class="doc-text-section">Before you can implement your processor, there are a few prerequisites.
+				</p>
+
+				<hr>	
+				<h4 id="pooled-effect-object">Pooled Effect Object</h4>
+
+				<p class="doc-text-section">First, you will need to make a custom script that inherits from <span class="doc-code">PooledEffectObjectBase</span>.
+					This script is responsible for handling each instance of your effect.
+				</p>
+
+				<p class="doc-text-section">The following example shows an object that keeps track of a value.
+					It automatically decrements this value and returns itself to the pool once the value is less than 0.
+				</p>
+<pre>
+//Implementation of PooledEffectObjectBase
+public class ExampleEffectPooledObject : PooledEffectObjectBase
+{
+	private float currentValue;
+
+	//Called when an effect is played for the first time.
+	public void PlayNewEffect(float value)
+	{
+		currentValue = value;
+	}
+
+	//Called when the effect is updated from sliding or rolling.
+	public void UpdateActiveEffect(float value)
+	{
+		currentValue = value;
+	}
+
+	//Run any needed code to update the object each FixedUpdate frame.
+	public override void UpdatePooledObject()
+	{
+		//Decrement the value.
+		currentValue -= Time.deltaTime;
+
+		//Return the object to its pool once value is less than 0.
+		if (currentValue < 0)
+		{
+			ReturnToPool();
+		}
+	}
+}
+</pre>
+				<hr>	
+				<h4 id="pooled-effect-authoring">Pooled Effect Authoring</h4>
+
+				<p class="doc-text-section">Next, your effect authoring script will need to inherit from <span class="doc-code">ImpactPooledEffectAuthoringBase</span>,
+					instead of <span class="doc-code">ImpactEffectAuthoringBase</span>.
+				</p>
+
+				<p class="doc-text-section">This class requires you to implement a method to retrieve a template object:</p>
+<pre>
+//Asset for authoring the effect in the editor.
+[CreateAssetMenu(fileName = "New Example Effect", menuName = "Impact CFX/Example Effect")]
+public class ExampleEffectAuthoring : ImpactPooledEffectAuthoringBase
+{
+	//Can have any fields and properties that are needed for the effect.
+	public ExampleEffectPooledObject Template;
+	public float ValueRoundingIncrement;
+
+	//Convenience method for creating an ExampleEffectData instance and copying properties.
+	public ExampleEffectData GetEffectData()
+	{
+		return new ExampleEffectData()
+		{
+			ValueRoundingIncrement = this.ValueRoundingIncrement
+		};
+	}
+
+	//Gets the object defined as a template for the object pool.
+	public override PooledEffectObjectBase GetTemplateObject()
+	{
+		return Template;
+	}
+}
+</pre>
+			<hr>	
+			<h4 id="pooled-effect-authoring">Pooled Effect Result</h4>
+
+			<p class="doc-text-section">Your effect result will need to implement the <span class="doc-code">IObjectPoolRequest</span> interface.
+				This allows the effect result to be used to request an object from the object pool.
+				This adds quite a few new properties to the result, but almost all of them are used internally by Impact CFX.
+			</p>
+<pre>
+//The result of the effect. This is created when a collision is processed.
+public struct ExampleEffectResult : IEffectResult, IObjectPoolRequest
+{
+	//Properties used internally by Impact CFX
+	public bool IsEffectValid { get; set; }
+	public int CollisionIndex { get; set; }
+	public int MaterialCompositionIndex { get; set; }
+	public bool IsObjectPoolRequestValid { get; set; }
+	public int TemplateID { get; set; }
+	public float Priority { get; set; }
+	public int ObjectIndex { get; set; }
+	public bool IsUpdate { get; set; }
+
+	//These contact point IDs allow Impact CFX to update effects for sliding and rolling.
+	public long ContactPointID { get; set; }
+	public bool CheckContactPointID { get; set; }
+
+	//Fields and properties for results specific to the effect.
+	public float ValueResult;
+}
+</pre>
+			<hr>	
+			<h4 id="pooled-effect-authoring">Pooled Effect Data</h4>
+
+			<p class="doc-text-section">Your effect data will need to be updated to implement <span class="doc-code">IPooledEffectData</span>
+				The important changes here are the setting of <span class="doc-code">TemplateID</span>, <span class="doc-code">Priority</span>, 
+				<span class="doc-code">ContactPointID</span>, <span class="doc-code">CheckContactPointID</span>, and <span class="doc-code">IsObjectPoolRequestValid</span>
+			</p>
+<pre>
+//Holds data for the effect that is suitable for use in burst-compiled jobs.
+public struct ExampleEffectData : IPooledEffectData&lt;ExampleEffectResult&gt;
+{
+	//Properties used internally by Impact CFX
+	public int EffectID { get; set; }
+	public ImpactTagMaskFilter IncludeTags { get; set; }
+	public ImpactTagMaskFilter ExcludeTags { get; set; }
+	public int TemplateID { get; set; }
+
+	//Fields and properties for parameters specific to the effect.
+	public float ValueRoundingIncrement;
+
+	//Takes the given collision data to produce a result.
+	public ExampleEffectResult GetResult(CollisionInputData collisionData, MaterialCompositionData materialCompositionData, ImpactVelocityData velocityData, ref Unity.Mathematics.Random random)
+	{
+		//Initialize result
+		ExampleEffectResult result = new ExampleEffectResult();
+
+		//Get the velocity magnitude and compare it to the velocity threshold to determine which message to display.
+		float velocityMagnitude = math.length(velocityData.ImpactVelocity);
+
+		//Round the value as defined by the rounding increment.
+		result.ValueResult = math.round(velocityMagnitude / ValueRoundingIncrement) * ValueRoundingIncrement;
+
+		//Make sure to set the template ID of the result.
+		result.TemplateID = TemplateID;
+		//Priority is used for object pool stealing.
+		result.Priority = collisionData.Priority;
+
+		//Populate these if you plan on using your effect for sliding and rolling.
+		result.ContactPointID = ContactPointIDGenerator.CalculateContactPointID(collisionData.TriggerObjectID,
+			collisionData.HitObjectID,
+			collisionData.CollisionType,
+			materialCompositionData.MaterialData.MaterialTags.Value,
+			EffectID);
+		result.CheckContactPointID = collisionData.CollisionType.RequiresContactPointID();
+
+		//Can optionally add checks for validity. Invalid results will be discarded.
+		//Note how both IsEffectValid and IsObjectPoolRequestValid are being set.
+		result.IsEffectValid = result.IsObjectPoolRequestValid = true;
+
+		return result;
+	}
+}
+</pre>
+			<hr>
+			<h4 id="object-pool">Object Pool</h4>
+
+			<p class="doc-text-section">Then you will need to create a object pool class that inherits from <span class="doc-code">EffectObjectPool</span>.
+				You don't need to implement anything in this class, it is just so Unity has a non-generic implementation of <span class="doc-code">EffectObjectPool</span> to work with.
+			</p>
+<pre>
+//Don't need to implement anything here, this is just so Unity has a non-generic implementation to work with.
+public class ExampleEffectPool : EffectObjectPool&lt;ExampleEffectPooledObject&gt; { }
+</pre>
+			<hr>	
+			<h4 id="pooled-effect-processor">Pooled Effect Processor</h4>
+
+			<p class="doc-text-section">Finally, you can create a processor that inherits from <span class="doc-code">ImpactPooledEffectProcessor</span>.
+				This is implemented similarly to <span class="doc-code">ImpactSimpleEffectProcessor</span>.
+			</p>
+<pre>
+//Uses the ImpactPooledEffectProcessor as a base for handling most of the implementation.
+public class ExampleEffectProcessor : ImpactPooledEffectProcessor&lt;ExampleEffectAuthoring, ExampleEffectData, ExampleEffectResult, ExampleEffectPool, ExampleEffectPooledObject&gt;
+{
+	//Return an instance using the convenience method from ExampleEffectAuthoring.
+	protected override ExampleEffectData getEffectForPooledEffect(ExampleEffectAuthoring effectAuthoring)
+	{
+		return effectAuthoring.GetEffectData();
+	}
+
+	//Return a new ImpactEffectProcessorJob&lt;ExampleEffectData, ExampleEffectResult&gt; instance.
+	//This is only needed so that Burst knows to compile the generic job with these type arguments.
+	protected override ImpactEffectProcessorJob&lt;ExampleEffectData, ExampleEffectResult&gt; getEffectProcessorJobBase()
+	{
+		return new ImpactEffectProcessorJob&lt;ExampleEffectData, ExampleEffectResult&gt;();
+	}
+
+	//Similar to above, this is only needed so that Burst knows to compile the generic job with these type arguments.
+	protected override ObjectPoolJob&lt;ExampleEffectResult&gt; getObjectPoolJobBase()
+	{
+		return new ObjectPoolJob&lt;ExampleEffectResult&gt;();
+	}
+
+	//Process the effect result using the given pooled object instance
+    public override void PlayPooledEffect(ExampleEffectResult effectResult, ExampleEffectPooledObject pooledObject, CollisionResultData collisionResultData)
+    {
+        //IsUpdate tells us if the effect is a new effect or an update of an existing effect.
+        if (effectResult.IsUpdate)
+            pooledObject.UpdateActiveEffect(effectResult.ValueResult, collisionResultData.Point);
+        else
+            pooledObject.PlayNewEffect(effectResult.ValueResult, collisionResultData.Point);
+    }
+}
+</pre>
+			</div>
+
+			<hr>
+
+			<div class="doc-section clearfix">	
+				<h3 id="add-to-impact-cfx-manager">Add to Impact CFX Manager</h3>
+
+				<img class="doc-image left" src="../images/CustomImpactEffectProcessor.png">
+
+				<p class="doc-text-section">Once you have your custom Impact Effect Processor, 
+					all you need to do is add it as a component to an object and assign it to the <span class="doc-property">Impact Effect Processors</span> list on the <span class="doc-property">Impact CFX Manager</span>.
+				</p>
+			</div>	
+
+			<hr>
+
+			<div class="doc-section clearfix">	
+				<h3 id="example-download">Example Effect Download</h3>
+
+				<p class="doc-text-section">Use the link below to download a package with the example effect outlined in the above sections.
+					You can use this for reference or as a starting point for your own effects.
+				</p>
+
+				<div class="external-link-container flex-row">
+					<a href="../downloads/ImpactCFX-Example-Effect.unitypackage" class="external-link"><i class="fab fa-unity"></i> Example Effect Package</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>    		
+    	</div>	
+    </div>
+  </body>
+</html>

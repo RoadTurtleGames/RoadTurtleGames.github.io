@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Impact Documentation</title>
+
+  	<meta charset="utf-8" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+  	<link rel="stylesheet" href="/css/main.css"/>
+  	<link rel="stylesheet" href="/css/all.css"> 
+  	
+  	<script src="/js/jquery.min.js"></script>
+  	<script src="/js/main.js"></script>
+</head>
+  <body>
+    <!-- Navigation Bar -->
+<header id="navigation" class="navbar flex-row">
+	<div class="flex-row navbar-title">
+		<a class="navbar-turtle-link" href="/">
+			<img class="navbar-turtle" src="/images/turtle.png">
+		</a>
+
+		<a class="navbar-title-link" href="/">
+			<h1>Road Turtle Games</h1>
+		</a>
+
+		<div class="flexible-space"></div>
+
+		<a class="navbar-link hamburger" href="javascript:void(0);" onclick="openHamburger()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+
+	<a class="navbar-link hide-me" href="/games">Games</a>	
+	<a class="navbar-link hide-me" href="/development-tools">Development Tools</a>
+</header>  	
+
+    <div class="vertical-navbar">
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="/impact-interaction-system"><i class="fas fa-arrow-left"></i> Impact Main Page</a>	
+		<a class="vertical-navbar-link" href="api"><i class="fas fa-book"></i> API Reference</a>		
+		<a class="vertical-navbar-link" href="change-logs"><i class="fas fa-list"></i> Change Logs</a>				
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="installation">Installation</a>			
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-tags">Impact Tags</a>		
+		<a class="vertical-navbar-link sub-1" href="impact-tags#tag-library">Impact Tag Library</a>	
+		<a class="vertical-navbar-link sub-1" href="impact-tags#using-tags">Using Impact Tags</a>		
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-manager">Impact Manager</a>		
+		<a class="vertical-navbar-link sub-1" href="impact-manager#material-mapping">Material Mapping</a>		
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-materials">Impact Materials</a>	
+		<a class="vertical-navbar-link sub-1" href="impact-materials#material-interaction-sets">Impact Material Interaction Sets</a>			
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-interactions">Impact Interactions</a>	
+		<a class="vertical-navbar-link sub-1" href="impact-interactions#audio">Audio Interactions</a>	
+		<a class="vertical-navbar-link sub-1" href="impact-interactions#particle">Particle Interactions</a>	
+		<a class="vertical-navbar-link sub-1" href="impact-interactions#decal">Decal Interactions</a>	
+		<a class="vertical-navbar-link sub-2" href="impact-interactions#decal-management">Decal Management</a>				
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-objects">Impact Objects</a>	
+		<a class="vertical-navbar-link sub-1" href="impact-objects#single-material">Impact Object Single Material</a>										
+		<a class="vertical-navbar-link sub-1" href="impact-objects#rigidbody">Impact Object Rigidbody</a>	
+		<a class="vertical-navbar-link sub-2" href="impact-objects#rigidbodies-multiple-materials">Rigidbodies With Multiple Materials</a>
+		<a class="vertical-navbar-link sub-2" href="impact-objects#rigidbody-cheap">Impact Object Rigidbody (Cheap)</a>											
+		<a class="vertical-navbar-link sub-1" href="impact-objects#terrain">Impact Terrain</a>				
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-triggers">Impact Triggers</a>										
+		<a class="vertical-navbar-link sub-1" href="impact-triggers#physics-triggers">Physics Triggers</a>										
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#collision">Impact Collision Trigger</a>	
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#velocity-collision">Impact Velocity Collision Trigger</a>										
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#slide-and-roll">Impact Slide and Roll Trigger</a>										
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#simple">Impact Simple Collision Trigger</a>										
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#speculative">Impact Speculative Collision Trigger</a>										
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#particle">Impact Particle Collision Trigger</a>		
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#on-trigger-enter">Impact On Trigger Enter</a>	
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#on-trigger-stay">Impact On Trigger Stay</a>									
+		<a class="vertical-navbar-link sub-1" href="impact-triggers#other-triggers">Other Triggers</a>										
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#raycast">Impact Raycast Trigger</a>				
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="extending-impact">Extending Impact</a>										
+		<a class="vertical-navbar-link sub-1" href="extending-impact#triggers">Custom Impact Triggers</a>										
+		<a class="vertical-navbar-link sub-2" href="extending-impact#interaction-data">Interaction Data</a>										
+		<a class="vertical-navbar-link sub-1" href="extending-impact#custom-interactions">Custom Impact Interactions</a>										
+		<a class="vertical-navbar-link sub-2" href="extending-impact#interactions">Impact Interactions</a>										
+		<a class="vertical-navbar-link sub-2" href="extending-impact#interaction-results">Interaction Results</a>										
+		<a class="vertical-navbar-link sub-3" href="extending-impact#iinteractionresult">IInteractionResult</a>										
+		<a class="vertical-navbar-link sub-3" href="extending-impact#icontinuousinteractionresult">IContinuousInteractionResult</a>										
+		<a class="vertical-navbar-link sub-1" href="extending-impact#objects">Custom Impact Objects</a>										
+		<a class="vertical-navbar-link sub-1" href="extending-impact#materials">Custom Impact Materials</a>		
+		<a class="vertical-navbar-link sub-1" href="extending-impact#tag-libraries">Custom Impact Tag Libraries</a>					
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="fmod-integration">FMOD Integration</a>		
+		<a class="vertical-navbar-link sub-1" href="fmod-integration#setup">Setup</a>	
+		<a class="vertical-navbar-link sub-1" href="fmod-integration#fmod-audio-interaction">FMOD Audio Interaction</a>			
+		<a class="vertical-navbar-link sub-1" href="fmod-integration#fmod-parameters">FMOD Parameters</a>	
+		<a class="vertical-navbar-link sub-1" href="fmod-integration#notes">Notes</a>	
+	</div>	
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="wwise-integration">Wwise Integration</a>		
+		<a class="vertical-navbar-link sub-1" href="wwise-integration#setup">Setup</a>	
+		<a class="vertical-navbar-link sub-1" href="wwise-integration#wwise-audio-interaction">Wwise Audio Interaction</a>			
+		<a class="vertical-navbar-link sub-1" href="wwise-integration#wwise-rtpcs">Wwise RTPCs</a>	
+		<a class="vertical-navbar-link sub-1" href="wwise-integration#notes">Notes</a>	
+	</div>	
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="masteraudio-integration">Master Audio Integration</a>		
+		<a class="vertical-navbar-link sub-1" href="masteraudio-integration#setup">Setup</a>	
+		<a class="vertical-navbar-link sub-1" href="masteraudio-integration#master-audio-interaction">Master Audio Interaction</a>			
+		<a class="vertical-navbar-link sub-1" href="masteraudio-integration#notes">Notes</a>	
+	</div>
+</div>  	
+
+    <div class="main-container doc-container">
+    	<div style="padding: 0px 80px;">
+    		<div class="main-body">
+	<div class="content">
+		<div class="doc-section clearfix">		
+			<h2>Master Audio Integration</h2>
+			<p>Impact features an optional package for integrating with Master Audio. This allows you to utilize Master Audio for playing audio interactions, rather than using Impact's audio system.</p>		
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h3 id="setup">Setup</h3>
+
+			<p class="doc-text-section">The only setup required is downloading and importing the <span class="doc-property">Impact Master Audio Integration</span> package.</p>
+			
+			<div class="external-link-container flex-row">
+				<a href="../downloads/ImpactMasterAudioIntegration_1_1_0.unitypackage" class="package-link"><i class="fas fa-file-alt"></i> MasterAudio Integration Package (v1.1.0)</a>
+			</div>
+
+			<div class="external-link-container flex-row">
+				<p class="package-version-info">MasterAudio Version: 2020.3.8</p>
+				<p class="package-version-info">Required Impact Version: 1.8.0+</p>
+			</div>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h3 id="master-audio-interaction">Master Audio Interaction</h3>
+
+			<p class="doc-text-section">The Impact Master Audio integration package is very lightweight and only introduces one new asset: the <span class="doc-property">Master Audio Interaction</span>. You can create a new Master Audio Interaction by going to <span class="doc-menu-path">Assets > Create > Impact > Master Audio > Master Audio Interaction</span>.</p>
+
+			<img class="doc-image left" src="../images/MasterAudioInteraction.png">
+	
+			<p class="doc-text-section">The Master Audio Interaction is almost identical to the built-in <span class="doc-property">Audio Interaction</span>, but uses Master Audio Sound Groups instead of Audio Clips.</p>
+
+			<p class="doc-text-section">Master Audio Interactions can have a list of sound groups to play on collision. There are 2 modes that can be used to select which sound group to use:</p>
+			<ul>
+				<li><span class="doc-property">Velocity</span> – Base the output sound group on the input velocity. The velocity will be converted to a normalized (0 to 1) value based on the Velocity Range and Collision Normal Influence, and that value will be used to select the output sound group. The first element corresponds to a value of 0 and the last element corresponds to a value of 1.</li>			
+				<li><span class="doc-property">Random</span> – Select a random sound group from the list.</li>							
+			</ul>	
+			
+			<p class="doc-text-section">In addition to the collision sound groups, you can assign sound groups to <span class="doc-property">Slide Sound Group</span> and <span class="doc-property">Roll Sound Group</span> to use when the object is sliding or rolling. These sounds should be looped.</p>	
+
+			<p class="doc-text-section">All other properties behave the same way as the built-in <span class="doc-property">Audio Interaction</span>, which you can reference <a href="https://roadturtlegames.com/impact-interaction-system/documentation/impact-interactions#audio">here</a>.</p>
+		</div>	
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h3 id="notes">Notes</h3>
+			<ul>	
+				<li>Master Audio contains an option for randomizing pitch in its sound groups. However, Impact overrides this, so you should use the <span class="doc-property">Pitch Randomness</span> property of the <span class="doc-property">Master Audio Interaction</span> to randomize the pitch of your sounds.</li>
+			</ul>	
+		</div>
+	</div>	
+</div>    		
+    	</div>	
+    </div>
+  </body>
+</html>

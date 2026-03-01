@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Impact CFX Documentation</title>
+
+  	<meta charset="utf-8" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+  	<link rel="stylesheet" href="/css/main.css"/>
+  	<link rel="stylesheet" href="/css/all.css"> 
+  	
+  	<script src="/js/jquery.min.js"></script>
+  	<script src="/js/main.js"></script>
+</head>
+  <body>
+    <!-- Navigation Bar -->
+<header id="navigation" class="navbar flex-row">
+	<div class="flex-row navbar-title">
+		<a class="navbar-turtle-link" href="/">
+			<img class="navbar-turtle" src="/images/turtle.png">
+		</a>
+
+		<a class="navbar-title-link" href="/">
+			<h1>Road Turtle Games</h1>
+		</a>
+
+		<div class="flexible-space"></div>
+
+		<a class="navbar-link hamburger" href="javascript:void(0);" onclick="openHamburger()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+
+	<a class="navbar-link hide-me" href="/games">Games</a>	
+	<a class="navbar-link hide-me" href="/development-tools">Development Tools</a>
+</header>  	
+
+    <div class="vertical-navbar">
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="/impact-cfx"><i class="fas fa-arrow-left"></i> Impact CFX Main Page</a>	
+		<a class="vertical-navbar-link" href="index"><i class="fas fa-book"></i> Index</a>		
+		<a class="vertical-navbar-link" href="api"><i class="fas fa-book"></i> API Reference</a>		
+		<a class="vertical-navbar-link" href="change-logs"><i class="fas fa-list"></i> Change Logs</a>		
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="conversion">Conversion From Legacy Impact</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="project-settings">Impact CFX Project Settings</a>
+		<a class="vertical-navbar-link sub-1" href="project-settings#tags">Impact Tags</a>
+		<a class="vertical-navbar-link sub-1" href="project-settings#logging">Logging</a>
+		<a class="vertical-navbar-link" href="material-registry">Impact Material Registry</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-cfx-manager">Impact CFX Manager</a>
+		<a class="vertical-navbar-link sub-1" href="impact-cfx-manager#material-mapping">Material Mapping</a>
+		<a class="vertical-navbar-link sub-1" href="impact-cfx-manager#managing-materials">Managing Registered Materials</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="materials">Impact Materials</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="audio-effect">Audio Effect</a>
+		<a class="vertical-navbar-link sub-1" href="audio-effect#prefab">Audio Source Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="audio-effect#processor">Audio Effect Processor</a>
+		<a class="vertical-navbar-link" href="particle-effect">Particle Effect</a>
+		<a class="vertical-navbar-link sub-1" href="particle-effect#prefab">Particle System Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="particle-effect#processor">Particle Effect Processor</a>
+		<a class="vertical-navbar-link" href="decal-effect">Decal Effect</a>
+		<a class="vertical-navbar-link sub-1" href="decal-effect#prefab">Decal Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="decal-effect#processor">Decal Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="decal-urp-hdrp">URP & HDRP Decals</a>
+		<a class="vertical-navbar-link" href="vfxbatch-effect">VFX Batch Effect</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#master">VFX Batch Master</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#creating">Creating a Visual Effect</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#processor">VFX Batch Effect Processor</a>
+		<a class="vertical-navbar-link" href="managing-attached-effects">Managing Attached Effects</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="objects">Impact Objects</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#single-material">Impact Object Single Material</a>										
+		<a class="vertical-navbar-link sub-1" href="objects#rigidbody">Impact Object Rigidbody</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#custom-velocity">Impact Object Custom Velocity</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#multiple-materials">Objects With Multiple Materials</a>									
+		<a class="vertical-navbar-link sub-1" href="objects#terrain">Impact Terrain</a>				
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="triggers">Impact Triggers</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#common">Common Trigger Properties</a>	
+		<a class="vertical-navbar-link sub-2" href="triggers#material-count">Material Count</a>														
+		<a class="vertical-navbar-link sub-1" href="triggers#collision">Impact Collision Trigger</a>									
+		<a class="vertical-navbar-link sub-1" href="triggers#slide-and-roll">Impact Slide and Roll Trigger</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#speculative">Impact Speculative Collision Trigger</a>									
+		<a class="vertical-navbar-link sub-1" href="triggers#simple">Impact Simple Collision Trigger</a>													
+		<a class="vertical-navbar-link sub-1" href="triggers#particle">Impact Particle Collision Trigger</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#on-trigger-enter">Impact On Trigger Enter</a>
+		<a class="vertical-navbar-link sub-1" href="triggers#on-trigger-stay">Impact On Trigger Stay</a>																	
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="raycasting">Impact Raycasting</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="fmod">FMOD Integration</a>	
+		<a class="vertical-navbar-link" href="wwise">Wwise Integration</a>	
+		<a class="vertical-navbar-link" href="master-audio">Master Audio Integration</a>	
+	</div>
+	
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="custom-triggers">Custom Triggers</a>
+		<a class="vertical-navbar-link" href="custom-objects">Custom Objects</a>
+		<a class="vertical-navbar-link sub-1" href="custom-objects#component">Creating an Impact Object Script</a>
+		<a class="vertical-navbar-link sub-1" href="custom-objects#processor">Impact Material Processors</a>
+		<a class="vertical-navbar-link" href="custom-effects">Custom Effects</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#asset">Impact Effect Authoring Asset</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#effect-result">Effect Result</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#effect-data">Effect Data</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#processor">Impact Effect Processors</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#simple-processor">Impact Simple Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#pooled-processor">Impact Pooled Effect Processor</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-object">Pooled Effect Object</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-authoring">Pooled Effect Authoring</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-result">Pooled Effect Result</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-data">Pooled Effect Data</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#object-pool">Object Pool</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-processor">Pooled Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#add-to-impact-cfx-manager"">Add to Impact CFX Manager</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#example-download"">Example Effect Download</a>
+	</div>
+</div>  	
+
+    <div class="main-container doc-container">
+    	<div style="padding: 0px 80px;">
+    		<div class="main-body">
+	<div class="content">
+		<div class="doc-section clearfix">		
+			<h2>Conversion From Legacy Impact</h2>
+
+			<p class="doc-text-section">Converting your project to use Impact CFX from legacy Impact requires a few steps:</p>
+			<ul>
+				<li><span class="doc-property">Convert Assets</span> - Impact Material and Interaction assets will need to be re-created using their Impact CFX counterparts.</li>
+				<li><span class="doc-property">Convert Components</span> - Impact components will need to be replaced with their Impact CFX counterparts, and any references to assets will need to be updated.</li>
+				<li><span class="doc-property">Convert Scripts</span> - Any custom scripts that use the legacy Impact API will need to be updated.</li>
+			</ul>
+			
+			<p class="doc-text-section">This can be done manually, or you can use the <span class="doc-property">Impact CFX Conversion Tool</span> to automatically convert all assets and components in your project.</p>
+			
+			<div class="external-link-container flex-row">
+				<a href="../downloads/ImpactCFX-ConversionTool-v1.0.4.unitypackage" class="external-link"><i class="fab fa-unity"></i> Impact CFX Conversion Tool (1.0.4)</a>
+			</div>
+
+			<div class="external-link-container flex-row">
+				<p class="package-version-info">Latest Release: 19/01/2024</p>
+			</div>
+
+			<p class="doc-text-section doc-warning">The conversion tool will not convert any custom scripts that use the Impact API or inherit from Impact components.
+				You will need to convert these custom scripts yourself.</p>
+			
+			<p class="doc-text-section doc-warning">IT IS VERY IMPORTANT THAT YOU HAVE A BACKUP OF YOUR PROJECT BEFORE ATTEMPTING TO CONVERT!</p>
+			
+			
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<h3>Using the Impact CFX Conversion Tool</h3>
+
+			<h5>1) Import Impact CFX</h5>
+			<p class="doc-text-section">Import Impact CFX into your project as normal. 
+				Impact CFX and legacy Impact can safely be in your project at the same time without any conflicts or errors.</p>
+
+			<h5>2) Import the Impact CFX Conversion Tool</h5>
+			<p class="doc-text-section">Import the <span class="doc-property">Impact CFX Conversion Tool</span> into your project.</p>
+
+			<h5>3) Open the Impact CFX Conversion Tool Window</h5>
+			<p class="doc-text-section">Open the Impact CFX Conversion Tool by going to <span class="doc-menu-path">Window > Impact CFX > Conversion Tool</span>.</p>
+
+			<p class="doc-text-section">First, click the <span class="doc-property">Scan</span> button scan your project for all Impact assets.</p>
+
+			<p class="doc-text-section">Once this is done, a listing of all Impact assets that were found will be shown. 
+				These lists are categorized by the kind of asset and show you the path for each asset.
+				The conversion tool will also go into scenes and convert any components inside of scenes.</p>
+			
+			<img class="center doc-image" src="../images/ConversionTool.png">
+
+			<p class="doc-text-section">Make sure to carefully look over all of the assets listed here to make sure that they are correct.</p>
+
+			<p class="doc-text-section">There is also the <span class="doc-property">Impact Tag Library</span> field. 
+				This is the Impact Tag Library the conversion tool will use to convert your tag names into Impact CFX project settings.</p>
+
+			<p class="doc-text-section">When you are ready to proceed, click the <span class="doc-property">Convert</span> button. 
+				This may take some time, depending on the size of your project.
+				The specific order of conversion is as follows:</p>
+
+			<ol>
+				<li>First, the Impact Tag Library you provided will be converted to Impact CFX project settings.</li>
+				<li>New Audio, Particle, and Decal effect assets are created to match each corresponding Audio, Particle, or Decal interaction. 
+					The prefabs used by these interactions will have the new Impact CFX components added to them.</li>
+				<li>New Impact CFX Material assets are created to match each corresponding Impact Material.</li>
+				<li>An Impact Material Registry asset is created using the newly created materials from the previous step.</li>
+				<li>All prefabs with Impact Object, Impact Trigger, or Impact Decal Manager components have the corresponding Impact CFX components added to them.</li>
+				<li>Old Impact components are now deleted from the prefabs.</li>
+				<li>Scenes are now opened and scanned for objects with Impact components, adding the corresponding Impact CFX components. 
+					The old Impact components are deleted when the scene conversion is finished, before saving the scene and loading the next scene.</li>
+				<li>Once scene conversion is complete, all old Impact Material and Audio, Particle, or Decal interaction assets are deleted.</li>
+			</ol>
+
+			<h5>4) Test Conversion Results</h5>
+
+			<p class="doc-text-section">All of your Impact assets and components will now be replaced with their Impact CFX counterparts, and should work without any further modifications.
+				Make sure to thoroughly test your project to make sure everything works as expected.
+				The console will also have a log of all assets and components that were converted.
+			</p>
+
+			<h5>5) Update custom scripts</h5>
+
+			<p class="doc-text-section">You will need to manually update any scripts that use the Impact API, or any custom components that inherit from Impact components.</p>
+
+			<h5>6) Remove Legacy Impact</h5>
+
+			<p class="doc-text-section">Finally, you can remove legacy Impact from your project.</p>
+
+		</div>
+	</div>	
+</div>    		
+    	</div>	
+    </div>
+  </body>
+</html>

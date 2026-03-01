@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Impact Triggers</title>
+
+  	<meta charset="utf-8" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+  	<link rel="stylesheet" href="/css/main.css"/>
+  	<link rel="stylesheet" href="/css/all.css"> 
+  	
+  	<script src="/js/jquery.min.js"></script>
+  	<script src="/js/main.js"></script>
+</head>
+  <body>
+    <!-- Navigation Bar -->
+<header id="navigation" class="navbar flex-row">
+	<div class="flex-row navbar-title">
+		<a class="navbar-turtle-link" href="/">
+			<img class="navbar-turtle" src="/images/turtle.png">
+		</a>
+
+		<a class="navbar-title-link" href="/">
+			<h1>Road Turtle Games</h1>
+		</a>
+
+		<div class="flexible-space"></div>
+
+		<a class="navbar-link hamburger" href="javascript:void(0);" onclick="openHamburger()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+
+	<a class="navbar-link hide-me" href="/games">Games</a>	
+	<a class="navbar-link hide-me" href="/development-tools">Development Tools</a>
+</header>  	
+
+    <div class="vertical-navbar">
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="/impact-interaction-system"><i class="fas fa-arrow-left"></i> Impact Main Page</a>	
+		<a class="vertical-navbar-link" href="api"><i class="fas fa-book"></i> API Reference</a>		
+		<a class="vertical-navbar-link" href="change-logs"><i class="fas fa-list"></i> Change Logs</a>				
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="installation">Installation</a>			
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-tags">Impact Tags</a>		
+		<a class="vertical-navbar-link sub-1" href="impact-tags#tag-library">Impact Tag Library</a>	
+		<a class="vertical-navbar-link sub-1" href="impact-tags#using-tags">Using Impact Tags</a>		
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-manager">Impact Manager</a>		
+		<a class="vertical-navbar-link sub-1" href="impact-manager#material-mapping">Material Mapping</a>		
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-materials">Impact Materials</a>	
+		<a class="vertical-navbar-link sub-1" href="impact-materials#material-interaction-sets">Impact Material Interaction Sets</a>			
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-interactions">Impact Interactions</a>	
+		<a class="vertical-navbar-link sub-1" href="impact-interactions#audio">Audio Interactions</a>	
+		<a class="vertical-navbar-link sub-1" href="impact-interactions#particle">Particle Interactions</a>	
+		<a class="vertical-navbar-link sub-1" href="impact-interactions#decal">Decal Interactions</a>	
+		<a class="vertical-navbar-link sub-2" href="impact-interactions#decal-management">Decal Management</a>				
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-objects">Impact Objects</a>	
+		<a class="vertical-navbar-link sub-1" href="impact-objects#single-material">Impact Object Single Material</a>										
+		<a class="vertical-navbar-link sub-1" href="impact-objects#rigidbody">Impact Object Rigidbody</a>	
+		<a class="vertical-navbar-link sub-2" href="impact-objects#rigidbodies-multiple-materials">Rigidbodies With Multiple Materials</a>
+		<a class="vertical-navbar-link sub-2" href="impact-objects#rigidbody-cheap">Impact Object Rigidbody (Cheap)</a>											
+		<a class="vertical-navbar-link sub-1" href="impact-objects#terrain">Impact Terrain</a>				
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-triggers">Impact Triggers</a>										
+		<a class="vertical-navbar-link sub-1" href="impact-triggers#physics-triggers">Physics Triggers</a>										
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#collision">Impact Collision Trigger</a>	
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#velocity-collision">Impact Velocity Collision Trigger</a>										
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#slide-and-roll">Impact Slide and Roll Trigger</a>										
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#simple">Impact Simple Collision Trigger</a>										
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#speculative">Impact Speculative Collision Trigger</a>										
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#particle">Impact Particle Collision Trigger</a>		
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#on-trigger-enter">Impact On Trigger Enter</a>	
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#on-trigger-stay">Impact On Trigger Stay</a>									
+		<a class="vertical-navbar-link sub-1" href="impact-triggers#other-triggers">Other Triggers</a>										
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#raycast">Impact Raycast Trigger</a>				
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="extending-impact">Extending Impact</a>										
+		<a class="vertical-navbar-link sub-1" href="extending-impact#triggers">Custom Impact Triggers</a>										
+		<a class="vertical-navbar-link sub-2" href="extending-impact#interaction-data">Interaction Data</a>										
+		<a class="vertical-navbar-link sub-1" href="extending-impact#custom-interactions">Custom Impact Interactions</a>										
+		<a class="vertical-navbar-link sub-2" href="extending-impact#interactions">Impact Interactions</a>										
+		<a class="vertical-navbar-link sub-2" href="extending-impact#interaction-results">Interaction Results</a>										
+		<a class="vertical-navbar-link sub-3" href="extending-impact#iinteractionresult">IInteractionResult</a>										
+		<a class="vertical-navbar-link sub-3" href="extending-impact#icontinuousinteractionresult">IContinuousInteractionResult</a>										
+		<a class="vertical-navbar-link sub-1" href="extending-impact#objects">Custom Impact Objects</a>										
+		<a class="vertical-navbar-link sub-1" href="extending-impact#materials">Custom Impact Materials</a>		
+		<a class="vertical-navbar-link sub-1" href="extending-impact#tag-libraries">Custom Impact Tag Libraries</a>					
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="fmod-integration">FMOD Integration</a>		
+		<a class="vertical-navbar-link sub-1" href="fmod-integration#setup">Setup</a>	
+		<a class="vertical-navbar-link sub-1" href="fmod-integration#fmod-audio-interaction">FMOD Audio Interaction</a>			
+		<a class="vertical-navbar-link sub-1" href="fmod-integration#fmod-parameters">FMOD Parameters</a>	
+		<a class="vertical-navbar-link sub-1" href="fmod-integration#notes">Notes</a>	
+	</div>	
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="wwise-integration">Wwise Integration</a>		
+		<a class="vertical-navbar-link sub-1" href="wwise-integration#setup">Setup</a>	
+		<a class="vertical-navbar-link sub-1" href="wwise-integration#wwise-audio-interaction">Wwise Audio Interaction</a>			
+		<a class="vertical-navbar-link sub-1" href="wwise-integration#wwise-rtpcs">Wwise RTPCs</a>	
+		<a class="vertical-navbar-link sub-1" href="wwise-integration#notes">Notes</a>	
+	</div>	
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="masteraudio-integration">Master Audio Integration</a>		
+		<a class="vertical-navbar-link sub-1" href="masteraudio-integration#setup">Setup</a>	
+		<a class="vertical-navbar-link sub-1" href="masteraudio-integration#master-audio-interaction">Master Audio Interaction</a>			
+		<a class="vertical-navbar-link sub-1" href="masteraudio-integration#notes">Notes</a>	
+	</div>
+</div>  	
+
+    <div class="main-container doc-container">
+    	<div style="padding: 0px 80px;">
+    		<div class="main-body">
+	<div class="content">
+		<div class="doc-section clearfix">		
+			<h2>Impact Triggers</h2>
+
+			<p class="doc-text-section">Impact Triggers are components that tell Impact Objects when to play interactions and with what data. They are the origin that provides the data which is sent to the object’s Impact Material to ultimately play the interactions defined on the material.</p>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h3 id="physics-triggers">Physics Triggers</h3>
+
+			<p class="doc-text-section">Included with Impact are a set of Impact Triggers that utilize Unity’s <span class="doc-property">OnCollisionEnter</span> and <span class="doc-property">OnCollisionStay</span> messages to trigger physics interactions. These triggers come in both 3D and 2D flavors.</p>
+
+			<img class="doc-image left" src="../images/ImpactTrigger_Collision.png">
+
+			<p class="doc-text-section">Most Impact Triggers have the following properties:</p>
+
+			<ul>				
+				<li><span class="doc-property">Enabled</span> – Whether or not the trigger will process collision messages. You should use this if you want to disable the trigger, since the normal <span class="doc-code">Behaviour.enabled</span> property will still recieve collision messages if the component is disabled.</li>
+				<li><span class="doc-property">Impact Object</span> – The Impact Object collision data will be sent to. If empty, it will attempt to find an Impact Object on the collider that was hit or one of its parents.</li>
+				<li><span class="doc-property">Contacts Mode</span> – How the trigger will handle collision contacts.
+					<ul>
+						<li><span class="doc-property">Single</span> – Use only the first contact.</li>
+						<li><span class="doc-property">Single Average</span> – Average all contact points together to create a single contact point. Both the Position and Normal of the contact points will be averaged.</li>
+						<li><span class="doc-property">Multiple</span> – Use all contact points of the collision.</li>
+					</ul>
+				</li>	
+				<li><span class="doc-property">Use Material Composition</span> – If checked, the trigger will send collision data for each material present on the other object at the point of contact. This can be useful for objects like terrains where textures can be blended together. If not checked, it will use the most prominent material at the contact point.</li>	
+				<li><span class="doc-property">High Priority</span> – If checked, the trigger will ignore the Physics Interactions Limit set in the Impact Manager and will always process collision messages.</li>
+			</ul>	
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h4 id="collision">Impact Collision Trigger</h3>
+
+			<img class="doc-image left" src="../images/ImpactTrigger_Collision.png">
+			<p class="doc-text-section">The Impact Collision Trigger is used to play interactions for single collisions using the <span class="doc-property">OnCollisionEnter</span> message.</p>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h4 id="velocity-collision">Impact Velocity Collision Trigger</h3>
+
+			<p class="doc-text-section">The Impact Velocity Collision Trigger works very similarly to the <span class="doc-property">Impact Collision Trigger</span>. However, unlike the normal collision trigger, it takes into account the actual change in velocity as a result of the collision. This can produce better results when objects of significantly different masses collide.</p>
+			
+			<p class="doc-text-section">For example, if a 1000kg object and a 1kg object collide at high speed, the 1000kg object will experience almost no change in velocity, and thus will produce a less intense interaction. The 1kg object on the other hand will have a big change in velocity, and so will produce a more intense collision.</p>
+
+			<img class="doc-image left" src="../images/ImpactTrigger_VelocityCollision.png">
+
+			<p class="doc-text-section">The Velocity Collision Trigger has one extra property:</p>
+			<ul>
+				<li><span class="doc-property">Velocity Change Influence</span> – How much the change in velocity will influence the resulting intensity. A value of 0 means the velocity change has no influence, and will behave exactly the same as the normal collision trigger.</li>
+			</ul>	
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h4 id="slide-and-roll">Impact Slide and Roll Trigger</h3>
+
+			<p class="doc-text-section">The Impact Slide and Roll Trigger is used to play interactions when objects slide and roll against each other. This trigger uses the <span class="doc-property">OnCollisionStay</span> message.</p>
+
+			<img class="doc-image left" src="../images/ImpactTrigger_SlideAndRoll.png">
+
+			<p class="doc-text-section">The Slide and Roll Trigger has 2 extra properties:</p>
+			<ul>
+				<li><span class="doc-property">Slide Mode</span> – Whether or not to trigger sliding interactions.</li>
+				<li><span class="doc-property">Roll Mode</span> – Whether or not to trigger rolling interactions.</li>	
+			</ul>	
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h4 id="simple">Impact Simple Collision Trigger</h3>
+
+			<img class="doc-image left" src="../images/ImpactTrigger_Simple.png">
+			<p class="doc-text-section">The Impact Simple Collision Trigger is similar to the normal Impact Collision Trigger, but it does not receive any collision data (such as velocity or the object that was collided with). You should only use this in cases where you do not need detailed collision data and high performance is necessary.</p>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h4 id="speculative">Impact Speculative Collision Trigger</h3>
+
+			<p class="doc-text-section">The Impact Speculative Collision Trigger is a special trigger that acts similarly to the normal Impact Collision Trigger, but attempts to handle scenarios that may not register due to the Impact Collision Trigger's use of <span class="doc-property">OnCollisionEnter</span>. For example:</p>
+			<ul>
+				<li>A large, long object that falls over, but stays in contact with the ground the entire time and so does not trigger an <span class="doc-property">OnCollisionEnter</span> message when it hits the ground.</li>
+				<li>Collisions against a single large non-convex mesh collider, where the floor and walls (and possibly ceiling) are part of the same mesh collider. If an object were to slide along the floor and hit a wall in this case, <span class="doc-property">OnCollisionEnter</span> would not be triggered.</li>	
+			</ul>
+
+			<img class="doc-image left" src="../images/ImpactTrigger_Speculative.png">
+
+			<p class="doc-text-section">This trigger has 3 extra properies:</p>
+			<ul>
+				<li><span class="doc-property">Max Collisions Per Frame</span> – The maximum number of collisions that can be generated in a single frame.</li>
+				<li><span class="doc-property">Contact Point Comparison</span> – The threshold to use when comparing contact points. If the square magnitude of the difference of 2 contact points is less than this value, those 2 contact points are considered the same. A lower value will typically result in more contact points, while a higher value will result in fewer.</li>
+				<li><span class="doc-property">Contact Point Lifetime</span> – How many Fixed Update frames a contact point should be alive for before it is removed from the list of active contacts. Increasing this value can reduce the likelyhood of interactions happening in quick succession for the same contact point.</li>	
+			</ul>	
+
+			<p class="doc-text-section">This trigger should only be used if absolutely necessary, as it requires more processing, is not always predictable, and may produce an over-abundance of interactions. Generally speaking the normal Collision Trigger is much more predictable.</p>
+
+			<p class="doc-text-section">Before using this trigger, it may be a good idea to examine your colliders to see if you can split single large colliders into multiple smaller colliders, since OnCollisionEnter will be called when different colliders of the same rigidbody are collided with.</p>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h4 id="particle">Impact Particle Collision Trigger</h3>
+
+			<p class="doc-text-section">The Impact Particle Collision Trigger is a special trigger for dealing with particle collisions.</p>
+
+			<img class="doc-image left" src="../images/ImpactTrigger_Particle.png">
+
+			<p class="doc-text-section">When <span class="doc-property">Particles</span> is assigned to a particle system, the trigger will send interaction data when the particles of the particle system collide with the world to the Impact Object, as if each particle was its own Impact Object.</p>
+
+			<p class="doc-text-section">When not assigned a particle system, the trigger will act similarly to the Impact Collision Trigger, but will receive collision messages from particles.</p>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h4 id="on-trigger-enter">Impact On Trigger Enter</h3>
+
+			<p class="doc-text-section">Impact On Trigger Enter is a trigger that can be used for "Trigger" type colliders.</p>
+
+			<img class="doc-image left" src="../images/ImpactTrigger_OnTriggerEnter.png">
+
+			<p class="doc-text-section">This trigger uses the <span class="doc-property">OnTriggerEnter</span> message to trigger interactions. It has a similar behavior to the normal <span class="doc-property">Impact Collision Trigger</span> and <span class="doc-property">Impact Simple Collision Trigger</span> that use <span class="doc-property">OnCollisionEnter</span>. It has one extra property:</p>
+			<ul>
+				<li><span class="doc-property">Contact Point Mode</span> – Which object's position should be used as the contact point (since detailed contact point data is not available for OnTriggerEnter and OnTriggerStay).
+					<ul>
+						<li><span class="doc-property">This Object</span> – Use this object's position as the contact point.</li>
+						<li><span class="doc-property">Other Object</span> – Use the position of the other object as the contact point.</li>
+					</ul>
+				</li>
+			</ul>	
+		
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h4 id="on-trigger-stay">Impact On Trigger Stay</h3>
+
+			<p class="doc-text-section">Impact On Trigger Stay is a trigger that can be used for "Trigger" type colliders.</p>
+
+			<img class="doc-image left" src="../images/ImpactTrigger_OnTriggerStay.png">
+
+			<p class="doc-text-section">This trigger uses the <span class="doc-property">OnTriggerStay</span> message to trigger interactions. It has a similar behavior to the normal <span class="doc-property">Impact Slide and Roll Trigger</span>, however it cannot differentiate between sliding and rolling, and so will default to sliding. It has one extra property:</p>
+			<ul>
+				<li><span class="doc-property">Contact Point Mode</span> – Which object's position should be used as the contact point (since detailed contact point data is not available for OnTriggerEnter and OnTriggerStay).
+					<ul>
+						<li><span class="doc-property">This Object</span> – Use this object's position as the contact point.</li>
+						<li><span class="doc-property">Other Object</span> – Use the position of the other object as the contact point.</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="clearfix">		
+			<h3 id="other-triggers">Other Triggers</h3>
+		</div>		
+
+		<div class="doc-section clearfix">		
+			<h4 id="raycast">Impact Raycast Trigger</h3>
+
+			<p class="doc-text-section">The Impact Raycast Trigger is a general purpose utility class for triggering interactions from raycasts. Some examples of its applications could be:</p>
+			<ul>
+				<li>Footsteps – Raycasting downward from the player’s position to get the object they are walking over.</li>
+				<li>Weapons – Using raycasts for bullets (either hitscan or with simulated ballistics) to get the object a bullet hit.</li>	
+			</ul>
+
+			<p class="doc-text-section">The Impact Raycast Trigger is a static class, so you do not need to add it as a component. The <span class="doc-property">Trigger</span> methods take RaycastHit or RaycastHit2D data (so you need to perform the raycasting in your code).</p>
+
+			<p class="doc-text-section">The Impact Raycast Trigger has several methods that fall into one of two categories:</p>
+			<ul>
+				<li>Trigger an interaction on the object that was hit by the raycast. You can either pass the Tag Mask, Velocity, From Object, and Interaction Type as separate parameters or pass in a pre-populated <span class="doc-code">IInteractionData</span> object. Use Material Composition, if enabled, will trigger an interaction for each material at the interaction point on the object that was hit.
+					<ul>
+						<li><span class="doc-code">Trigger(ImpactTagMask tagMask, RaycastHit hit, Vector3 velocity, GameObject fromObject, int interactionType, bool useMaterialComposition)</span></li>	
+						<li><span class="doc-code">Trigger&lt;T&gt;(T interactionData, RaycastHit hit, bool useMaterialComposition) where T : IInteractionData</span></li>		
+						<li><span class="doc-code">Trigger2D(ImpactTagMask tagMask, RaycastHit2D hit, Vector3 velocity, GameObject fromObject, int interactionType, bool useMaterialComposition)</span></li>	
+						<li><span class="doc-code">Trigger2D&lt;T&gt;(T interactionData, RaycastHit2D hit, bool useMaterialComposition) where T : IInteractionData</span></li>		
+					</ul>
+				</li>
+				<li>Trigger an interaction on a provided object, gathering material data from the object that was hit. For these you pass in the IImpactObject you want to trigger the interaction on. Use Material Composition, if enabled, will trigger an interaction for each material at the interaction point on the object that was hit.
+					<ul>
+						<li><span class="doc-code">Trigger(IImpactObject impactObject, RaycastHit hit, Vector3 velocity, int interactionType, bool useMaterialComposition)</span></li>	
+						<li><span class="doc-code">Trigger&lt;T&gt;(T interactionData, RaycastHit hit, IImpactObject impactObject, bool useMaterialComposition) where T : IInteractionData</span></li>		
+						<li><span class="doc-code">Trigger2D(IImpactObject impactObject, RaycastHit2D hit, Vector3 velocity, int interactionType, bool useMaterialComposition)</span></li>	
+						<li><span class="doc-code">Trigger2D&lt;T&gt;(T interactionData, RaycastHit2D hit, IImpactObject impactObject, bool useMaterialComposition) where T : IInteractionData</span></li>				
+					</ul>
+				</li>	
+			</ul>
+		</div>		
+	</div>	
+</div>    		
+    	</div>	
+    </div>
+  </body>
+</html>

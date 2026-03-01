@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Impact Documentation</title>
+
+  	<meta charset="utf-8" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+  	<link rel="stylesheet" href="/css/main.css"/>
+  	<link rel="stylesheet" href="/css/all.css"> 
+  	
+  	<script src="/js/jquery.min.js"></script>
+  	<script src="/js/main.js"></script>
+</head>
+  <body>
+    <!-- Navigation Bar -->
+<header id="navigation" class="navbar flex-row">
+	<div class="flex-row navbar-title">
+		<a class="navbar-turtle-link" href="/">
+			<img class="navbar-turtle" src="/images/turtle.png">
+		</a>
+
+		<a class="navbar-title-link" href="/">
+			<h1>Road Turtle Games</h1>
+		</a>
+
+		<div class="flexible-space"></div>
+
+		<a class="navbar-link hamburger" href="javascript:void(0);" onclick="openHamburger()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+
+	<a class="navbar-link hide-me" href="/games">Games</a>	
+	<a class="navbar-link hide-me" href="/development-tools">Development Tools</a>
+</header>  	
+
+    <div class="vertical-navbar">
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="/impact-interaction-system"><i class="fas fa-arrow-left"></i> Impact Main Page</a>	
+		<a class="vertical-navbar-link" href="api"><i class="fas fa-book"></i> API Reference</a>		
+		<a class="vertical-navbar-link" href="change-logs"><i class="fas fa-list"></i> Change Logs</a>				
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="installation">Installation</a>			
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-tags">Impact Tags</a>		
+		<a class="vertical-navbar-link sub-1" href="impact-tags#tag-library">Impact Tag Library</a>	
+		<a class="vertical-navbar-link sub-1" href="impact-tags#using-tags">Using Impact Tags</a>		
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-manager">Impact Manager</a>		
+		<a class="vertical-navbar-link sub-1" href="impact-manager#material-mapping">Material Mapping</a>		
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-materials">Impact Materials</a>	
+		<a class="vertical-navbar-link sub-1" href="impact-materials#material-interaction-sets">Impact Material Interaction Sets</a>			
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-interactions">Impact Interactions</a>	
+		<a class="vertical-navbar-link sub-1" href="impact-interactions#audio">Audio Interactions</a>	
+		<a class="vertical-navbar-link sub-1" href="impact-interactions#particle">Particle Interactions</a>	
+		<a class="vertical-navbar-link sub-1" href="impact-interactions#decal">Decal Interactions</a>	
+		<a class="vertical-navbar-link sub-2" href="impact-interactions#decal-management">Decal Management</a>				
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-objects">Impact Objects</a>	
+		<a class="vertical-navbar-link sub-1" href="impact-objects#single-material">Impact Object Single Material</a>										
+		<a class="vertical-navbar-link sub-1" href="impact-objects#rigidbody">Impact Object Rigidbody</a>	
+		<a class="vertical-navbar-link sub-2" href="impact-objects#rigidbodies-multiple-materials">Rigidbodies With Multiple Materials</a>
+		<a class="vertical-navbar-link sub-2" href="impact-objects#rigidbody-cheap">Impact Object Rigidbody (Cheap)</a>											
+		<a class="vertical-navbar-link sub-1" href="impact-objects#terrain">Impact Terrain</a>				
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-triggers">Impact Triggers</a>										
+		<a class="vertical-navbar-link sub-1" href="impact-triggers#physics-triggers">Physics Triggers</a>										
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#collision">Impact Collision Trigger</a>	
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#velocity-collision">Impact Velocity Collision Trigger</a>										
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#slide-and-roll">Impact Slide and Roll Trigger</a>										
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#simple">Impact Simple Collision Trigger</a>										
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#speculative">Impact Speculative Collision Trigger</a>										
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#particle">Impact Particle Collision Trigger</a>		
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#on-trigger-enter">Impact On Trigger Enter</a>	
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#on-trigger-stay">Impact On Trigger Stay</a>									
+		<a class="vertical-navbar-link sub-1" href="impact-triggers#other-triggers">Other Triggers</a>										
+		<a class="vertical-navbar-link sub-2" href="impact-triggers#raycast">Impact Raycast Trigger</a>				
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="extending-impact">Extending Impact</a>										
+		<a class="vertical-navbar-link sub-1" href="extending-impact#triggers">Custom Impact Triggers</a>										
+		<a class="vertical-navbar-link sub-2" href="extending-impact#interaction-data">Interaction Data</a>										
+		<a class="vertical-navbar-link sub-1" href="extending-impact#custom-interactions">Custom Impact Interactions</a>										
+		<a class="vertical-navbar-link sub-2" href="extending-impact#interactions">Impact Interactions</a>										
+		<a class="vertical-navbar-link sub-2" href="extending-impact#interaction-results">Interaction Results</a>										
+		<a class="vertical-navbar-link sub-3" href="extending-impact#iinteractionresult">IInteractionResult</a>										
+		<a class="vertical-navbar-link sub-3" href="extending-impact#icontinuousinteractionresult">IContinuousInteractionResult</a>										
+		<a class="vertical-navbar-link sub-1" href="extending-impact#objects">Custom Impact Objects</a>										
+		<a class="vertical-navbar-link sub-1" href="extending-impact#materials">Custom Impact Materials</a>		
+		<a class="vertical-navbar-link sub-1" href="extending-impact#tag-libraries">Custom Impact Tag Libraries</a>					
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="fmod-integration">FMOD Integration</a>		
+		<a class="vertical-navbar-link sub-1" href="fmod-integration#setup">Setup</a>	
+		<a class="vertical-navbar-link sub-1" href="fmod-integration#fmod-audio-interaction">FMOD Audio Interaction</a>			
+		<a class="vertical-navbar-link sub-1" href="fmod-integration#fmod-parameters">FMOD Parameters</a>	
+		<a class="vertical-navbar-link sub-1" href="fmod-integration#notes">Notes</a>	
+	</div>	
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="wwise-integration">Wwise Integration</a>		
+		<a class="vertical-navbar-link sub-1" href="wwise-integration#setup">Setup</a>	
+		<a class="vertical-navbar-link sub-1" href="wwise-integration#wwise-audio-interaction">Wwise Audio Interaction</a>			
+		<a class="vertical-navbar-link sub-1" href="wwise-integration#wwise-rtpcs">Wwise RTPCs</a>	
+		<a class="vertical-navbar-link sub-1" href="wwise-integration#notes">Notes</a>	
+	</div>	
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="masteraudio-integration">Master Audio Integration</a>		
+		<a class="vertical-navbar-link sub-1" href="masteraudio-integration#setup">Setup</a>	
+		<a class="vertical-navbar-link sub-1" href="masteraudio-integration#master-audio-interaction">Master Audio Interaction</a>			
+		<a class="vertical-navbar-link sub-1" href="masteraudio-integration#notes">Notes</a>	
+	</div>
+</div>  	
+
+    <div class="main-container doc-container">
+    	<div style="padding: 0px 80px;">
+    		<div class="main-body">
+	<div class="content">
+
+		<h2>Change Logs</h2>
+
+		<div class="doc-section clearfix">
+			<div class="changelog-header-container">
+				<h2 class="changelog-header">1.9.6</h2>
+				<span class="changelog-date">(13/03/2023)</span>
+			</div>
+
+			<h4 class="changelog-header">Features</h4>
+			<ul>				
+				<li>Added Contact Point Mode to OnTriggerEnter and OnTriggerStay triggers, allowing you to specify which object's position should be used as the contact point.</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<div class="changelog-header-container">
+				<h2 class="changelog-header">1.9.5</h2>
+				<span class="changelog-date">(16/08/2022)</span>
+			</div>
+
+			<h4 class="changelog-header">Changes</h4>
+			<ul>				
+				<li>ImpactTriggerBase now implements the IImpactTrigger interface. This allows you to get all Impact Trigger components attached to an object, which was previously not possible due to ImpactTriggerBase being a generic class.</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<div class="changelog-header-container">
+				<h2 class="changelog-header">1.9.4</h2>
+				<span class="changelog-date">(29/07/2022)</span>
+			</div>
+
+			<h4 class="changelog-header">Changes</h4>
+			<ul>				
+				<li>Reworked Terrain Data null-checking. Errors are no longer thrown on Awake if no Terrain Data is present.</li>
+				<li>Improved null checks when getting Impact Materials from Impact Objects.</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<div class="changelog-header-container">
+				<h2 class="changelog-header">1.9.3</h2>
+				<span class="changelog-date">(13/05/2022)</span>
+			</div>
+
+			<h4 class="changelog-header">Changes</h4>
+			<ul>				
+				<li>Impact components now allow for getting data in the editor using non-cached data.</li>
+				<li>ImpactAOTWorkaround class for projects using IL2CPP is now included by default.</li>
+				<li>Rigidbody wrapper now assigns Unknown physics type if no rigidbody is found.</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<div class="changelog-header-container">
+				<h2 class="changelog-header">1.9.2</h2>
+				<span class="changelog-date">(17/03/2022)</span>
+			</div>
+
+			<h4 class="changelog-header">Changes</h4>
+			<ul>
+				<li>Improved undo/redo capabilities of Impact Material editor.</li>
+			</ul>
+
+			<h4 class="changelog-header">Bug Fixes</h4>
+			<ul>
+				<li>Fixed drag-and-drop for collision audio clips not marking the asset as dirty, and so not saving changes properly.</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<div class="changelog-header-container">
+				<h2 class="changelog-header">1.9.1</h2>
+				<span class="changelog-date">(20/01/2022)</span>
+			</div>
+
+			<h4 class="changelog-header">Bug Fixes</h4>
+			<ul>
+				<li>Fixed potential ambiguity between Impact.Utility.Range and System.Range.</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<div class="changelog-header-container">
+				<h2 class="changelog-header">1.9.0</h2>
+				<span class="changelog-date">(10/01/2022)</span>
+			</div>
+
+			<h4 class="changelog-header">Features</h4>
+			<ul>
+				<li>Added Impact Decal Manager component to improve manageability of decals attached to objects.</li>
+				<li>Added static function ReturnAllDecalsToPools to ImpactDecalPool that will release all decals from the objects they are attached to and return them to the pool.</li>
+				<li>Added static events to all interaction results that are invoked when the interaction result is processed.</li>
+			</ul>
+
+			<h4 class="changelog-header">Changes</h4>
+			<ul>
+				<li>Decal pools now scan themselves for missing objects on scene load and will re-instantiate missing objects. This is needed because decals that have been parented to objects cannot be returned to the pool when those objects are destroyed when the scene unloads.</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<div class="changelog-header-container">
+				<h2 class="changelog-header">1.8.0</h2>
+				<span class="changelog-date">(10/12/2021)</span>
+			</div>
+
+			<h4 class="changelog-header">Features</h4>
+			<ul>				
+				<li>Added ImpactOnTriggerEnter and ImpactOnTriggerStay triggers that will trigger interactions from OnTriggerEnter and OnTriggerStay messages respectively.</li>
+				<li>Simple triggers now use their Impact Object's velocity, rather than having no velocity data.</li>
+			</ul>
+
+			<h4 class="changelog-header">Changes</h4>
+			<ul>
+				<li>Minimum Unity version is now 2019.4 as per Asset Store guidelines.</li>
+				<li>Improved performance of PhysicsUtilities.CalculateTangentialVelocity.</li>
+				<li>Deprecated the "Simple" Interaction Type.</li>
+			</ul>
+
+			<h4 class="changelog-header">Bug Fixes</h4>
+			<ul>
+				<li>Fixed incorrect labels on Particle Interaction assets.</li>
+				<li>Fixed possible index out of range errors when getting Impact Materials at the edge of a terrain.</li>
+			</ul>
+
+			<h4 class="changelog-header">Notes</h4>
+			<ul>
+				<li>The FMOD, WWise, and MasterAudio integration packages have been updated to remove the obsolete "Simple" interaction type. Make sure to download the latest version if you are using these packages.</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<div class="changelog-header-container">
+				<h2 class="changelog-header">1.7.3</h2>
+				<span class="changelog-date">(24/11/2021)</span>
+			</div>
+
+			<h4 class="changelog-header">Changes</h4>
+			<ul>				
+				<li>Impact Audio Interaction Collision Audio Clips now use a reorderable list for easy reordering.</li>
+				<li>Cleaned up editor scripts to better support undo/redo.</li>
+				<li>Exposed the previously private Trigger methods of ImpactRaycastTrigger class.</li>
+			</ul>
+
+			<h4 class="changelog-header">Bug Fixes</h4>
+			<ul>
+				<li>Fixed sliding and rolling not respecting the original volume and pitch of the Audio Source Template.</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<div class="changelog-header-container">
+				<h2 class="changelog-header">1.7.2</h2>
+				<span class="changelog-date">(14/10/2021)</span>
+			</div>
+
+			<h4 class="changelog-header">Bug Fixes</h4>
+			<ul>
+				<li>Fixed Simple Collision Triggers not working properly.</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<div class="changelog-header-container">
+				<h2 class="changelog-header">1.7.1</h2>
+				<span class="changelog-date">(27/09/2021)</span>
+			</div>
+
+			<h4 class="changelog-header">Bug Fixes</h4>
+			<ul>
+				<li>Fixed Impact Material editor not properly saving changes to interaction sets.</li>
+				<li>Fixed Impact Particle Interaction and Impact Decal Interaction editors overly restricting the allowed prefab types.</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<div class="changelog-header-container">
+				<h2 class="changelog-header">1.7.0</h2>
+				<span class="changelog-date">(12/08/2021)</span>
+			</div>
+
+			<h4 class="changelog-header">Features</h4>
+			<ul>
+				<li>Added Rotation Mode and Axis options to Impact Particles for more control over how they are aligned with the surface.</li>
+			</ul>
+
+			<h4 class="changelog-header">Bug Fixes</h4>
+			<ul>
+				<li>Fixed incorrect collider usage when creating 2D Impact Contact Points.</li>
+				<li>Fixed possible ambiguity between Impact.Utilities.Range and System.Range.</li>
+				<li>Fixed possible null reference error when object pools are destroyed.</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<div class="changelog-header-container">
+				<h2 class="changelog-header">1.6.0</h2>
+				<span class="changelog-date">(09/07/2021)</span>
+			</div>
+
+			<h4 class="changelog-header">Features</h4>
+			<ul>
+				<li>Added Impact Object Rigidbody (Cheap) component that can be used instead of the normal Impact Object Rigidbody. This version does not use FixedUpdate at the cost of slightly less accurate interactions, particularly when sliding and rolling.</li>
+				<li>Added Pool Fallback Mode property to interaction template objects. This specifies how the object pool should handle cases when all objects are in use.</li>
+			</ul>
+
+			<h4 class="changelog-header">Changes</h4>
+			<ul>
+				<li>Refactored internal pooling system to accomodate for Pool Fallback Mode option.</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<div class="changelog-header-container">
+				<h2 class="changelog-header">1.5.0</h2>
+				<span class="changelog-date">(22/04/2021)</span>
+			</div>
+
+			<h4 class="changelog-header">Changes</h4>
+			<ul>
+				<li>The Audio Source Template property of Audio Interactions has been changed. See below changes for details.</li>
+				<li>Changed Impact Audio Pool implementation. Each audio source template now has it's own pool, similarly to the Particle and Decal interaction pools.</li>
+				<li>Audio Interactions now require a component that inherits ImpactAudioSourceBase to be on the Audio Source Template prefab.</li>
+				<li>Added Pool Size property to Impact Audio Source.</li>
+				<li>Removed Default Audio Pool Size property from the Impact Manager.</li>
+				<li>Improved handling and logging of missing dependencies on Impact components.</li>
+			</ul>
+
+			<h4 class="changelog-header">Bug Fixes</h4>
+			<ul>
+				<li>Impact Object Single Material now does a null-check on the Material on Awake.</li>
+			</ul>
+
+			<h4 class="changelog-header">Upgrading to 1.5.0</h4>
+			<p class="doc-text-section">Version 1.5.0 changes the way the built-in <span class="doc-property">Audio Interactions</span> use their <span class="doc-property">Audio Source Template</span> prefab (Click <a href="./impact-interactions#audio">here</a> to learn more). 
+				These prefabs now require an <span class="doc-property">Impact Audio Source</span> component, which unfortunately will break the references on your Audio Interactions. 
+				A tool has been included in the 1.5.0 release that will attempt to automatically fix all broken references and add the Impact Audio Source component to your audio source templates.
+				Go to <span class="doc-menu-path">Assets > Impact > Fix Audio Source Template References</span> to run this tool, but make sure you have a backup!</p>
+
+			<p class="doc-text-section">Also, if you have pre-made <span class="doc-property">Impact Audio Pool</span> object in your scenes, make sure you delete them, or you will see errors when it they are destroyed on scene load or play mode exit.</p>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<div class="changelog-header-container">
+				<h2 class="changelog-header">1.4.1</h2>
+				<span class="changelog-date">(08/03/2021)</span>
+			</div>
+
+			<h4 class="changelog-header">Changes</h4>
+			<ul>
+				<li>Built-in trigger base classes no longer specify IImpactCollisionWrapper and IImpactContactPoint types for ImpactTriggerBase, allowing you to inherit from them and specify your own types.</li>
+			</ul>
+
+			<h4 class="changelog-header">Bug Fixes</h4>
+			<ul>
+				<li>Fixed Particle and Velocity triggers calculating interaction velocity backwards.</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<div class="changelog-header-container">
+				<h2 class="changelog-header">1.4.0</h2>
+				<span class="changelog-date">(01/03/2021)</span>
+			</div>
+			<h4 class="changelog-header">Features</h4>
+			<ul>
+				<li>Added new Velocity Collision Trigger. This trigger works similarly to the normal Collision Trigger, however it takes into account the actual change in velocity experienced by the rigidbody. This can produce better results when objects of significantly different masses collide. The object with a higher mass will have less velocity change and so will produce a less intense collision, the object with a lower mass will produce a more intense collision.</li>
+				<li>Added Rotation Mode property to Impact Decals.</li>
+				<li>Added Axis property to Impact Decals.</li>
+				<li>Added Version.txt for showing the currently installed version.</li>
+			</ul>
+
+			<h4 class="changelog-header">Changes</h4>
+			<ul>
+				<li>Removed Interaction Result Pool Size from Impact Manager. These pools are now dynamically sized as needed.</li>
+				<li>Removed GetKey function from IInteractionData interface.</li>
+				<li>Updated how interaction result keys are generated to reduce likelyhood of collisions.</li>
+				<li>ImpactTriggerBase now has IImpactCollisionWrapper and IImpactContactPoint type constraints at the class level, rather than on the individual methods.</li>
+			</ul>
+
+			<h4 class="changelog-header">Bug Fixes</h4>
+			<ul>
+				<li>Fixed Impact Material returning prematurely in some cases, meaning not all interaction results would be returned.</li>
+				<li>Fixed Impact Audio Source not copying spatialize and spatializePostEffects properties from the template.</li>
+			</ul>
+		</div>
+
+		<p class="doc-text-section">If using the <a href="./fmod-integration.html">FMOD</a> or <a href="./wwise-integration.html">WWise</a> integration packages, make sure to download the latest version of the package.</p>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<div class="changelog-header-container">
+				<h2 class="changelog-header">1.3.1</h2>
+				<span class="changelog-date">(22/12/2020)</span>
+			</div>
+
+			<h4 class="changelog-header">Bug Fixes</h4>
+			<ul>
+				<li>Fixed Impact Manager using Physic Material map instead of Physics Material 2D map when initializing material mapping.</li>
+				<li>Fixed Impact Materials not being marked as dirty when modifying interactions, causing changes to sometimes not be saved.</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<div class="changelog-header-container">
+				<h2 class="changelog-header">1.3.0</h2>
+				<span class="changelog-date">(14/12/2020)</span>
+			</div>
+
+			<h4 class="changelog-header">Features</h4>
+			<ul>
+				<li>Created custom dropdown for Tag selection, which includes search capability.</li>	
+				<li>Added OnTriggered event to ImpactTriggerBase and its implementations, which can be used to receive events when a trigger is triggered.</li>			
+			</ul>
+
+			<h4 class="changelog-header">Changes</h4>
+			<ul>		
+				<li>Interaction result objects are now pooled by the Impact Manager. The size of the pools is controlled by the Interaction Result Pool Size property.</li>			
+				<li>ImpactManager.HasReachedPhysicsInteractionsLimit no longer increments the physics interactions counter. Added separate IncrementPhysicsInteractionsLimit method to do this instead.</li>	
+				<li>Removed null check from ImpactManagerInstance.GetInstance and replaced with boolean to improve performance.</li>
+
+				<li>IInteractionResult interface no longer requires OriginalData property.</li>
+				<li>IContinuousInteractionResult.KeepAlive now takes an IInteractionResult object as a parameter instead of IInteractionData.</li>		
+				<li>Key property for IContinuousInteractionResult is now a long instead of an int.</li>				
+
+				<li>Improved Particle Collision Trigger to respect material mapping and have more accurate collision velocity.</li>
+				<li>Removed Contact Mode property from Particle Collision Trigger inspector since it is not used.</li>
+
+				<li>Built-in interactions now check intensity before creating an Interaction Result, saving wasted processing time.</li>
+				<li>Built-in interactions now check if the active continuous interactions limit has been reached before processing, saving wasted processing time.</li>
+
+				<li>Modified IImpactCollisionWrapper interface to be generic, now requiring an IImpactContactPoint implementation to be specified.</li>
+				<li>Modified methods of ImpactTriggerBase that take IImpactCollisionWrapper and IImpactContactPoint parameters to be generic, which prevents GC allocation of structs that implement an interface.</li>
+				<li>Changed InteractionData to struct.</li>
+				<li>All methods that took an IInteractionData parameter are now generic, which prevents GC allocation of structs that implement an interface.</li>
+
+				<li>Various improvements to utility functions to clean up redundant code and improve performance.</li>
+			</ul>
+
+			<h4 class="changelog-header">Bug Fixes</h4>
+			<ul>
+				<li>Fixed issues with tag selection when tags are not defined in a continuous sequence (i.e. numbers are skipped).</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<div class="changelog-header-container">
+				<h2 class="changelog-header">1.2.2</h2>
+				<span class="changelog-date">(11/11/2020)</span>
+			</div>
+
+			<h4 class="changelog-header">Changes</h4>
+			<ul>
+				<li>Range.Normalize now will return 1 if the Min, Max, and input values are all equal.</li>
+			</ul>
+
+			<h4 class="changelog-header">Bug Fixes</h4>
+			<ul>
+				<li>Impact Manager now disposes of any active continuous interactions when it is destroyed.</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<div class="changelog-header-container">
+				<h2 class="changelog-header">1.2.1</h2>
+				<span class="changelog-date">(21/08/2020)</span>
+			</div>
+
+			<h4 class="changelog-header">Bug Fixes</h4>
+			<ul>
+				<li>Fixed Speculative Collision Trigger error caused by using the wrong value for contacts index.</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<div class="changelog-header-container">
+				<h2 class="changelog-header">1.2.0</h2>
+				<span class="changelog-date">(19/08/2020)</span>
+			</div>
+
+			<h4 class="changelog-header">Features</h4>
+			<ul>
+				<li>Added Set As Active Instance property to Impact Manager.</li>
+				<li>Added Enabled property to all physics triggers.</li>		
+				<li>Added Multiple contact mode.</li>		
+				<li>Added Contact Point Comparison property to Impact Speculative Collision Trigger.</li>				
+				<li>Added Contact Point Lifetime property to Impact Speculative Collision Trigger.</li>
+			</ul>
+
+			<h4 class="changelog-header">Changes</h4>
+			<ul>
+				<li>Improved ImpactManager instance handling.
+					<ul>
+						<li>Created instance members in ImpactManager to mirror the static members.</li>	
+						<li>Moved all static members previously on ImpactManager to new ImpactManagerInstance static class.</li>
+						<li>Added SetInstance and GetInstance methods to ImpactManagerInstance for setting and getting the currently active ImpactManager instance.</li>
+					</ul>
+				</li>			
+				<li>Changed how the Impact Speculative Collision Trigger compares contacts from rounding to comparing sqrMagnitude.</li>	
+				<li>Impact Speculative Collision Trigger now also uses OnCollisionEnter message so that collision messages are handled more consistently.</li>	
+				<li>Changed SpeculativeCollisionContact class to a struct.</li>
+			</ul>
+
+			<h4 class="changelog-header">Bug Fixes</h4>
+			<ul>
+				<li>Fixed Single Average contact mode not copying Physics Material IDs from the original contact points needed for Material Mapping.</li>	
+				<li>Removed the Contact Mode property from the Impact Speculative Collision Trigger inspector since it is not actually used.</li>	
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<div class="changelog-header-container">
+				<h2 class="changelog-header">1.1.2</h2>
+				<span class="changelog-date">(20/07/2020)</span>
+			</div>
+
+			<h4 class="changelog-header">Changes</h4>
+			<ul>
+				<li>Impact Terrain now better handles Material Composition:
+					<ul>
+						<li>Results are now returned sorted from highest to lowest Composition Value.</li>		
+						<li>Terrain layers with the same Impact Material are now combined into a single result.</li>			
+						<li>When the number of terrain layers is greater than the Material Composition Buffer Size, the most prevalent materials will be returned, and the sum of their Composition Values will be (close to) 1.</li>	
+					</ul>
+				</li>	
+			</ul>
+
+			<h4 class="changelog-header">Bug Fixes</h4>
+			<ul>
+				<li>Fixed various issues with Impact Raycast Trigger methods.</li>	
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<div class="changelog-header-container">
+				<h2 class="changelog-header">1.1.1</h2>
+				<span class="changelog-date">(25/06/2020)</span>
+			</div>
+
+			<h4 class="changelog-header">Changes</h4>
+			<ul>
+				<li>Made active continuous interactions array no longer static.</li>				
+				<li>Improved handling of multiple Impact Manager instances. A warning will be logged to the console and duplicate Impact Managers will be disabled.</li>	
+			</ul>
+
+			<h4 class="changelog-header">Bug Fixes</h4>
+			<ul>
+				<li>Fixed continuous interactions being processed when the active continuous interactions array is full, which would cause them to never be updated or disposed of. Continuous interactions will no longer be processed if the active continuous interactions array is full.</li>	
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<div class="changelog-header-container">
+				<h2 class="changelog-header">1.1.0</h2>
+				<span class="changelog-date">(12/06/2020)</span>
+			</div>
+
+			<h4 class="changelog-header">Features</h4>
+			<ul>
+				<li>Added Impact Manager script.
+					<ul>
+						<li>Added Default Audio Pool Size property.</li>
+						<li>Added Physics Interactions Limit property.</li>
+						<li>Added Interaction Result Buffer Size property.</li>
+						<li>Added Max Active Continuous Interactions property.</li>
+						<li>Added Material Composition Buffer Size property.</li>
+						<li>Added ability to map Unity's physics materials (both 3D and 2D) to Impact Materials.</li>												
+					</ul>
+				</li>
+				<li>The built-in physics triggers now check Physics Interactions Limit when a collision message is recieved. If the limit has been reached further processing will be aborted.</li>
+				<li>Added High Priority property to ImpactTriggerBase for overrding Physics Interactions Limit.</li>
+				<li>Added Contacts Mode property to ImpactTriggerBase with Single and Single Averaged options.</li>
+				<li>Added ImpactObjectRigidbodyChild component that can be used for rigidbodies with multiple materials and has less overhead than ImpactObjectRigidbody.</li>
+				<li>Added more ImpactRaycastTrigger methods (including methods for 2D raycasting).</li>
+			</ul>
+
+			<h4 class="changelog-header">Changes</h4>
+			<ul>				
+				<li>Changed string InteractionKeywords property to int InteractionType on IInteractionData interface to increase performance.</li>
+				<li>Changed GetKey function on IInteractionData interface to return an int to eliminate string concatenation and increase performance.</li>
+				<li>Added useMaterialComposition parameter to existing ImpactRaycastTrigger methods.</li>
+				<li>Removed ImpactTriggerInteractionData class and renamed buildAndSendInteractionData to buildInteractionData on ImpactTriggerBase. buildInteractionData now takes all parameters separately instead of as a class to reduce GC allocation.</li>
+				<li>Removed continuous interaction handling and FixedUpdate from ImpactObjectBase. This is now part of ImpactManager.</li>
+				<li>Removed ProcessInteraction and ProccessContinuousInteraction from IImpactObject interface. These methods are now a part of ImpactManager.</li>
+				<li>Removed interaction result buffer array from ImpactObjectBase. This is now a shared static array on ImpactManager.</li>
+				<li>Removed material composition result buffer array from ImpactTriggerBase. This is now a shared static array on ImpactManager.</li>	
+				<li>Refactored ImpactRigidbodyWrapper to include center of mass, velocity, and angular velocity code that was previously in ImpactObjectRigidbody.</li>
+			</ul>
+
+			<h4 class="changelog-header">Bug Fixes</h4>
+			<ul>
+				<li>Fixed cached material composition not being updated on ImpactObjectSingleMaterial when the Material property is changed at runtime.</li>
+				<li>Fixed IndexOutOfRange exception when assigning a tag library with no tags to a material.</li>		
+			</ul>
+		</div>
+	</div>	
+</div>    		
+    	</div>	
+    </div>
+  </body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Impact CFX Documentation</title>
+
+  	<meta charset="utf-8" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+  	<link rel="stylesheet" href="/css/main.css"/>
+  	<link rel="stylesheet" href="/css/all.css"> 
+  	
+  	<script src="/js/jquery.min.js"></script>
+  	<script src="/js/main.js"></script>
+</head>
+  <body>
+    <!-- Navigation Bar -->
+<header id="navigation" class="navbar flex-row">
+	<div class="flex-row navbar-title">
+		<a class="navbar-turtle-link" href="/">
+			<img class="navbar-turtle" src="/images/turtle.png">
+		</a>
+
+		<a class="navbar-title-link" href="/">
+			<h1>Road Turtle Games</h1>
+		</a>
+
+		<div class="flexible-space"></div>
+
+		<a class="navbar-link hamburger" href="javascript:void(0);" onclick="openHamburger()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+
+	<a class="navbar-link hide-me" href="/games">Games</a>	
+	<a class="navbar-link hide-me" href="/development-tools">Development Tools</a>
+</header>  	
+
+    <div class="vertical-navbar">
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="/impact-cfx"><i class="fas fa-arrow-left"></i> Impact CFX Main Page</a>	
+		<a class="vertical-navbar-link" href="index"><i class="fas fa-book"></i> Index</a>		
+		<a class="vertical-navbar-link" href="api"><i class="fas fa-book"></i> API Reference</a>		
+		<a class="vertical-navbar-link" href="change-logs"><i class="fas fa-list"></i> Change Logs</a>		
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="conversion">Conversion From Legacy Impact</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="project-settings">Impact CFX Project Settings</a>
+		<a class="vertical-navbar-link sub-1" href="project-settings#tags">Impact Tags</a>
+		<a class="vertical-navbar-link sub-1" href="project-settings#logging">Logging</a>
+		<a class="vertical-navbar-link" href="material-registry">Impact Material Registry</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-cfx-manager">Impact CFX Manager</a>
+		<a class="vertical-navbar-link sub-1" href="impact-cfx-manager#material-mapping">Material Mapping</a>
+		<a class="vertical-navbar-link sub-1" href="impact-cfx-manager#managing-materials">Managing Registered Materials</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="materials">Impact Materials</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="audio-effect">Audio Effect</a>
+		<a class="vertical-navbar-link sub-1" href="audio-effect#prefab">Audio Source Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="audio-effect#processor">Audio Effect Processor</a>
+		<a class="vertical-navbar-link" href="particle-effect">Particle Effect</a>
+		<a class="vertical-navbar-link sub-1" href="particle-effect#prefab">Particle System Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="particle-effect#processor">Particle Effect Processor</a>
+		<a class="vertical-navbar-link" href="decal-effect">Decal Effect</a>
+		<a class="vertical-navbar-link sub-1" href="decal-effect#prefab">Decal Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="decal-effect#processor">Decal Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="decal-urp-hdrp">URP & HDRP Decals</a>
+		<a class="vertical-navbar-link" href="vfxbatch-effect">VFX Batch Effect</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#master">VFX Batch Master</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#creating">Creating a Visual Effect</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#processor">VFX Batch Effect Processor</a>
+		<a class="vertical-navbar-link" href="managing-attached-effects">Managing Attached Effects</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="objects">Impact Objects</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#single-material">Impact Object Single Material</a>										
+		<a class="vertical-navbar-link sub-1" href="objects#rigidbody">Impact Object Rigidbody</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#custom-velocity">Impact Object Custom Velocity</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#multiple-materials">Objects With Multiple Materials</a>									
+		<a class="vertical-navbar-link sub-1" href="objects#terrain">Impact Terrain</a>				
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="triggers">Impact Triggers</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#common">Common Trigger Properties</a>	
+		<a class="vertical-navbar-link sub-2" href="triggers#material-count">Material Count</a>														
+		<a class="vertical-navbar-link sub-1" href="triggers#collision">Impact Collision Trigger</a>									
+		<a class="vertical-navbar-link sub-1" href="triggers#slide-and-roll">Impact Slide and Roll Trigger</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#speculative">Impact Speculative Collision Trigger</a>									
+		<a class="vertical-navbar-link sub-1" href="triggers#simple">Impact Simple Collision Trigger</a>													
+		<a class="vertical-navbar-link sub-1" href="triggers#particle">Impact Particle Collision Trigger</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#on-trigger-enter">Impact On Trigger Enter</a>
+		<a class="vertical-navbar-link sub-1" href="triggers#on-trigger-stay">Impact On Trigger Stay</a>																	
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="raycasting">Impact Raycasting</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="fmod">FMOD Integration</a>	
+		<a class="vertical-navbar-link" href="wwise">Wwise Integration</a>	
+		<a class="vertical-navbar-link" href="master-audio">Master Audio Integration</a>	
+	</div>
+	
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="custom-triggers">Custom Triggers</a>
+		<a class="vertical-navbar-link" href="custom-objects">Custom Objects</a>
+		<a class="vertical-navbar-link sub-1" href="custom-objects#component">Creating an Impact Object Script</a>
+		<a class="vertical-navbar-link sub-1" href="custom-objects#processor">Impact Material Processors</a>
+		<a class="vertical-navbar-link" href="custom-effects">Custom Effects</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#asset">Impact Effect Authoring Asset</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#effect-result">Effect Result</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#effect-data">Effect Data</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#processor">Impact Effect Processors</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#simple-processor">Impact Simple Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#pooled-processor">Impact Pooled Effect Processor</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-object">Pooled Effect Object</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-authoring">Pooled Effect Authoring</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-result">Pooled Effect Result</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-data">Pooled Effect Data</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#object-pool">Object Pool</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-processor">Pooled Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#add-to-impact-cfx-manager"">Add to Impact CFX Manager</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#example-download"">Example Effect Download</a>
+	</div>
+</div>  	
+
+    <div class="main-container doc-container">
+    	<div style="padding: 0px 80px;">
+    		<div class="main-body">
+	<div class="content">
+		<div class="doc-section clearfix">	
+			<h2>Impact CFX Project Settings</h2>
+
+			<p class="doc-text-section">Impact CFX Project Settings are defined in <span class="doc-menu-path">Edit > Project Settings > Impact CFX</span>.</p>
+		</div>
+
+		<div class="doc-section clearfix">	
+			<h3 id="tags">Impact Tags</h3>
+
+			<img class="doc-image left" src="../images/ImpactCFXSettings.png">
+
+			<p class="doc-text-section"><span class="doc-property">Impact Tags</span> are the foundation though which Impact determines what effects to play. 
+				They are how Impact communicates material information between Impact Materials, so that the materials know what effects to play for a collision.</p>
+			
+			<p class="doc-text-section">The tag names defined here are editor-only. Under the hood, tags are stored in a 32-bit integer, similarly to Unity's own Layers system, hence the 32 tag limit.</p>
+
+			<p class="doc-text-section">Getting the most out of Impact Tags takes some careful consideration. 
+				Generally, it is best to use them to group and categorize materials that share common characteristics.
+				For instance, materials like Stone, Wood, Metal could all be considered "Hard" materials, while materials like Grass, Carpet, Sand could be considered "Soft" materials.
+				Here are some examples of ways you can define tags:</p>
+
+			<ul>
+				<li><span class="doc-property">Material Types</span> - You can group materials into different types such as <span class="doc-property">Hard</span> and <span class="doc-property">Soft</span> to play different audio for collisions with hard and soft objects.</li>
+				<li><span class="doc-property">Material Attributes</span> - You can define tags for material attributes such as <span class="doc-property">Dusty</span> to show dust effects and <span class="doc-property">Metallic</span> to show spark effects.</li>
+				<li><span class="doc-property">Actions</span> - You can define tags for actions such as <span class="doc-property">Footstep</span> to play footstep effects and <span class="doc-property">Bullet</span> to show bullet impact effects.</li>
+			</ul>
+		</div>
+
+		<div class="doc-section clearfix">	
+			<h3 id="logging">Logging</h3>
+
+			<p class="doc-text-section">The Impact CFX Settings also has the ability to <span class="doc-property">Enable Impact CFX Logging</span>.</p>
+
+			<p class="doc-text-section">If you are having issues with your effects not playing as expected, it may be helpful to enable logging.
+				This will log collision events and effect processing, giving some insight into how the system is processing a collision, which may help determine where any problems lie.
+			</p>
+
+			<p class="doc-text-section">Note: Logging is enabled via the <span class="doc-code">IMPACTCFX_DEBUG</span> Scripting Define Symbol, which you can manually add and remove from your Player settings if you wish.</p>
+
+			<p class="doc-text-section">Below is an example of the logging for a single collision event.</p>
+
+			<img class="doc-image center" src="../images/Console.png">
+			<ul>
+				<li><span class="doc-property">1</span> - Logs marked with <span class="doc-property">[TRIGGER]</span> come from the collision triggers.
+					These logs tell you exactly what trigger was invoked and on what object.
+					If the trigger aborts processing the collision event, a reason will be given in these logs.
+					If you don't see any trigger logs, this means that Unity's collision messages are not being invoked, indicating a physics issue outside of Impact CFX.</li>
+				<li><span class="doc-property">2</span> - Logs marked with <span class="doc-property">[QUEUE]</span> come from the Impact CFX Manager when a collision is queued for processing.
+					You will also see these for collision effects created from raycasts.</li>
+				<li><span class="doc-property">3</span> - This designates the beginning of the actual processing of the queued collision events, marked with <span class="doc-property">[PROCESSING]</span></li>
+				<li><span class="doc-property">4</span> - This displays information about an effect that was processed. You can see the type of effect as well as information about the effect result.
+					If the effect is marked as invalid, a reason will be given.
+					If you don't see any logs for an effect, it likely indicates an issue with your Impact Materials.</li>
+				<li><span class="doc-property">5</span> - Logs marked with <span class="doc-property">[PLAY]</span> come from Audio Source, Particle, and Decal objects.
+					They are logged when one of these objects is told to play an effect.
+					These logs give information about the effect data passed to the objects.</li>
+			</ul>
+
+			<p class="doc-text-section"></p>
+
+			<p class="doc-warning">ENABLING LOGGING CAN GENERATE A LOT OF MESSAGES.</p>		
+			<p class="doc-warning">It is best to test things with as few objects as possible, otherwise your console can very quickly be filled with hundreds of messages.</p>		
+		</div>
+	</div>	
+</div>    		
+    	</div>	
+    </div>
+  </body>
+</html>

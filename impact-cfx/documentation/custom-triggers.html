@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Impact CFX Documentation</title>
+
+  	<meta charset="utf-8" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+  	<link rel="stylesheet" href="/css/main.css"/>
+  	<link rel="stylesheet" href="/css/all.css"> 
+  	
+  	<script src="/js/jquery.min.js"></script>
+  	<script src="/js/main.js"></script>
+</head>
+  <body>
+    <!-- Navigation Bar -->
+<header id="navigation" class="navbar flex-row">
+	<div class="flex-row navbar-title">
+		<a class="navbar-turtle-link" href="/">
+			<img class="navbar-turtle" src="/images/turtle.png">
+		</a>
+
+		<a class="navbar-title-link" href="/">
+			<h1>Road Turtle Games</h1>
+		</a>
+
+		<div class="flexible-space"></div>
+
+		<a class="navbar-link hamburger" href="javascript:void(0);" onclick="openHamburger()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+
+	<a class="navbar-link hide-me" href="/games">Games</a>	
+	<a class="navbar-link hide-me" href="/development-tools">Development Tools</a>
+</header>  	
+
+    <div class="vertical-navbar">
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="/impact-cfx"><i class="fas fa-arrow-left"></i> Impact CFX Main Page</a>	
+		<a class="vertical-navbar-link" href="index"><i class="fas fa-book"></i> Index</a>		
+		<a class="vertical-navbar-link" href="api"><i class="fas fa-book"></i> API Reference</a>		
+		<a class="vertical-navbar-link" href="change-logs"><i class="fas fa-list"></i> Change Logs</a>		
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="conversion">Conversion From Legacy Impact</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="project-settings">Impact CFX Project Settings</a>
+		<a class="vertical-navbar-link sub-1" href="project-settings#tags">Impact Tags</a>
+		<a class="vertical-navbar-link sub-1" href="project-settings#logging">Logging</a>
+		<a class="vertical-navbar-link" href="material-registry">Impact Material Registry</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-cfx-manager">Impact CFX Manager</a>
+		<a class="vertical-navbar-link sub-1" href="impact-cfx-manager#material-mapping">Material Mapping</a>
+		<a class="vertical-navbar-link sub-1" href="impact-cfx-manager#managing-materials">Managing Registered Materials</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="materials">Impact Materials</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="audio-effect">Audio Effect</a>
+		<a class="vertical-navbar-link sub-1" href="audio-effect#prefab">Audio Source Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="audio-effect#processor">Audio Effect Processor</a>
+		<a class="vertical-navbar-link" href="particle-effect">Particle Effect</a>
+		<a class="vertical-navbar-link sub-1" href="particle-effect#prefab">Particle System Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="particle-effect#processor">Particle Effect Processor</a>
+		<a class="vertical-navbar-link" href="decal-effect">Decal Effect</a>
+		<a class="vertical-navbar-link sub-1" href="decal-effect#prefab">Decal Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="decal-effect#processor">Decal Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="decal-urp-hdrp">URP & HDRP Decals</a>
+		<a class="vertical-navbar-link" href="vfxbatch-effect">VFX Batch Effect</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#master">VFX Batch Master</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#creating">Creating a Visual Effect</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#processor">VFX Batch Effect Processor</a>
+		<a class="vertical-navbar-link" href="managing-attached-effects">Managing Attached Effects</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="objects">Impact Objects</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#single-material">Impact Object Single Material</a>										
+		<a class="vertical-navbar-link sub-1" href="objects#rigidbody">Impact Object Rigidbody</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#custom-velocity">Impact Object Custom Velocity</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#multiple-materials">Objects With Multiple Materials</a>									
+		<a class="vertical-navbar-link sub-1" href="objects#terrain">Impact Terrain</a>				
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="triggers">Impact Triggers</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#common">Common Trigger Properties</a>	
+		<a class="vertical-navbar-link sub-2" href="triggers#material-count">Material Count</a>														
+		<a class="vertical-navbar-link sub-1" href="triggers#collision">Impact Collision Trigger</a>									
+		<a class="vertical-navbar-link sub-1" href="triggers#slide-and-roll">Impact Slide and Roll Trigger</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#speculative">Impact Speculative Collision Trigger</a>									
+		<a class="vertical-navbar-link sub-1" href="triggers#simple">Impact Simple Collision Trigger</a>													
+		<a class="vertical-navbar-link sub-1" href="triggers#particle">Impact Particle Collision Trigger</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#on-trigger-enter">Impact On Trigger Enter</a>
+		<a class="vertical-navbar-link sub-1" href="triggers#on-trigger-stay">Impact On Trigger Stay</a>																	
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="raycasting">Impact Raycasting</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="fmod">FMOD Integration</a>	
+		<a class="vertical-navbar-link" href="wwise">Wwise Integration</a>	
+		<a class="vertical-navbar-link" href="master-audio">Master Audio Integration</a>	
+	</div>
+	
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="custom-triggers">Custom Triggers</a>
+		<a class="vertical-navbar-link" href="custom-objects">Custom Objects</a>
+		<a class="vertical-navbar-link sub-1" href="custom-objects#component">Creating an Impact Object Script</a>
+		<a class="vertical-navbar-link sub-1" href="custom-objects#processor">Impact Material Processors</a>
+		<a class="vertical-navbar-link" href="custom-effects">Custom Effects</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#asset">Impact Effect Authoring Asset</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#effect-result">Effect Result</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#effect-data">Effect Data</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#processor">Impact Effect Processors</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#simple-processor">Impact Simple Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#pooled-processor">Impact Pooled Effect Processor</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-object">Pooled Effect Object</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-authoring">Pooled Effect Authoring</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-result">Pooled Effect Result</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-data">Pooled Effect Data</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#object-pool">Object Pool</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-processor">Pooled Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#add-to-impact-cfx-manager"">Add to Impact CFX Manager</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#example-download"">Example Effect Download</a>
+	</div>
+</div>  	
+
+    <div class="main-container doc-container">
+    	<div style="padding: 0px 80px;">
+    		<div class="main-body">
+	<div class="content">
+		<div class="doc-section clearfix">	
+			<div class="doc-section clearfix">		
+				<h2>Custom Triggers</h2>
+	
+				<p class="doc-text-section">This section provides some direction for creating custom Impact Triggers. 
+					Impact Triggers are the most straightforward and flexible part of Impact CFX to extend.
+					They don't require you to inherit from any specific class or interface, and the logic of the trigger is entirely up to you.</p>
+	
+				<p class="doc-text-section">For comprehensive documentation of the entire Impact CFX API, please refer to the <a href="api">API Reference</a>.</p>
+			</div>	
+
+			<hr>
+
+			<div class="doc-section clearfix">	
+				<h3>Example Custom Trigger</h3>
+
+				<p class="doc-text-section">The following example shows a very basic custom Impact Trigger implementation:</p>
+				<pre>
+using ImpactCFX;
+using UnityEngine;
+
+//Note we are not inheriting from any Impact CFX class.
+public class ImpactExampleTrigger : MonoBehaviour
+{
+	//Inspector field for assigning an Impact Object to use when triggering the collision.
+	public ImpactObjectBase ImpactObject;
+
+	//Use the OnCollisionEnter message for this trigger.
+	private void OnCollisionEnter(Collision collision)
+	{
+		//Get the first contact point.
+		ContactPoint contactPoint = collision.GetContact(0);
+
+		//Create an ImpactContactPoint that wraps the contact point obtained from the collision.
+		//ImpactContactPoint consolidates 3D and 2D physics.
+		//collision.relativeVelocity is given as a fallback velocity.
+		ImpactContactPoint impactContactPoint = new ImpactContactPoint(contactPoint, collision.relativeVelocity);
+
+		//Attempt to get an Impact Object component from the collider that was hit.
+		//Note the use of the IImpactObject interface to keep things abstract.
+		IImpactObject hitObject = contactPoint.otherCollider.GetComponentInParent<IImpactObject>();
+
+		//Queue the collision.
+		ImpactCFXGlobal.QueueCollision(
+			ImpactObject,                                   //The object that is triggering the collision.
+			hitObject,                                      //The object that was hit.
+			impactContactPoint,                             //The contact point of the collision.
+			CollisionType.Collision,                        //The type of collision (Collision, Slide, or Roll)
+			1,                                              //How many materials to get at the contact point for this object.
+			1,                                              //How many materials to get at the contact point for the other object.
+			CollisionVelocityMethod.RelativeVelocities);    //The method to use for calculating the velocity.
+	}
+}				</pre>
+
+				<p class="doc-text-section">Not much is required to make a basic custom trigger, but there are a few key things to take note of.</p>
+	
+				<h5>ImpactContactPoint</h5>
+
+				<p class="doc-text-section"><span class="doc-code">ImpactContactPoint</span> is a data structure that wraps both <span class="doc-code">ContactPoint</span> and <span class="doc-code">ContactPoint2D</span> structures provided by Unity.
+					This consolidates the two kinds of physics and makes processing collisions much simpler.</p>
+
+					<p class="doc-text-section"><span class="doc-code">ImpactContactPoint</span> has many constructors that cover a variety of use cases.
+						In the above example, the constructor taking a <span class="doc-code">ContactPoint</span> as a parameter was used.
+						The <span class="doc-code">collision.relativeVelocity</span> was also given, as this velocity is sometimes used in velocity calculations later.</p>
+	
+				<h5>ImpactCFXGlobal</h5>
+
+				<p class="doc-text-section"><span class="doc-code">ImpactCFXGlobal</span> is the primary class for interacting with the active <span class="doc-property">Impact CFX Manager</span> instance.
+					The method we are interested in is <span class="doc-code">QueueCollision</span>. This method is responsible for taking collision data and queueing it for processing into an actual effect.</p>
+				
+				<p class="doc-text-section"><span class="doc-code">QueueCollision</span> has a few overloads depending on the use case.
+					In the above example, the overload taking two <span class="doc-code">IImpactObject</span> parameters for the trigger and hit object was used.
+					You don't need to worry about null-checking here, the Impact CFX Manager automatically does this when queueing.</p>
+			</div>
+
+			<div class="doc-section clearfix">		
+				<h3>Inheriting From Impact CFX Trigger Bases</h3>
+				
+				<p class="doc-text-section">While inheriting from any particular class is not necessary, there are several base classes for different kinds of triggers that may be useful to inherit.
+					These classes may have shared properties or logic that may be useful.
+				</p>
+
+				<ul>
+					<li><span class="doc-code">ImpactTriggerBase</span> - The most basic trigger class, contains shared properties and logic for many built-in triggers.</li>
+					<li><span class="doc-code">ImpactCollisionTriggerBase</span> - Base class for one-shot Collision effects.</li>
+					<li><span class="doc-code">ImpactSlideAndRollTriggerBase</span> - Base class for Slide and Roll effects.</li>
+					<li><span class="doc-code">ImpactOnTriggerEnterBase</span> - Base class triggers that use OnTriggerEnter for generating one-shot Collision effects.</li>
+					<li><span class="doc-code">ImpactOnTriggerStayBase</span> - Base class triggers that use OnTriggerStay for generating Slide and Roll effects.</li>
+					<li><span class="doc-code">ImpactSpeculativeCollisionTriggerBase</span> - Base class the special speculative triggers for one-shot Collision effects.</li>
+				</ul>
+				
+			</div>
+		</div>
+	</div>
+</div>    		
+    	</div>	
+    </div>
+  </body>
+</html>

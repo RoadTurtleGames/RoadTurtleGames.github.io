@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Impact Documentation</title>
+
+  	<meta charset="utf-8" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+  	<link rel="stylesheet" href="/css/main.css"/>
+  	<link rel="stylesheet" href="/css/all.css"> 
+  	
+  	<script src="/js/jquery.min.js"></script>
+  	<script src="/js/main.js"></script>
+</head>
+  <body>
+    <!-- Navigation Bar -->
+<header id="navigation" class="navbar flex-row">
+	<div class="flex-row navbar-title">
+		<a class="navbar-turtle-link" href="/">
+			<img class="navbar-turtle" src="/images/turtle.png">
+		</a>
+
+		<a class="navbar-title-link" href="/">
+			<h1>Road Turtle Games</h1>
+		</a>
+
+		<div class="flexible-space"></div>
+
+		<a class="navbar-link hamburger" href="javascript:void(0);" onclick="openHamburger()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+
+	<a class="navbar-link hide-me" href="/games">Games</a>	
+	<a class="navbar-link hide-me" href="/development-tools">Development Tools</a>
+</header>  	
+
+    <div class="vertical-navbar">
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="/impact-cfx"><i class="fas fa-arrow-left"></i> Impact CFX Main Page</a>	
+		<a class="vertical-navbar-link" href="index"><i class="fas fa-book"></i> Index</a>		
+		<a class="vertical-navbar-link" href="api"><i class="fas fa-book"></i> API Reference</a>		
+		<a class="vertical-navbar-link" href="change-logs"><i class="fas fa-list"></i> Change Logs</a>		
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="conversion">Conversion From Legacy Impact</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="project-settings">Impact CFX Project Settings</a>
+		<a class="vertical-navbar-link sub-1" href="project-settings#tags">Impact Tags</a>
+		<a class="vertical-navbar-link sub-1" href="project-settings#logging">Logging</a>
+		<a class="vertical-navbar-link" href="material-registry">Impact Material Registry</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="impact-cfx-manager">Impact CFX Manager</a>
+		<a class="vertical-navbar-link sub-1" href="impact-cfx-manager#material-mapping">Material Mapping</a>
+		<a class="vertical-navbar-link sub-1" href="impact-cfx-manager#managing-materials">Managing Registered Materials</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="materials">Impact Materials</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="audio-effect">Audio Effect</a>
+		<a class="vertical-navbar-link sub-1" href="audio-effect#prefab">Audio Source Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="audio-effect#processor">Audio Effect Processor</a>
+		<a class="vertical-navbar-link" href="particle-effect">Particle Effect</a>
+		<a class="vertical-navbar-link sub-1" href="particle-effect#prefab">Particle System Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="particle-effect#processor">Particle Effect Processor</a>
+		<a class="vertical-navbar-link" href="decal-effect">Decal Effect</a>
+		<a class="vertical-navbar-link sub-1" href="decal-effect#prefab">Decal Prefab</a>
+		<a class="vertical-navbar-link sub-1" href="decal-effect#processor">Decal Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="decal-urp-hdrp">URP & HDRP Decals</a>
+		<a class="vertical-navbar-link" href="vfxbatch-effect">VFX Batch Effect</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#master">VFX Batch Master</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#creating">Creating a Visual Effect</a>
+		<a class="vertical-navbar-link sub-1" href="vfxbatch-effect#processor">VFX Batch Effect Processor</a>
+		<a class="vertical-navbar-link" href="managing-attached-effects">Managing Attached Effects</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="objects">Impact Objects</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#single-material">Impact Object Single Material</a>										
+		<a class="vertical-navbar-link sub-1" href="objects#rigidbody">Impact Object Rigidbody</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#custom-velocity">Impact Object Custom Velocity</a>	
+		<a class="vertical-navbar-link sub-1" href="objects#multiple-materials">Objects With Multiple Materials</a>									
+		<a class="vertical-navbar-link sub-1" href="objects#terrain">Impact Terrain</a>				
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="triggers">Impact Triggers</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#common">Common Trigger Properties</a>	
+		<a class="vertical-navbar-link sub-2" href="triggers#material-count">Material Count</a>														
+		<a class="vertical-navbar-link sub-1" href="triggers#collision">Impact Collision Trigger</a>									
+		<a class="vertical-navbar-link sub-1" href="triggers#slide-and-roll">Impact Slide and Roll Trigger</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#speculative">Impact Speculative Collision Trigger</a>									
+		<a class="vertical-navbar-link sub-1" href="triggers#simple">Impact Simple Collision Trigger</a>													
+		<a class="vertical-navbar-link sub-1" href="triggers#particle">Impact Particle Collision Trigger</a>		
+		<a class="vertical-navbar-link sub-1" href="triggers#on-trigger-enter">Impact On Trigger Enter</a>
+		<a class="vertical-navbar-link sub-1" href="triggers#on-trigger-stay">Impact On Trigger Stay</a>																	
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="raycasting">Impact Raycasting</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="fmod">FMOD Integration</a>	
+		<a class="vertical-navbar-link" href="wwise">Wwise Integration</a>	
+		<a class="vertical-navbar-link" href="master-audio">Master Audio Integration</a>	
+	</div>
+	
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="custom-triggers">Custom Triggers</a>
+		<a class="vertical-navbar-link" href="custom-objects">Custom Objects</a>
+		<a class="vertical-navbar-link sub-1" href="custom-objects#component">Creating an Impact Object Script</a>
+		<a class="vertical-navbar-link sub-1" href="custom-objects#processor">Impact Material Processors</a>
+		<a class="vertical-navbar-link" href="custom-effects">Custom Effects</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#asset">Impact Effect Authoring Asset</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#effect-result">Effect Result</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#effect-data">Effect Data</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#processor">Impact Effect Processors</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#simple-processor">Impact Simple Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#pooled-processor">Impact Pooled Effect Processor</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-object">Pooled Effect Object</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-authoring">Pooled Effect Authoring</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-result">Pooled Effect Result</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-data">Pooled Effect Data</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#object-pool">Object Pool</a>
+		<a class="vertical-navbar-link sub-2" href="custom-effects#pooled-effect-processor">Pooled Effect Processor</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#add-to-impact-cfx-manager"">Add to Impact CFX Manager</a>
+		<a class="vertical-navbar-link sub-1" href="custom-effects#example-download"">Example Effect Download</a>
+	</div>
+</div>  	
+
+    <div class="main-container doc-container">
+    	<div style="padding: 0px 80px;">
+    		<div class="main-body">
+	<div class="content">
+		<div class="doc-section clearfix">		
+			<h2>Master Audio Integration</h2>
+			<p>Impact CFX features an optional package for integrating with Master Audio 2022. This allows you to utilize Master Audio 2022 for playing audio effects.</p>		
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h3 id="setup">Setup</h3>
+
+			<p class="doc-text-section">The only setup required is downloading and importing the <span class="doc-property">Impact CFX Master Audio Integration</span> package.</p>
+			
+			<div class="external-link-container flex-row">
+				<a href="../downloads/ImpactCFX-MasterAudio-v1.2.1.unitypackage" class="package-link"><i class="fas fa-file-alt"></i> Master Audio Integration Package (v1.2.1)</a>
+			</div>
+
+			<div class="external-link-container flex-row">
+				<p class="package-version-info">Impact CFX 1.4.1+</p>
+				<p class="package-version-info">Master Audio 2022 Version: 1.0.4</p>
+			</div>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h3 id="master-audio-interaction">Master Audio Effect</h3>
+
+			<p class="doc-text-section">The Impact CFX Master Audio integration introduces the <span class="doc-property">Master Audio Effect</span>. 
+				This effect should be used instead of the built-in Audio Effect.
+				You can create a new Master Audio Effect by going to <span class="doc-menu-path">Assets > Create > Impact CFX > Master Audio Effect</span>.</p>
+
+			<img class="doc-image left" src="../images/MasterAudioEffect.png">
+	
+			<p class="doc-text-section">The Master Audio Effect is similar to the built-in <span class="doc-property">Audio Effect</span>, but uses Master Audio Sound Groups instead of Audio Clips.</p>
+
+			<p class="doc-text-section">Master Audio Effects can have a list of sound groups to play on collision. There are 2 modes that can be used to select which sound group to use:</p>
+			<ul>
+				<li><span class="doc-property">Random</span> – Select a random sound group from the list.</li>		
+				<li><span class="doc-property">Velocity</span> – Select a sound group based on the collision velocity, where the first element is the lowest velocity, and the last element is the highest velocity.</li>						
+			</ul>
+
+			<p class="doc-text-section">Of course, you can choose to only use a single sound group for your collisions.</p>
+
+			<p class="doc-text-section">In addition to the collision sound groups, you can assign sound groups to <span class="doc-property">Slide Sound Group</span> and 
+				<span class="doc-property">Roll Sound Group</span> to use when the object is sliding or rolling. These sounds should be looped.</p>	
+				
+			<p class="doc-text-section">Master Audio Effects have the following additional properties:</p>	
+			<ul>	
+				<li><span class="doc-property">Velocity Reference Range</span> – Collision velocities will be converted to a normalized (0 to 1) value based on this range and the <span class="doc-property">Collision Normal Influence</span>. 
+					The normalized value will then be used with the <span class="doc-property">Scale Volume With Velocity</span> property.
+					Note that if the collision velocity is less than the minimum value of the range, no effect will be played.</li>		
+				<li><span class="doc-property">Scale Volume With Velocity</span> – If checked, the output volume will be multiplied based on the input velocity. The value to multiply by comes from the <span class="doc-property">Volume Scale Curve</span>.</li>
+				<li><span class="doc-property">Collision Normal Influence</span> – How much the input normal will effect the calculated intensity of the collision. This can be used so that grazing collisions will have a low volume even if they have a high velocity.</li>	
+													
+			</ul>				
+		</div>	
+
+		<hr>
+
+		<div class="doc-section clearfix">		
+			<h3 id="fmod-audio-interaction">Master Audio Effect Processor</h3>
+
+			<p class="doc-text-section">Like all other effects, the <span class="doc-property">Master Audio Effect</span> requires a processor component, the <span class="doc-property">Master Audio Effect Processor</span>
+				You can create this component by going to <span class="doc-menu-path">Add Component > Impact CFX > Master Audio > Impact Master Audio Effect Processor</span>.
+				Make sure that you add this processor to the <span class="doc-property">Impact Effect Processors</span> list on your <span class="doc-property">Impact CFX Manager</span>.</p>
+
+			<img class="doc-image left" src="../images/MasterAudioEffectProcessor.png">
+
+			<p class="doc-text-section">The Master Audio Effect Processor has the following properties:</p>	
+			<ul>	
+				<li><span class="doc-property">Queue Capacity</span> – The maximum number of effects that can be processed in a frame.</li>		
+				<li><span class="doc-property">Proxy Object Pool Config</span> – This integration uses empty game objects that manage each Master Audio effect instance.
+					This property controls the object pool used for these empty game objects.
+					<ul>	
+						<li><span class="doc-property">Pool Size</span> – The size of the object pool. This effectively defines how many effects can be active simultaneously.</li>	
+						<li><span class="doc-property">Stealing</span> – The behavior for stealing when all of the objects are in use.</li>
+					</ul>	
+				</li>
+				<li><span class="doc-property">Effect Attach Mode</span> – Defines what object involved in the collision, if any, the effect should attach to.
+					This can be useful for long collision effects that you want to follow an object.
+					See <a href="effect-attaching.html">Managing Attached Effects</a> for more info on how to properly manage attached effects.
+					<ul>	
+						<li><span class="doc-property">None</span> – Don't attach to an object.</li>		
+						<li><span class="doc-property">This Object</span> – Attach to the object that triggered the effect, if it is present.</li>	
+						<li><span class="doc-property">Other Object</span> – Attach to the object that was collided with, if it is present.</li>
+					</ul>	
+				</li>
+				<li><span class="doc-property">Audio Fade Out Time</span> – For sliding and rolling effects, how long the audio takes to fade out once sliding/rolling has stopped.</li>								
+			</ul>			
+		</div>	
+	</div>	
+</div>    		
+    	</div>	
+    </div>
+  </body>
+</html>

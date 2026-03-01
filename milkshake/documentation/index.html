@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>MilkShake Documentation</title>
+
+  	<meta charset="utf-8" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+  	<link rel="stylesheet" href="/css/main.css"/>
+  	<link rel="stylesheet" href="/css/all.css"> 
+  	
+  	<script src="/js/jquery.min.js"></script>
+  	<script src="/js/main.js"></script>
+</head>
+  <body>
+    <!-- Navigation Bar -->
+<header id="navigation" class="navbar flex-row">
+	<div class="flex-row navbar-title">
+		<a class="navbar-turtle-link" href="/">
+			<img class="navbar-turtle" src="/images/turtle.png">
+		</a>
+
+		<a class="navbar-title-link" href="/">
+			<h1>Road Turtle Games</h1>
+		</a>
+
+		<div class="flexible-space"></div>
+
+		<a class="navbar-link hamburger" href="javascript:void(0);" onclick="openHamburger()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+
+	<a class="navbar-link hide-me" href="/games">Games</a>	
+	<a class="navbar-link hide-me" href="/development-tools">Development Tools</a>
+</header>  	
+
+    <div class="vertical-navbar">
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="/milkshake"><i class="fas fa-arrow-left"></i> MilkShake Main Page</a>	
+		<a class="vertical-navbar-link" href="api"><i class="fas fa-book"></i> API Reference</a>			
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="#camera-setup">Camera Setup</a>		
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="#shake-parameters">Shake Parameters</a>
+		<a class="vertical-navbar-link sub-1" href="#shake-presets">Shake Presets</a>			
+	</div>
+
+	<div class="vertical-navbar-section">			
+		<a class="vertical-navbar-link" href="#shaking-the-camera">Shaking the Camera</a>
+		<a class="vertical-navbar-link sub-1" href="#direct-reference">Direct Reference</a>
+		<a class="vertical-navbar-link sub-1" href="#static-methods">Static Methods</a>
+	</div>
+
+	<div class="vertical-navbar-section">
+		<a class="vertical-navbar-link" href="#updating-shakes">Updating Shakes at Runtime</a>
+		<a class="vertical-navbar-link sub-1" href="#shake-instances">Shake Instances</a>
+	</div>
+</div>  	
+
+    <div class="main-container doc-container">
+    	<div style="padding: 0px 80px;">
+    		<div class="main-body">
+	<div class="content">
+		<div class="doc-section clearfix">		
+			<h2>MilkShake Documentation</h2>
+
+			<p class="doc-text-section">Welcome to the <span class="doc-property">MilkShake</span> documentation! You can use the navigation bar on the left to scroll to a topic.</p>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">	
+			<h2 id="camera-setup">Camera Setup</h2>
+
+			<p class="doc-text-section">MilkShake uses the camera's local position and rotation to apply shakes, and shakes are always done relative to (0,0,0) local position and rotation. This means that your camera will need to be contained in an empty container object, with its local position and rotation set to (0,0,0), as shown below:</p>
+
+			<img class="doc-image center" src="../images/Camera_Setup.png">
+
+			<p class="doc-text-section">If you are using scripts to move the camera around, your camera movement scripts should be on the conatiner object, instead of directly on the camera object.</p>
+
+			<p class="doc-text-section">Finally, once your camera objects are all set up, you can add the <span class="doc-property">Shaker</span> component to your Camera object by going to <span class="doc-menu-path">Add Component > MilkShake > Shaker</span>.</p>
+
+			<img class="doc-image left" src="../images/Shaker_Component.png">
+
+			<p class="doc-text-section">The Shaker component has a single property <span class="doc-property">Add To Global Shakers</span>. Turn this on if you want the Shaker to be added to a static list of shakers, so that you can shake it using static methods rather than a direct reference (more on this later).</p>
+
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">	
+			<h2 id="shake-parameters">Shake Parameters</h2>
+
+			<p class="doc-text-section">Before we can start shaking the camera, we need to understand <span class="doc-property">Shake Parameters</span>. Shake Parameters define the behavior of a shake; the shake type, strength and roughness, fading, and position and rotation influence:</p>
+			<ul>
+				<li><span class="doc-property">Shake Type</span> – Shakes come in 2 types:		
+					<ul>
+						<li><span class="doc-property">One-Shot</span> – The shake fades in and fades out automatically. This kind of shake is good for short shakes like explosions.</li>			
+						<li><span class="doc-property">Sustained</span> – The shake fades in and continues to shake until told to stop. This kind of shake is good for long shakes like earthquakes.</li>
+					</ul>
+				</li>			
+				<li><span class="doc-property">Strength</span> – The intensity / magnitude of the shake.</li>	
+				<li><span class="doc-property">Roughness</span> – Lower roughness values are slower and smoother. Higher values are faster and noisier.</li>	
+				<li><span class="doc-property">Fade In</span> – The time, in seconds, for the shake to fade in.</li>	
+				<li><span class="doc-property">Fade Out</span> – The time, in seconds, for the shake to fade out. This is mainly used for One-Shot shakes.</li>	
+				<li><span class="doc-property">Position Influence</span> – How much influence the shake has on the position. This can have any value, even negative values and values greater than 1.</li>
+				<li><span class="doc-property">Rotation Influence</span> – How much influence the shake has on the rotation. This can have any value, even negative values and values greater than 1. You may need to set this to high values (i.e. 10 or more) to see noticable rotation shake.</li>						
+			</ul>		
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">	
+			<h3 id="shake-presets">Shake Presets</h3>
+
+			<p class="doc-text-section">Shake Presets provide a way to store Shake parameters as assets in your project. You can create a new Shake Preset by going to <span class="doc-menu-path">Assets > Create > MilkShake > Shake Preset</span>. Shake Presets have all of the same parameters described above:</p>
+	
+			<div class="content-list flex-row">
+				<div class="content-list-item" style="padding-top: 0px">
+					<img class="doc-image" src="../images/Shake_Preset_1.png">							
+				</div>	
+					<div class="content-list-item" style="padding-top: 0px">
+					<img class="doc-image" src="../images/Shake_Preset_2.png">							
+				</div>							
+			</div>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">	
+			<h2 id="shaking-the-camera">Shaking the Camera</h2>
+
+			<p class="doc-text-section">Now we can start shaking the camera. You can either use a direct reference to shaker components or you can use static methods on the Shaker class.</p>		
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<h3 id="direct-reference">Direct Reference</h3>
+
+			<p class="doc-text-section">You can shake a camera using a direct reference to one or more Shaker components. You can create an inspector variable for the Shaker component, or get the reference another way. Once you have a reference, call the <span class="doc-code">Shake</span> method, where you pass in a Shake Parameters object. In the below example, a Shake Preset inspector field is used:</p>	
+<pre>
+using UnityEngine;
+using MilkShake;
+
+public class ShakeDemo : MonoBehaviour
+{
+	//Inspector field for the Shaker component.
+    public Shaker MyShaker;
+    //Inspector field for a Shake Preset to use as the shake parameters.
+    public ShakePreset ShakePreset;
+
+    private void Start()
+    {
+    	//Shake using the shake preset's parameters.
+        MyShaker.Shake(ShakePreset);
+    }
+}</pre>	
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">
+			<h3 id="static-methods">Static Methods</h3>
+
+			<p class="doc-text-section">You can shake all active shakers without direct references by calling the static <span class="doc-code">ShakeAll</span> method on the Shaker class. Make sure that the shakers you want to shake using the static methods have the <span class="doc-property">Add To Global Shakers</span> property checked.</p>	
+<pre>
+using UnityEngine;
+using MilkShake;
+
+public class ShakeDemo : MonoBehaviour
+{
+    //Inspector field for a Shake Preset to use as the shake parameters.
+    public ShakePreset ShakePreset;
+
+    private void Start()
+    {
+    	//Shake all active shakers using the shake preset's parameters.
+        Shaker.ShakeAll(ShakePreset);
+    }
+}</pre>	
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">	
+			<h2 id="updating-shakes">Updating Shakes at Runtime</h2>
+
+			<p class="doc-text-section">It is possible to start, stop, and update shakes at runtime using <span class="doc-property">Shake Instances</span>. For One-Shot shakes it is usually not necessary to save and modify the shake instance since the shakes are usually short, but for sustained shakes it is necessary to save the shake instance so that you can stop the shake when needed.</p>
+		</div>
+
+		<hr>
+
+		<div class="doc-section clearfix">	
+			<h3 id="shake-instances">Shake Instances</h3>
+
+			<p class="doc-text-section">Shake Instances are objects that hold shake data and have various methods you can use to start, stop, and pause a shake. Below is an example showing how you can start and stop a shake as well as modify its strength:</p>
+<pre>
+using UnityEngine;
+using MilkShake;
+
+public class ShakeDemo : MonoBehaviour
+{
+	//Inspector field for the Shaker component.
+    public Shaker MyShaker;
+    //Inspector field for a Shake Preset to use as the shake parameters.
+    public ShakePreset ShakePreset;
+
+    //The saved shake instance we will be modifying
+    private ShakeInstance myShakeInstance;
+
+    private void Start()
+    {
+    	//The Shake method returns a Shake Instance that you can save and modify.
+        myShakeInstance = Shaker.ShakeAll(ShakePreset);
+    }
+
+    private void Update()
+    {
+    	//Start the shake, with a fade-in time of 1 second.
+    	if(Input.GetKeyDown(KeyCode.Q))
+    		myShakeInstance.Start(1f);
+
+    	//Stop the shake, with a fade-out time of 1 second. Also make sure the shake is not removed by the Shaker once it is fully stopped.
+    	if(Input.GetKeyDown(KeyCode.E))
+    		myShakeInstance.Stop(1f, false);
+
+    	//Pause or unpause the shake, with a fade-out time of 1 second. Pausing will stop the shake from moving, but keep the offset position and rotation.
+    	if(Input.GetKeyDown(KeyCode.P))
+    		myShakeInstance.TogglePaused(1f);
+
+    	//Increase the shake strength when holding the Plus key on the numpad.
+    	if(Input.GetKey(KeyCode.KeypadPlus))
+    		myShakeInstance.StrengthScale += Time.deltaTime;
+
+    	//Decrease the shake strength when holding the Minus key on the numpad.
+    	if(Input.GetKey(KeyCode.KeypadMinus))
+    		myShakeInstance.StrengthScale -= Time.deltaTime;
+    }
+}</pre>	
+		</div>		
+
+		<hr>
+	</div>	
+
+</div>    		
+    	</div>	
+    </div>
+  </body>
+</html>

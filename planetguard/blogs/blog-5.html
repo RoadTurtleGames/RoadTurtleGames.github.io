@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html style="background-image: url('images/page_background.jpg'); background-size: cover;">
+  <head>
+	<title>Planetguard</title>
+
+  	<meta charset="utf-8" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+  	<link rel="stylesheet" href="/css/main.css"/>
+  	<link rel="stylesheet" href="/css/all.css"> 
+  	
+  	<script src="/js/jquery.min.js"></script>
+  	<script src="/js/main.js"></script>
+</head>
+  <body>
+    <!-- Navigation Bar -->
+<header id="navigation" class="navbar flex-row">
+	<div class="flex-row navbar-title">
+		<a class="navbar-turtle-link" href="/">
+			<img class="navbar-turtle" src="/images/turtle.png">
+		</a>
+
+		<a class="navbar-title-link" href="/">
+			<h1>Road Turtle Games</h1>
+		</a>
+
+		<div class="flexible-space"></div>
+
+		<a class="navbar-link hamburger" href="javascript:void(0);" onclick="openHamburger()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+
+	<a class="navbar-link hide-me" href="/games">Games</a>	
+	<a class="navbar-link hide-me" href="/development-tools">Development Tools</a>
+</header>  	
+
+    <div class="main-container">
+      <link rel="stylesheet" href="../css/page.css"> 
+
+<div class="main-body" >
+	<div class="content ">
+		<div class="content-section">	
+			<h2>Creating Space Skyboxes - Part 2</h2>
+			<h5>27 May 2022</h5>	
+
+			<hr>
+
+			<div class="blog-section">
+				<p>
+					In the previous dev blog, I went through the process of creating space skyboxes with stars and nebulae using Blender.
+					In this dev blog, I will be expanding this by creating planetary skyboxes, with atmospheres and clouds.
+
+				</p>
+			</div>
+
+            <div class="blog-section">
+				<p>
+					Make sure you check out Part 1 of this blog, since I will be referencing some parts of it here.
+				</p>
+                <div class="external-link-container text-section flex-row">
+                    <a href="./blog-4.html" class="external-link">Creating Space Skyboxes - Part 1</a>
+                </div>
+			</div>
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-5/Render_00.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					Note that the purpose is not to create accurate atmospheres and clouds based on atmospheric composition, this is purely for artistic purposes. 
+				</p>
+			</div>
+
+			<h3>Setting Up the Project</h3>
+
+			<div class="blog-section">
+				<p>
+					First, let's set up the basics of the project.
+					I have imported the same camera setup used for the nebula skyboxes created in the previous blog.
+				</p>
+			</div>
+
+			<div class="text-section">
+				<img class="blog-image" src="images/blog-4/Camera_01.png"/>
+			</div>
+
+			<div class="text-section">
+				<img class="blog-image" src="images/blog-4/Camera_02.gif"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					Next, let's go to the Render Properties.
+					Make sure that the Render Engine is set to Cycles.
+					In the Volumes section, we want to decrease the Step Rate Render value to something like 0.1.
+					Decreasing this value will give us more detail in our volumes, which is especially important for clouds.
+					I also double the Max Steps value from 1024 to 2048.
+				</p>
+			</div>
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-5/Blender_01.png"/>
+			</div>
+
+			<h3>Adding the Space Skybox</h3>
+
+			<div class="blog-section">
+				<p>
+					Now let's add one of the space skyboxes from the previous blog.
+					Unfortunately Blender has no easy way of using a 6-sided skybox as a background (i.e. in the World shader), however we can simply make our own skybox by making a large inside-out cube.
+					You'll also need to make sure in the Ray Visibility settings of the Object Properties to uncheck everything except for Camera, which will ensure the skybox doesn't actually affect the lighting in the scene.
+				</p>
+			</div>
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-5/Blender_02.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					It's easiest to set up a skybox if you combine all 6 faces into a single texture.
+					All you need to do is make sure the UVs of your cube match the layout of your texture
+				</p>
+			</div>
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-5/Blender_03.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					For the skybox material, a simple Emission shader using our skybox texture will do.
+				</p>
+			</div>
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-5/Blender_04.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					Finally, lets add our sun.
+					The sun has 2 parts: the sun light and a sphere that is used as an analog for the sun.
+					I find it useful to create a sun light and then add a sphere as a child of the light.
+					That way, the angle of the light and the position of the sphere always match.
+					Just like with the skybox, the sphere should have everything except for Camera unchecked in the Ray Visibility settings, so that it does not affect the lighting.
+				</p>
+			</div>
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-5/Blender_05.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					The sun material can be a simple Emission shader as well.
+					Make sure to crank up the Strength so it will have a lot of bloom/glow.
+				</p>
+			</div>
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-5/Blender_06.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					One last thing, we also need to increase the strength of the sun light.
+					I set it to 10 to start off, but we can always adjust this later.
+				</p>
+			</div>
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-5/Blender_07.png"/>
+			</div>
+
+			<h3>Creating the Atmosphere</h3>
+
+			<div class="blog-section">
+				<p>
+					Now it is finally time to start creating the planet surface.
+					It is useful to add a plane that will act as a stand-in for the ground.
+					A simple material that is close to the average color of the ground will suffice.
+				</p>
+			</div>
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-5/Blender_08.png"/>
+			</div>
+
+
+			<div class="blog-section">
+				<p>
+					Now lets finally create the atmosphere.
+					Create a cube and scale it so that it covers the plane you created for the ground.
+					The height of the cube is somewhat arbitrary, we will be adjusting the atmosphere's density in the atmosphere shader.
+					Also, if you have strange banding artifacts, try lowering the bottom of the atmosphere cube so that it is below the ground plane.
+					Blender sometimes will have artifacts when volumes intersect with other objects.
+				</p>
+			</div>
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-5/Blender_09.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					Next let's add a material to the atmosphere and use the Principled Volume shader.
+				</p>
+			</div>
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-5/Blender_10.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					The first thing we need to do is decrease the density based on the height.
+					We can do this using a gradient texture.
+					By default the gradient is going the wrong way, so use a Mapping node with the Generated Texture Coordinate to rotate the gradient and adjust its position.
+					You can plug in the gradient to the Surface output to make sure it's rotated correctly.
+					White will be high density, and black will be low density.
+				</p>
+			</div>
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-5/Blender_11.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					Let's now rearrange this to plug the Gradient into our density.
+					A Multiply node allows us to further control the density.
+					For the atmosphere, the density multiplier will need to be very low.
+					Let's go ahead and render to see what it looks like.
+				</p>
+			</div>
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-5/Blender_12.png"/>
+				<img class="blog-image" src="images/blog-5/Render_01.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					We still have a lot of work to do but the basics are there!
+					Let's now set up the atmopshere color.
+					We can use a Color Ramp to color the atmosphere based on our gradient texture.
+					I made the horizon color white, and the rest of the atmosphere blue.
+					I also adjusted the density and increased the brightness of the sun light.
+					Remember to always be tweaking values as you are working!
+				</p>
+			</div>
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-5/Blender_13.png"/>
+				<img class="blog-image" src="images/blog-5/Render_02.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					And that is basically all we need to do for our atmosphere.
+				</p>
+			</div>
+
+			<h3>Making Clouds</h3>
+
+			<div class="blog-section">
+				<p>
+					Now we can start adding clouds to spruce up our skybox.
+					To start, you can simply copy the atmosphere cube.
+					Make sure to scale down the clouds cube so it is not intersecting with the atmosphere cube.
+					Also, we need to make a copy of the atmosphere material.
+					We will be using a Gradient Texture just like before, however this time we will use a Color Ramp to turn it into a double-sided graident.
+					This will allow us to control the height of our clouds.
+				</p>
+			</div>
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-5/Blender_14.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					Next let's add a Noise texture.
+					Since our box is kind of squished, the noise texture will be squished too, so I add a Mapping node to adjust the scale and compensate for the squishing.
+					I use another Color Ramp to control the density of the clouds.
+					Using the Constant mode is good for clouds, since they usually have hard edges (at least when viewed from far away).
+				</p>
+			</div>
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-5/Blender_15.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					Finally we multiply the Gradient we created earlier with the noise texture.
+					This gradient controls the noise so that we don't end up with clouds with flat tops and bottoms.
+				</p>
+			</div>
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-5/Blender_16.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					Let's take a look at a render now. Make sure you disconnect the nodes from the Surface Material Output, and instead route everything into the Density of the volume shader.
+				</p>
+			</div>
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-5/Render_03.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					Looks pretty good!
+					You can use a similar technique for clouds of all kinds, like these weird wispy clouds.
+				</p>
+			</div>
+
+			<div class="text-section">
+				<img class="blog-image" src="images/blog-5/Render_04.png"/>
+				<img class="blog-image" src="images/blog-5/Blender_17.png"/>
+			</div>
+
+			<div class="blog-section">
+				<p>
+					And there you have a relatively simple way to make planetary skyboxes, complete with an atmosphere and clouds.
+					Of course, every planet is going to have different atmospheric properties, but this method can certainly accomodate that.
+				</p>
+			</div>
+
+			<div class="text-section">
+                <img class="blog-image" src="images/blog-5/Render_05.png"/>
+
+                <img class="blog-image" src="images/blog-5/Render_06.png"/>
+
+                <img class="blog-image" src="images/blog-5/Render_07.png"/>
+
+                <img class="blog-image" src="images/blog-5/Render_08.png"/>
+			</div>
+
+            <div class="blog-section">
+				<p>
+					Use the link below to download the source .blend files for the 4 skyboxes shown above.
+				</p>
+                <div class="external-link-container text-section flex-row">
+                    <a href="../downloads/Planetguard Skies.zip" class="external-link"><i class="fas fa-file-alt"></i> Download Source Files</a>
+                </div>
+			</div>
+
+            <div class="blog-section">
+				<p>
+					Due to file size restrictions the above source files do not include the pre-rendered nebula skyboxes, 
+					so if you would like to use those, please visit the previous blog to download them.
+				</p>
+                <div class="external-link-container text-section flex-row">
+                    <a href="./blog-4.html" class="external-link">Creating Space Skyboxes - Part 1</a>
+                </div>
+			</div>
+
+			<div class="blog-section">
+				<a href="../" class="main-page-link"><i class="fas fa-arrow-left"></i> Back to Main Page</a>
+			</div>	
+
+		</div>
+	</div>	
+</div>
+
+      <div class="footer">
+    <a class="footer-title-link" href="/">
+        Road Turtle Games
+    </a>
+    <div class="flexible-space"></div>
+
+    <a href="mailto:contact@roadturtlegames.com" class="footer-button hide-me"><i class="fas fa-envelope"></i> Contact Us</a>	
+    <a href="mailto:contact@roadturtlegames.com" class="footer-button mobile"><i class="fas fa-envelope"></i></a>	
+</div>
+    </div>   
+  </body>
+</html>
